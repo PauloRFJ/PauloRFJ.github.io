@@ -852,7 +852,7 @@ document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', ()
   if (day === 1) txt = 'Fechado hoje. Voltamos terça, às 18h';
   else if (min < open) txt = day === 0 ? 'Delivery abre hoje às 18h' : 'Abre hoje às 18h';
   else if (min < close){ isOpen = true; txt = day === 0 ? 'Delivery aberto até 22h30' : 'Aberto agora até 22h30'; }
-  else txt = day === 0 ? 'Fechado. Voltamos terça, às 18h' : 'Fechado. Abre amanhã às 18h';
+  else txt = day === 0 ? 'Fechado. Voltamos terça, às 18h' : day === 6 ? 'Fechado. Delivery abre amanhã às 18h' : 'Fechado. Abre amanhã às 18h';
   el.querySelector('span').textContent = txt;
   el.classList.toggle('is-open', isOpen);
   // destaca o horário do dia
@@ -1122,7 +1122,12 @@ setList(DATA.tabs[0].items, DATA.tabs[0].id);
     if (q.length < 3){ out.textContent = 'A resposta aparece aqui enquanto você digita.'; return; }
     const hit = BAIRROS.find(b => norm(b) === q) || BAIRROS.find(b => norm(b).startsWith(q)) || BAIRROS.find(b => norm(b).includes(q));
     if (hit){ out.classList.add('ok'); out.innerHTML = `Sim, entregamos em <b>${hit}</b>. A taxa aparece no carrinho do delivery.`; }
-    else { out.innerHTML = `Ainda não achamos “${inp.value.trim()}” na lista. <a href="https://wa.me/${WA}?text=${encodeURIComponent('Olá! Vocês entregam no bairro ' + inp.value.trim() + '?')}" target="_blank" rel="noopener">Pergunte pelo WhatsApp</a>.`; }
+    else {
+      // o texto digitado entra como texto, nunca como HTML
+      const digitado = inp.value.trim();
+      const a = Object.assign(document.createElement('a'), { href: `https://wa.me/${WA}?text=` + encodeURIComponent('Olá! Vocês entregam no bairro ' + digitado + '?'), target: '_blank', rel: 'noopener', textContent: 'Pergunte pelo WhatsApp' });
+      out.replaceChildren(`Ainda não achamos “${digitado}” na lista. `, a, '.');
+    }
   });
 })();
 </script>
