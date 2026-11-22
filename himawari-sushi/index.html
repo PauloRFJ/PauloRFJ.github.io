@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Himawari Sushi | Sushi premiado na Bela Vista, Palhoça</title>
+<meta name="description" content="Vencedor do Festival Palhoça + Sabor. Sushi no tubo, Sushi Burguer, combos e cardápio completo na Bela Vista, Palhoça. Salão de terça a sábado e delivery até domingo, das 18h às 22h30.">
+<meta name="theme-color" content="#100d0c">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Himawari Sushi | Palhoça">
+<meta property="og:description" content="Sushi premiado na Bela Vista, Palhoça. Peça pelo delivery ou pelo WhatsApp.">
+<meta property="og:url" content="https://paulorfj.github.io/himawari-sushi/">
+<meta property="og:image" content="https://paulorfj.github.io/himawari-sushi/img/og-himawari.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo do Himawari Sushi sobre a foto do sushi no tubo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="logos/hm-favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="logos/hm-favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="logos/hm-favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Fonte da MeKa Studio, carregada só com as letras do crédito -->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&text=MeKaStudioSitepor&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Himawari Sushi",
+  "servesCuisine": ["Japonesa", "Sushi"],
+  "foundingDate": "2019-01",
+  "founder": [{"@type":"Person","name":"Flávio Jhonatan Martins"},{"@type":"Person","name":"Daniela Luzia Vitorio"}],
+  "award": "Festival Palhoça + Sabor, categoria Restaurante Oriental",
+  "telephone": "+55 48 98444-8797",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. José Cosme Pamplona, 1807",
+    "addressLocality": "Palhoça",
+    "addressRegion": "SC",
+    "postalCode": "88132-700",
+    "addressCountry": "BR"
+  },
+  "geo": {"@type": "GeoCoordinates", "latitude": -27.6552147, "longitude": -48.6870443},
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "18:00", "closes": "22:30"}
+  ],
+  "hasMenu": "https://himawari-sushi.ola.click/products",
+  "sameAs": ["https://www.instagram.com/sushihimawari/", "https://www.ifood.com.br/delivery/palhoca-sc/himawari-sushi-bela-vista/626fc99e-ff67-47a0-9b60-64511c34a07c"],
+  "areaServed": ["Palhoça", "São José"],
+  "url": "https://paulorfj.github.io/himawari-sushi/",
+  "image": "https://paulorfj.github.io/himawari-sushi/img/og-himawari.jpg"
+}
+</script>
+
+<style>
+/* =========================================================
+   1. TOKENS — cores, fontes e espaços (ajuste aqui)
+   Conceito: "Noite de koi e girassol"
+   ========================================================= */
+:root{
+  color-scheme: dark;
+  --bg:#100d0c;          /* preto da parede do salão */
+  --bg-2:#181312;
+  --surface:#211a18;
+  --ink:#f3ece2;         /* branco arroz */
+  --muted:#b4a89b;
+  --line:rgba(243,236,226,.13);
+  --red:#d7192a;         /* vermelho do "SUSHI" no logo */
+  --red-ink:#ff4a55;     /* vermelho legível em texto sobre preto */
+  --gold:#f2b523;        /* girassol (himawari) */
+  --koi:#f0642c;         /* laranja das carpas do mural */
+  --on-red:#fff;
+
+  --f-display:"Shippori Mincho B1", "Hiragino Mincho ProN", Georgia, serif;
+  --f-body:"Zen Kaku Gothic New", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --step--1:clamp(.84rem,.8rem + .2vw,.94rem);
+  --step-0:clamp(1rem,.96rem + .2vw,1.1rem);
+  --step-1:clamp(1.2rem,1.1rem + .5vw,1.45rem);
+  --step-2:clamp(1.5rem,1.3rem + 1vw,2.1rem);
+  --step-3:clamp(2rem,1.6rem + 2vw,3.2rem);
+  --step-4:clamp(2.6rem,1.8rem + 4vw,5.4rem);
+
+  --space-s:clamp(.75rem,.6rem + .6vw,1.1rem);
+  --space-m:clamp(1.25rem,1rem + 1vw,2rem);
+  --space-l:clamp(2.5rem,1.8rem + 3vw,5rem);
+  --space-xl:clamp(4rem,3rem + 5vw,8rem);
+  --wrap:min(1180px, 100% - 2*var(--space-m));
+
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+/* Modo claro: papel de arroz. O topo continua escuro por causa do vídeo. */
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    color-scheme: light;
+    --bg:#f1eae0; --bg-2:#e9e0d3; --surface:#fffaf3;
+    --ink:#1b1513; --muted:#5f544c; --line:rgba(27,21,19,.14);
+    --red-ink:#b5101e; --gold:#9a6500; --koi:#b8420f;
+  }
+}
+:root[data-theme="dark"]{ color-scheme:dark }
+
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);interpolate-size:allow-keywords}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0;text-wrap:pretty}
+.wrap{width:var(--wrap);margin-inline:auto}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:1rem;top:-4rem;z-index:100;background:var(--gold);color:#1b1513;padding:.6rem 1rem;border-radius:8px;font-weight:700;transition:top .2s}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 1rem)}
+
+/* =========================================================
+   2. BOTÕES
+   ========================================================= */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:48px;padding:.75rem 1.35rem;border-radius:999px;font:700 var(--step-0)/1 var(--f-body);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .25s var(--ease-out),background-color .25s,border-color .25s,color .25s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.2em;height:1.2em;flex:none}
+.btn--red{background:var(--red);color:var(--on-red)}
+.btn--red:hover{background:#b80f1f}
+.btn--ghost{border-color:currentColor;color:var(--ink);background:transparent}
+.btn--ghost:hover{background:color-mix(in srgb,var(--ink) 10%,transparent)}
+.btn--gold{background:var(--gold);color:#1b1513}
+.btn--gold:hover{filter:brightness(1.07)}
+
+/* =========================================================
+   3. CABEÇALHO
+   ========================================================= */
+.top{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background-color .35s,box-shadow .35s}
+.top.is-solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 1px 0 var(--line)}
+.top__in{width:var(--wrap);margin-inline:auto;display:flex;align-items:center;gap:1rem;height:68px}
+.top__logo img{height:40px;width:auto}
+/* logo é branco + vermelho; em modo claro, com o cabeçalho sólido, inverte mantendo o vermelho */
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .top.is-solid .top__logo img{filter:invert(1) hue-rotate(180deg)} }
+.top__nav{margin-left:auto;display:none;gap:.25rem}
+.top__nav a{padding:.6rem .9rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:var(--step--1);color:#f3ece2;transition:background-color .2s}
+.top.is-solid .top__nav a{color:var(--ink)}
+.top__nav a:hover{background:color-mix(in srgb,currentColor 12%,transparent)}
+.top__cta{margin-left:auto;min-height:44px;padding:.6rem 1.1rem;font-size:var(--step--1)}
+.top__menu{min-width:44px;min-height:44px;border-radius:999px;border:1.5px solid rgba(243,236,226,.35);background:transparent;color:#f3ece2;display:grid;place-items:center;cursor:pointer}
+.top.is-solid .top__menu{color:var(--ink);border-color:var(--line)}
+@media (min-width:900px){.top__nav{display:flex}.top__cta{margin-left:.5rem}.top__menu{display:none}}
+
+/* Menu mobile com Popover API + @starting-style */
+#menu{inset:auto 0 0 0;margin:0;width:100%;max-width:none;border:0;padding:var(--space-m) var(--space-m) calc(var(--space-m) + env(safe-area-inset-bottom,0px));background:var(--surface);color:var(--ink);border-radius:22px 22px 0 0;box-shadow:0 -20px 60px rgba(0,0,0,.4);
+  transition:transform .4s var(--ease-out),opacity .3s,display .4s allow-discrete,overlay .4s allow-discrete;transform:translateY(0)}
+#menu:not(:popover-open){transform:translateY(100%);opacity:0}
+@starting-style{#menu:popover-open{transform:translateY(100%);opacity:0}}
+#menu::backdrop{background:rgba(0,0,0,.5)}
+#menu nav{display:grid}
+#menu nav a{font-family:var(--f-display);font-size:var(--step-2);text-decoration:none;padding:.55rem 0;border-bottom:1px solid var(--line)}
+#menu .btn{margin-top:var(--space-m);width:100%}
+
+/* =========================================================
+   4. HERO — vídeo de fundo
+   ========================================================= */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;color:#f3ece2;isolation:isolate;overflow:hidden;background:#100d0c}
+.hero__media{position:absolute;inset:0;z-index:-2}
+.hero__media img,.hero__media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.hero__media img{animation:kenburns 22s ease-in-out infinite alternate}
+.hero__media video{object-position:center 40%}
+@media (max-width:899px){
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(16,13,12,.32)}
+  .hero__in{padding-bottom:calc(var(--space-l) + 64px)}
+  .hero__award{padding-right:56px}
+}
+.hero__media video{opacity:0;transition:opacity 1.2s}
+.hero__media video.is-playing{opacity:1}
+.hero__media video.is-still{opacity:1}
+@keyframes kenburns{from{transform:scale(1.04)}to{transform:scale(1.14) translate(-1.5%,-1%)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(16,13,12,.55) 0%,rgba(16,13,12,0) 28%,rgba(16,13,12,.25) 52%,rgba(16,13,12,.94) 100%),
+  linear-gradient(90deg,rgba(16,13,12,.7) 0%,rgba(16,13,12,0) 65%)}
+.hero__in{width:var(--wrap);margin-inline:auto;padding-block:calc(68px + var(--space-l)) var(--space-l);display:grid;gap:var(--space-m)}
+.hero__status{display:inline-flex;align-items:center;gap:.55rem;font-size:var(--step--1);font-weight:500;padding:.4rem .85rem .4rem .7rem;border-radius:999px;background:rgba(16,13,12,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(243,236,226,.18);justify-self:start}
+.hero__status i{width:9px;height:9px;border-radius:50%;background:#7a7068}
+.hero__status.is-open i{background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+.hero h1{font-size:var(--step-4);max-width:13ch}
+.hero__lead{font-size:var(--step-1);max-width:36ch;color:#e6ddd1}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero__ctas .btn--ghost{color:#f3ece2}
+.hero__award{display:flex;align-items:center;gap:.7rem;font-size:var(--step--1);color:#e6ddd1;margin-top:.25rem}
+.hero__award svg{width:28px;height:28px;color:var(--gold);flex:none}
+@media (min-width:900px){.hero__in{padding-bottom:calc(var(--space-l) + 1rem)}.hero h1{font-size:clamp(3rem,2rem + 3vw,4.8rem)}}
+
+/* Botão pausar/tocar o vídeo (acessibilidade: movimento com mais de 5s precisa poder parar) */
+.hero__pause{position:absolute;z-index:2;right:max(16px,calc((100% - var(--wrap))/2));top:calc(env(safe-area-inset-top,0px) + 84px);width:44px;height:44px;border-radius:50%;border:1px solid rgba(243,236,226,.3);background:rgba(16,13,12,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#f3ece2;display:none;place-items:center;cursor:pointer}
+.hero__pause.is-on{display:grid}
+.hero__pause.is-big{width:auto;height:48px;padding:0 1.1rem 0 .9rem;border-radius:999px;display:inline-flex;align-items:center;gap:.5rem;font:600 .95rem/1 inherit;background:rgba(16,13,12,.72)}
+.hero__pause.is-big span{white-space:nowrap}
+.hero__pause svg{width:18px;height:18px}
+
+/* Desktop: o vídeo é vertical (9:16), então vira uma "tela" à direita
+   e o fundo usa um quadro do vídeo desfocado, sem esticar a imagem. */
+@media (min-width:900px){
+  .hero{--frame-h:min(74svh,740px);align-items:center}
+  .hero h1{font-size:clamp(2.8rem,1.4rem + 2.4vw,4rem);max-width:17ch}
+  .hero__in{padding-block:calc(68px + var(--space-m)) var(--space-m)}
+  .hero__media img{filter:blur(38px) brightness(.45) saturate(1.2);transform:scale(1.25);animation:none}
+  .hero__media video{inset:auto;top:50%;right:max(var(--space-m),calc((100% - var(--wrap))/2));left:auto;translate:0 -46%;
+    height:var(--frame-h);width:auto;aspect-ratio:9/16;border-radius:26px;
+    box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(243,236,226,.14),0 0 0 10px rgba(242,181,35,.10)}
+  .hero::after{background:linear-gradient(90deg,rgba(16,13,12,.75) 0%,rgba(16,13,12,.2) 60%,rgba(16,13,12,0) 100%),linear-gradient(180deg,transparent 70%,rgba(16,13,12,.7) 100%)}
+  .hero__in{padding-right:calc(var(--frame-h)*.5625 + var(--space-l))}
+  .hero__media video{translate:0 -50%}
+  .hero__pause{top:auto;bottom:calc(50% - var(--frame-h)*.5 + 16px);right:calc(max(var(--space-m),(100% - var(--wrap))/2) + 16px)}
+}
+/* parallax leve guiado pela rolagem (só onde há suporte) */
+@supports (animation-timeline: scroll()){
+  @media (prefers-reduced-motion: no-preference){
+    .hero__in{animation:heroOut linear both;animation-timeline:scroll();animation-range:0 90vh}
+    @keyframes heroOut{to{transform:translateY(-12vh);opacity:.1}}
+  }
+}
+
+/* =========================================================
+   5. SEÇÕES GERAIS
+   ========================================================= */
+section{padding-block:var(--space-xl)}
+.sec-head{display:grid;gap:.8rem;margin-bottom:var(--space-l);max-width:44rem}
+.sec-head h2{font-size:var(--step-3)}
+.sec-head p{color:var(--muted);font-size:var(--step-1);max-width:40ch}
+.kanji{font-family:var(--f-display);color:var(--red-ink);font-size:var(--step-1);font-weight:600}
+
+/* =========================================================
+   6. PRÊMIO
+   ========================================================= */
+.award{background:var(--bg-2);position:relative;overflow:hidden}
+.award__grid{display:grid;gap:var(--space-l);align-items:center}
+.award__photo{position:relative;justify-self:center;width:min(100%,380px)}
+.award__photo img{border-radius:200px 200px 18px 18px;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;width:100%}
+.award__badge{position:absolute;right:-8px;bottom:22px;width:118px;height:118px;border-radius:50%;background:var(--gold);color:#1b1513;display:grid;place-items:center;text-align:center;font-family:var(--f-display);font-weight:800;line-height:1;rotate:-8deg;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.award__badge b{display:block;font-size:2.4rem}
+.award__badge sup{font-family:var(--f-body);font-size:.45em;vertical-align:.9em}
+.award__badge span{font-size:.72rem;font-family:var(--f-body);font-weight:700;padding-inline:12px;line-height:1.2}
+.award__text{display:grid;gap:var(--space-m)}
+.award__text h2{font-size:var(--step-3)}
+.award__text > p{color:var(--muted);font-size:var(--step-0)}
+.award__quote{margin:0;padding:var(--space-s) 0 var(--space-s) var(--space-m);border-left:3px solid var(--gold);display:grid;gap:.5rem}
+.award__quote p{font-family:var(--f-display);font-weight:600;font-size:var(--step-1);line-height:1.4;color:var(--ink)}
+.award__quote footer{font-size:var(--step--1);color:var(--muted)}
+.award__facts{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none}
+.award__facts li{padding:.45rem .9rem;border:1px solid var(--line);border-radius:999px;font-size:var(--step--1)}
+@media (min-width:860px){.award__grid{grid-template-columns:.85fr 1fr}.award__photo{justify-self:start}}
+
+/* =========================================================
+   7. ASSINATURAS — bento
+   ========================================================= */
+.bento{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+.tile{position:relative;border-radius:18px;overflow:hidden;background:var(--surface);min-height:220px;display:flex;align-items:flex-end;color:#f3ece2;text-decoration:none;border:0;padding:0;cursor:pointer;text-align:left;font:inherit;isolation:isolate}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s var(--ease-out)}
+.tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(16,13,12,.05) 15%,rgba(16,13,12,.92) 92%)}
+.tile:hover img{transform:scale(1.06)}
+.tile__txt{padding:var(--space-s) var(--space-m) var(--space-m);display:grid;gap:.3rem}
+.tile h3{font-size:var(--step-1)}
+.tile p{font-size:var(--step--1);color:#e0d6ca;max-width:34ch}
+.tile__go{font-size:var(--step--1);font-weight:700;color:var(--gold);display:inline-flex;gap:.35rem;align-items:center;margin-top:.2rem}
+.tile--big{grid-column:1/-1;min-height:420px}
+.tile--big h3{font-size:var(--step-2)}
+.tile--tall{grid-row:span 2}
+@media (min-width:860px){
+  .bento{grid-template-columns:1.3fr 1fr 1fr;grid-auto-rows:240px}
+  .tile{min-height:0}
+  .tile--big{grid-column:1;grid-row:1/3}
+  .tile--wide{grid-column:2/4}
+}
+
+/* =========================================================
+   8. ROLETA DO HIMAWARI — cardápio interativo (momento uau)
+   ========================================================= */
+.menu{background:radial-gradient(120% 70% at 50% 0%,color-mix(in srgb,var(--red) 16%,var(--bg)) 0%,var(--bg) 60%)}
+.menu__tools{display:grid;gap:.9rem;margin-bottom:var(--space-m)}
+.search{position:relative;max-width:420px}
+.search input{width:100%;min-height:50px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;padding:.7rem 1rem .7rem 2.8rem}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{outline:none;border-color:var(--gold)}
+.search svg{position:absolute;left:1rem;top:50%;translate:0 -50%;width:20px;height:20px;color:var(--muted)}
+.tabs{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;padding:.25rem .1rem .6rem;margin-inline:calc(var(--space-m)*-1);padding-inline:var(--space-m);scroll-snap-type:x proximity;mask-image:linear-gradient(90deg,transparent 0,#000 var(--space-m),#000 calc(100% - var(--space-m)),transparent)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;scroll-snap-align:start;min-height:44px;padding:.55rem 1rem;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);font:500 var(--step--1)/1 var(--f-body);cursor:pointer;display:inline-flex;gap:.45rem;align-items:center;transition:background-color .25s,border-color .25s,color .25s}
+.tab small{color:var(--muted);font-size:.78em}
+.tab:hover{border-color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tab[aria-selected="true"] small{color:color-mix(in srgb,var(--bg) 65%,var(--ink))}
+
+.stage{display:grid;gap:var(--space-m);align-items:center}
+@media (min-width:900px){.stage{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:var(--space-l)}}
+
+/* a roda: girassol de pratos */
+.wheel{--size:min(92vw,560px);position:relative;margin-bottom:64px;width:var(--size);aspect-ratio:1;justify-self:center;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.wheel.is-drag{cursor:grabbing}
+.wheel__petals{position:absolute;inset:6%;border-radius:50%;
+  background:repeating-conic-gradient(from -6deg,color-mix(in srgb,var(--gold) 22%,transparent) 0 6deg,transparent 6deg 30deg);
+  -webkit-mask:radial-gradient(circle,transparent 41%,#000 42%,#000 70%,transparent 71%);mask:radial-gradient(circle,transparent 41%,#000 42%,#000 70%,transparent 71%);opacity:.75;transition:rotate .1s linear}
+.wheel__ring{position:absolute;inset:0;border-radius:50%;border:1px dashed var(--line)}
+.wheel__mark{position:absolute;left:50%;top:-4px;translate:-50% 0;width:0;height:0;border-inline:11px solid transparent;border-top:15px solid var(--gold);z-index:3;filter:drop-shadow(0 3px 6px rgba(0,0,0,.4))}
+.plate{position:absolute;left:50%;top:50%;width:calc(var(--size)*.17);aspect-ratio:1;margin:calc(var(--size)*-.085);border-radius:50%;border:0;padding:0;background:var(--surface);cursor:pointer;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.35),0 0 0 2px color-mix(in srgb,var(--ink) 12%,transparent);will-change:transform,opacity;transition:box-shadow .3s}
+.plate img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.plate.is-active{box-shadow:0 10px 26px rgba(0,0,0,.45),0 0 0 3px var(--gold)}
+.plate .ph,.center .ph{width:100%;height:100%;display:grid;place-items:center;background:radial-gradient(circle,var(--gold) 0 22%,var(--koi) 23% 34%,var(--surface) 35%);color:#1b1513;font-family:var(--f-display);font-weight:800}
+.center{position:absolute;inset:23%;border-radius:50%;overflow:hidden;background:var(--surface);box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 6px color-mix(in srgb,var(--gold) 70%,transparent),0 0 0 14px color-mix(in srgb,var(--gold) 16%,transparent);view-transition-name:prato}
+.center img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s var(--ease-out),scale .6s var(--ease-out)}
+.center img.is-out{opacity:0;scale:1.08}
+.wheel__ctrl{position:absolute;top:calc(100% + 12px);display:flex;gap:.5rem;left:50%;translate:-50% 0;z-index:4}
+.round{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(6px);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:background-color .2s,transform .2s var(--ease-spring)}
+.round:hover{background:var(--surface)}
+.round:active{transform:scale(.9)}
+.round svg{width:20px;height:20px}
+
+.detail{display:grid;gap:.9rem;align-content:start;min-height:18rem}
+.detail__cat{font-size:var(--step--1);color:var(--gold);font-weight:700}
+.detail h3{font-size:var(--step-3);view-transition-name:prato-nome}
+.detail__desc{white-space:pre-line;color:var(--muted);font-size:var(--step-0);max-height:9.6em;overflow:auto;padding-right:.4rem;scrollbar-width:thin}
+.detail__count{font-size:var(--step--1);color:var(--muted);font-variant-numeric:tabular-nums}
+.detail__ctas{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.3rem}
+.detail__hint{font-size:var(--step--1);color:var(--muted)}
+@media (hover:none){.detail__hint{display:none}}
+.empty{padding:var(--space-l) 0;text-align:center;color:var(--muted)}
+.empty[hidden]{display:none}
+
+/* transições de troca de categoria (View Transitions API) */
+::view-transition-old(prato),::view-transition-new(prato){animation-duration:.5s;animation-timing-function:var(--ease-out)}
+::view-transition-old(prato-nome){animation:vtOut .25s var(--ease-out) both}
+::view-transition-new(prato-nome){animation:vtIn .45s var(--ease-out) both}
+@keyframes vtOut{to{opacity:0;transform:translateY(-10px)}}
+@keyframes vtIn{from{opacity:0;transform:translateY(14px)}}
+
+/* =========================================================
+   8b. ONDE PEDIR — canais de pedido
+   ========================================================= */
+.order{background:var(--bg-2)}
+.channels{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:640px){.channels{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1080px){.channels{grid-template-columns:1.25fr 1fr 1fr 1fr}}
+.ch{position:relative;display:grid;grid-template-rows:auto 1fr auto;gap:.9rem;padding:var(--space-m);border-radius:22px;background:var(--surface);border:1px solid var(--line);text-decoration:none;color:var(--ink);overflow:hidden;isolation:isolate;
+  transition:transform .35s var(--ease-out),border-color .3s,box-shadow .35s}
+.ch:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--ch) 60%,transparent);box-shadow:0 22px 50px rgba(0,0,0,.25)}
+.ch::before{content:"";position:absolute;inset:auto -30% -60% auto;width:220px;height:220px;border-radius:50%;background:var(--ch);opacity:.10;z-index:-1;transition:transform .6s var(--ease-out),opacity .4s}
+.ch:hover::before{transform:scale(1.35);opacity:.16}
+.ch__top{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.ch__icon{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:color-mix(in srgb,var(--ch) 16%,transparent);color:var(--ch)}
+.ch__icon svg{width:26px;height:26px}
+.ch__tag{font-size:.74rem;font-weight:700;padding:.3rem .65rem;border-radius:999px;background:var(--gold);color:#1b1513}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .ch__tag{color:#fff} }
+.ch h3{font-size:var(--step-1)}
+.ch p{color:var(--muted);font-size:var(--step--1);margin-top:.35rem}
+.ch__go{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:var(--step--1);color:var(--ch)}
+.ch__go svg{width:18px;height:18px;transition:transform .3s var(--ease-out)}
+.ch:hover .ch__go svg{transform:translateX(4px)}
+.ch--casa{--ch:var(--red-ink)}
+.ch--casa{background:linear-gradient(160deg,color-mix(in srgb,var(--red) 22%,var(--surface)) 0%,var(--surface) 70%)}
+.ch--wa{--ch:#25a85a}
+.ch--ifood{--ch:#ff4655}
+.ch--99{--ch:#f7cf01}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .ch--ifood{--ch:#c8101f} :root:not([data-theme="dark"]) .ch--99{--ch:#7d6300} }
+.ch__logo{width:52px;height:52px;display:block;filter:drop-shadow(0 6px 14px rgba(0,0,0,.25));transition:transform .35s var(--ease-spring)}
+.ch__logo img{width:100%;height:100%}
+.ch:hover .ch__logo{transform:rotate(-6deg) scale(1.06)}
+.order__note{margin-top:var(--space-m);color:var(--muted);font-size:var(--step--1)}
+
+/* =========================================================
+   9. ENTREGA
+   ========================================================= */
+.delivery__grid{display:grid;gap:var(--space-l)}
+@media (min-width:900px){.delivery__grid{grid-template-columns:1fr 1fr;align-items:start}}
+.check{display:grid;gap:.75rem;background:var(--surface);border-radius:22px;padding:var(--space-m);border:1px solid var(--line)}
+.check label{font-weight:700}
+.check__row{display:flex;gap:.5rem;flex-wrap:wrap}
+.check input{flex:1 1 200px;min-height:50px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;padding:.7rem 1rem}
+.check input:focus{outline:none;border-color:var(--gold)}
+.check__out{min-height:3.2em;font-size:var(--step-0)}
+.check__out.ok{color:var(--ink)}
+.check__out b{color:var(--gold)}
+.hoods{margin-top:var(--space-m)}
+.hoods summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;gap:.5rem;list-style:none}
+.hoods summary::-webkit-details-marker{display:none}
+.hoods summary::before{content:"+";display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);transition:rotate .3s var(--ease-out)}
+.hoods[open] summary::before{rotate:45deg}
+.hoods::details-content{block-size:0;overflow:hidden;transition:block-size .45s var(--ease-out),content-visibility .45s allow-discrete}
+.hoods[open]::details-content{block-size:auto}
+.hoods ul{columns:2 10rem;gap:1rem;padding:.5rem 0 0;margin:0;list-style:none;color:var(--muted);font-size:var(--step--1)}
+.hoods li{padding:.2rem 0;break-inside:avoid}
+.pay{display:grid;gap:.9rem}
+.pay h3{font-size:var(--step-2)}
+.pay ul{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.pay > ul li{padding:.5rem .95rem;border-radius:10px;background:var(--bg-2);font-size:var(--step--1);font-weight:500}
+.steps{list-style:none;padding:0;margin:var(--space-m) 0 0;display:grid;gap:1rem;counter-reset:s}
+.steps li{display:grid;grid-template-columns:2.4rem 1fr;gap:.8rem;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--f-display);font-weight:800;font-size:1.3rem;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;background:var(--red);color:#fff}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:var(--step--1)}
+
+/* =========================================================
+   10. VISITE + INSTAGRAM
+   ========================================================= */
+.visit{background:var(--bg-2)}
+.visit__grid{display:grid;gap:var(--space-l)}
+@media (min-width:960px){.visit__grid{grid-template-columns:1fr 1.1fr;align-items:center}}
+.info{display:grid;gap:var(--space-m)}
+.info dl{display:grid;gap:1rem;margin:0}
+.info dt{font-size:var(--step--1);color:var(--muted)}
+.info dd{margin:0;font-size:var(--step-1);font-family:var(--f-display);font-weight:600}
+.info__btns{display:flex;flex-wrap:wrap;gap:.65rem}
+.today{color:var(--gold)}
+.ig{display:grid;gap:var(--space-s)}
+.ig__head{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
+.ig__avatar{width:60px;height:60px;border-radius:50%;padding:3px;background:conic-gradient(from 200deg,#f2b523,#f0642c,#d7192a,#c1157d,#f2b523)}
+.ig__avatar span{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:#fff;overflow:hidden}
+.ig__avatar img{width:84%;height:auto}
+.ig__name{font-weight:700}
+.ig__meta{font-size:var(--step--1);color:var(--muted)}
+.ig__head .btn{margin-left:auto}
+.ig__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ig__grid a{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:10px}
+.ig__grid a:first-child{grid-row:span 2;aspect-ratio:auto}
+.ig__grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-out),filter .4s}
+.ig__grid a:hover img{transform:scale(1.06);filter:brightness(.8)}
+.map{border-radius:18px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;background:var(--surface)}
+.map--link{display:grid;place-items:center;text-decoration:none;text-align:center;aspect-ratio:16/7;background:radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--gold) 22%,var(--surface)) 0 18%,var(--surface) 60%);transition:border-color .25s}
+.map--link:hover{border-color:var(--gold)}
+.map--link span{display:grid;gap:.3rem}.map--link b{font-family:var(--f-display);font-size:var(--step-1)}.map--link small{color:var(--muted);font-size:var(--step--1)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.3) contrast(1.05)}
+
+/* =========================================================
+   11. CTA FINAL + RODAPÉ
+   ========================================================= */
+.final{text-align:left}
+.final__box{background:var(--red);color:#fff;border-radius:28px;padding:var(--space-l) var(--space-m);display:grid;gap:var(--space-m);position:relative;overflow:hidden;isolation:isolate}
+.final__box::before{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;z-index:-1;
+  background:repeating-conic-gradient(rgba(242,181,35,.55) 0 7deg,transparent 7deg 22.5deg);-webkit-mask:radial-gradient(circle,transparent 30%,#000 31%);mask:radial-gradient(circle,transparent 30%,#000 31%)}
+@media (prefers-reduced-motion: no-preference){.final__box::before{animation:spin 60s linear infinite}}
+@keyframes spin{to{rotate:360deg}}
+.final h2{font-size:var(--step-3);max-width:16ch}
+.final p{font-size:var(--step-1);max-width:38ch;color:#ffe9e4}
+.final .btn--ghost{color:#fff}
+@media (min-width:860px){.final__box{padding:var(--space-l)}}
+body > footer{padding-block:var(--space-l) calc(var(--space-l) + 70px);color:var(--muted);font-size:var(--step--1)}
+.foot{display:grid;gap:var(--space-m)}
+@media (min-width:860px){.foot{grid-template-columns:1fr auto;align-items:end}}
+.foot img{height:46px;width:auto}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .foot img{filter:invert(1) hue-rotate(180deg)} }
+.foot nav{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem}
+.foot nav a{min-height:44px;display:inline-flex;align-items:center}
+
+/* =========================================================
+   14. CRÉDITO MEKA STUDIO
+   Escuro: versão principal (K em verde-limão). Claro: versão monocromática do manual.
+   ========================================================= */
+.credit{--mk-ink:#EDEBE6;--mk-k:#C8F542;--mk-sub:#8E939C}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .credit{--mk-ink:#0E1014;--mk-k:#0E1014;--mk-sub:#4A4E57} }
+.credit{grid-column:1/-1;border-top:1px solid var(--line);padding-top:var(--space-m);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.credit__link{display:inline-flex;align-items:center;gap:.7rem;min-height:44px;text-decoration:none;font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;color:var(--mk-ink)}
+.credit__by{font-size:.8rem;font-weight:500;color:var(--mk-sub)}
+.credit__mark{width:34px;height:26px;flex:none;overflow:visible}
+.credit__mark .k{stroke:var(--mk-k);stroke-dasharray:70;stroke-dashoffset:0}
+.credit__rule{width:1.5px;height:24px;background:color-mix(in srgb,var(--mk-sub) 45%,transparent)}
+.credit__name{display:flex;flex-direction:column;line-height:.95}
+.credit__name b{font-size:1.2rem;font-weight:700;letter-spacing:-.035em}
+.credit__name b span{color:var(--mk-k)}
+.credit__name small{font-size:.72rem;font-weight:500;letter-spacing:-.02em;color:var(--mk-sub)}
+@media (prefers-reduced-motion: no-preference){
+  .credit__link:hover .k,.credit__link:focus-visible .k{animation:mkDraw .7s var(--ease-out)}
+  .credit__link:hover .credit__mark{transform:translateY(-1px)}
+  .credit__mark{transition:transform .3s var(--ease-out)}
+}
+@keyframes mkDraw{from{stroke-dashoffset:70}to{stroke-dashoffset:0}}
+
+/* =========================================================
+   12. WHATSAPP FLUTUANTE
+   ========================================================= */
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .3s var(--ease-spring)}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px}
+@media (prefers-reduced-motion: no-preference){.wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:waPulse 2.6s var(--ease-out) infinite}}
+@keyframes waPulse{0%{transform:scale(1);opacity:.8}70%,100%{transform:scale(1.55);opacity:0}}
+
+/* =========================================================
+   13. REVELAÇÃO SUTIL AO ROLAR (só o bento e o prêmio)
+   ========================================================= */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 5% entry 55%}
+    @keyframes rise{from{opacity:0;transform:translateY(40px) scale(.98)}}
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#cardapio">Pular para o cardápio</a>
+
+<!-- ============ CABEÇALHO ============ -->
+<header class="top" id="top">
+  <div class="top__in">
+    <a class="top__logo" href="#inicio" aria-label="Himawari Sushi, voltar ao início"><img src="img/logo-himawari.webp" alt="Himawari Sushi" width="90" height="40"></a>
+    <nav class="top__nav" aria-label="Principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#assinaturas">Assinaturas</a>
+      <a href="#pedir">Onde pedir</a>
+      <a href="#entrega">Entrega</a>
+      <a href="#visite">Visite</a>
+    </nav>
+    <a class="btn btn--red top__cta" href="https://himawari-sushi.ola.click/products" target="_blank" rel="noopener">Pedir agora</a>
+    <button class="top__menu" popovertarget="menu" aria-label="Abrir menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+<div id="menu" popover>
+  <nav aria-label="Menu">
+    <a href="#cardapio">Cardápio</a>
+    <a href="#assinaturas">Assinaturas</a>
+    <a href="#pedir">Onde pedir</a>
+      <a href="#entrega">Entrega</a>
+    <a href="#visite">Visite o salão</a>
+  </nav>
+  <a class="btn btn--red" href="https://himawari-sushi.ola.click/products" target="_blank" rel="noopener">Pedir no delivery</a>
+</div>
+
+<main>
+<!-- ============ HERO COM VÍDEO ============ -->
+<section class="hero" id="inicio" aria-labelledby="h1">
+  <div class="hero__media">
+    <img src="img/hero-quadro.webp" alt="" fetchpriority="high" width="540" height="960">
+    <!-- VÍDEO DO TOPO (9:16, 720x1280, 26s, sem áudio, ~4,7 MB).
+         O vídeo fica em video/hero-himawari.mp4.
+         Não carrega com "economia de dados" nem para quem pediu menos movimento: aí fica o quadro parado. -->
+    <video id="heroVideo" muted loop playsinline autoplay preload="none" data-src="video/hero-himawari.mp4" aria-hidden="true"></video>
+  </div>
+  <button class="hero__pause" id="heroPause" type="button" aria-label="Pausar vídeo">
+    <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+  </button>
+  <div class="hero__in">
+    <p class="hero__status" id="status" role="status"><i></i><span>Ter a dom, 18h às 22h30</span></p>
+    <h1 id="h1">Sushi premiado da Bela Vista, no salão ou na sua casa.</h1>
+    <p class="hero__lead">Do Sushi no tubo ao Sushi Burguer, um cardápio que vai além do combo. Delivery para Palhoça e São José.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--red" href="https://himawari-sushi.ola.click/products" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+        Pedir no delivery</a>
+      <a class="btn btn--ghost" href="#cardapio">Ver o cardápio</a>
+    </div>
+    <p class="hero__award">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+      Vencedor do Festival Palhoça + Sabor, categoria Restaurante Oriental
+    </p>
+  </div>
+</section>
+
+<!-- ============ PRÊMIO ============ -->
+<!-- Fonte: matéria sobre o Festival Palhoça + Sabor enviada pelo cliente. PENDENTE: confirmar o ano da premiação -->
+<section class="award" aria-labelledby="award-h">
+  <div class="wrap award__grid">
+    <figure class="award__photo reveal" style="margin:0">
+      <img src="img/premiacao.webp" alt="Flávio Jhonatan Martins e Daniela Luzia Vitorio segurando o troféu do Festival Palhoça + Sabor" width="482" height="621" loading="lazy">
+      <div class="award__badge" aria-hidden="true"><div><b>1<sup>º</sup></b><span>Palhoça + Sabor</span></div></div>
+    </figure>
+    <div class="award__text">
+      <span class="kanji" lang="ja">向日葵: himawari, o girassol</span>
+      <h2 id="award-h">Os jurados chegaram sem avisar. E o Himawari venceu.</h2>
+      <p>O Himawari ganhou o Festival Palhoça + Sabor na categoria Restaurante Oriental. Os jurados visitaram as casas sem aviso prévio e avaliaram qualidade, atendimento e organização.</p>
+      <p>Flávio Jhonatan Martins e Daniela Luzia Vitorio abriram o restaurante em janeiro de 2019, para levar sushi a um bairro que ainda não tinha. A inauguração reuniu mais de 200 pessoas. Logo depois veio a pandemia, e o casal seguiu investindo.</p>
+      <blockquote class="award__quote">
+        <p>“Palhoça faz parte da nossa história e do nosso crescimento, e não trocaríamos essa cidade por nenhuma outra para construir a trajetória do Himawari.”</p>
+        <footer>Daniela Luzia Vitorio, sócia</footer>
+      </blockquote>
+      <ul class="award__facts">
+        <li>Na Bela Vista desde 2019</li>
+        <li>Salão, cozinha e sushi bar ampliados</li>
+        <li>Mais de 200 itens no cardápio</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ASSINATURAS ============ -->
+<section id="assinaturas" aria-labelledby="ass-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="ass-h">O que só tem aqui</h2>
+      <p>A casa já lançou o hambúrguer de sushi, o sushi no copo, a roleta e agora o sushi no tubo. Toque em um para vê-lo na roleta.</p>
+    </div>
+    <div class="bento">
+      <button class="tile tile--big reveal" data-jump="Sushi no tubo">
+        <img src="img/sushi-no-tubo.webp" alt="Tubos do Sushi no tubo com a marca Himawari, mostrando os rolls por dentro" loading="lazy" width="900" height="1185">
+        <span class="tile__txt"><h3>Sushi no tubo</h3><p>Dez peças num tubo de empurrar, inspirado numa tendência de Nova York. A novidade mais recente da casa.</p><span class="tile__go">Ver na roleta</span></span>
+      </button>
+      <button class="tile tile--wide reveal" data-jump="Sushi Burguer Salmão">
+        <img src="img/sushi-burguer.webp" alt="Sushi Burguer de salmão com pão de arroz empanado, cebola roxa e crispy de couve" loading="lazy" width="900" height="846" style="object-position:center 72%">
+        <span class="tile__txt"><h3>Sushi Burguer</h3><p>Arroz empanado no lugar do pão, 150 g de salmão ou camarão, crispy de couve e cream cheese.</p><span class="tile__go">Ver na roleta</span></span>
+      </button>
+      <button class="tile reveal" data-jump="Super Hot Salmão" data-img="Super Hot Salmão">
+        <img alt="Super Hot de 500 g" loading="lazy" width="300" height="300">
+        <span class="tile__txt"><h3>Super Hot 500 g</h3><p>Um hot gigante com 200 g de proteína.</p></span>
+      </button>
+      <button class="tile reveal" data-jump="Pizza de Sushi do Hima" data-img="Pizza de Sushi do Hima">
+        <img alt="Fatia da Pizza de Sushi do Hima" loading="lazy" width="300" height="300">
+        <span class="tile__txt"><h3>Pizza de Sushi</h3><p>Base de alga e arroz frito com borda de hossomaki.</p></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROLETA DO HIMAWARI (CARDÁPIO) ============ -->
+<section class="menu" id="cardapio" aria-labelledby="menu-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="menu-h">Gire a roleta do Himawari</h2>
+      <p>O cardápio inteiro em uma roda. Arraste, use as setas ou toque num prato. Os valores ficam no delivery.</p>
+    </div>
+    <div class="menu__tools">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <label class="sr-only" for="q">Buscar no cardápio</label>
+        <input id="q" type="search" placeholder="Buscar: salmão, temaki, hot…" autocomplete="off">
+      </div>
+      <div class="tabs" role="tablist" aria-label="Categorias do cardápio" id="tabs"></div>
+    </div>
+
+    <div class="stage" id="stage">
+      <div class="wheel" id="wheel" role="group" aria-roledescription="roleta" aria-label="Pratos da categoria" tabindex="0">
+        <div class="wheel__petals" id="petals" aria-hidden="true"></div>
+        <div class="wheel__ring" aria-hidden="true"></div>
+        <span class="wheel__mark" aria-hidden="true"></span>
+        <div id="plates"></div>
+        <div class="center" id="center" aria-hidden="true"></div>
+      </div>
+
+      <div class="detail" aria-live="polite">
+        <span class="detail__cat" id="dCat"></span>
+        <h3 id="dName"></h3>
+        <p class="detail__desc" id="dDesc"></p>
+        <span class="detail__count" id="dCount"></span>
+        <div class="detail__ctas">
+          <a class="btn btn--red" id="dOrder" href="https://himawari-sushi.ola.click/products" target="_blank" rel="noopener">Pedir no delivery</a>
+          <a class="btn btn--ghost" id="dWa" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+            Pedir pelo WhatsApp</a>
+        </div>
+        <p class="detail__hint">Dica: no computador, use as setas do teclado.</p>
+      </div>
+    </div>
+    <p class="empty" id="empty" hidden>Nada com esse nome no cardápio. Tente outra palavra ou chame no WhatsApp.</p>
+  </div>
+</section>
+
+<!-- ============ ONDE PEDIR ============ -->
+<!-- Logos do iFood e do 99Food enviadas pelo cliente (fundo externo removido) -->
+<section class="order" id="pedir" aria-labelledby="ped-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="ped-h">Peça do seu jeito</h2>
+      <p>Direto com a casa, pelo WhatsApp ou no app que você já usa. O sushi sai da mesma cozinha.</p>
+    </div>
+    <div class="channels">
+      <a class="ch ch--casa" href="https://himawari-sushi.ola.click/products" target="_blank" rel="noopener">
+        <div class="ch__top"><span class="ch__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></span><span class="ch__tag">Direto com a casa</span></div>
+        <div><h3>Cardápio Himawari</h3><p>O cardápio completo, com fotos, valores e os cupons da casa.</p></div>
+        <span class="ch__go">Abrir o cardápio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="ch ch--wa" href="https://wa.me/5548984448797?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">
+        <div class="ch__top"><span class="ch__icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></span></div>
+        <div><h3>WhatsApp</h3><p>Fale com a equipe e monte o pedido na conversa.</p></div>
+        <span class="ch__go">Chamar no WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="ch ch--ifood" href="https://www.ifood.com.br/delivery/palhoca-sc/himawari-sushi-bela-vista/626fc99e-ff67-47a0-9b60-64511c34a07c" target="_blank" rel="noopener">
+        <div class="ch__top"><span class="ch__logo"><img src="img/logo-ifood.webp" alt="Logo do iFood" width="52" height="52" loading="lazy"></span></div>
+        <div><h3>iFood</h3><p>Para quem já pede pelo iFood e quer pagar e acompanhar por lá.</p></div>
+        <span class="ch__go">Pedir no iFood <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="ch ch--99" href="https://oia.99app.com/dlp9/1qNbCJ?share_media=WHATSAPP" target="_blank" rel="noopener">
+        <div class="ch__top"><span class="ch__logo"><img src="img/logo-99food.webp" alt="Logo do 99Food" width="52" height="52" loading="lazy"></span></div>
+        <div><h3>99Food</h3><p>Também estamos no 99Food, com entrega pelo app da 99.</p></div>
+        <span class="ch__go">Pedir no 99Food <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <p class="order__note">Prefere buscar? Faça o pedido em qualquer canal e retire no balcão, na R. José Cosme Pamplona, 1807.</p>
+  </div>
+</section>
+
+<!-- ============ ENTREGA ============ -->
+<section id="entrega" aria-labelledby="ent-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="ent-h">Entregamos aí?</h2>
+      <p>Delivery de terça a domingo, das 18h às 22h30, em 31 bairros de Palhoça e São José.</p>
+    </div>
+    <div class="delivery__grid">
+      <div>
+        <div class="check">
+          <label for="bairro">Digite seu bairro</label>
+          <div class="check__row">
+            <input id="bairro" list="bairros" placeholder="Ex.: Pedra Branca" autocomplete="address-level3">
+            <datalist id="bairros"></datalist>
+          </div>
+          <p class="check__out" id="checkOut" aria-live="polite">A resposta aparece aqui enquanto você digita.</p>
+        </div>
+        <details class="hoods">
+          <summary>Ver todos os bairros atendidos</summary>
+          <ul id="hoodList"></ul>
+        </details>
+      </div>
+      <div class="pay">
+        <h3>Como pedir</h3>
+        <ol class="steps">
+          <li><div><b>Escolha onde pedir</b><span>Cardápio da casa, WhatsApp, iFood ou 99Food. <a href="#pedir">Ver os canais</a>.</span></div></li>
+          <li><div><b>Informe o endereço</b><span>A taxa de entrega aparece conforme o bairro.</span></div></li>
+          <li><div><b>Pague como preferir</b><span>Na entrega ou na retirada no balcão.</span></div></li>
+        </ol>
+        <ul aria-label="Formas de pagamento">
+          <li>Pix</li><li>Cartão</li><li>Dinheiro</li><li>Alelo</li><li>Sodexo</li><li>Ticket</li><li>VR</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISITE + INSTAGRAM ============ -->
+<section class="visit" id="visite" aria-labelledby="vis-h">
+  <div class="wrap visit__grid">
+    <div class="info">
+      <div class="sec-head" style="margin:0">
+        <h2 id="vis-h">Jante entre as carpas</h2>
+        <p>O salão tem o mural de koi pintado à mão que aparece nas fotos. Abre de terça a sábado.</p>
+      </div>
+      <dl>
+        <div><dt>Endereço</dt><dd>R. José Cosme Pamplona, 1807<br>Bela Vista, Palhoça</dd></div>
+        <div><dt>Salão e delivery</dt><dd id="h-tue">Terça a sábado, 18h às 22h30</dd></div>
+        <div><dt>Só delivery</dt><dd id="h-sun">Domingo, 18h às 22h30</dd></div>
+        <div><dt>Telefone e WhatsApp</dt><dd><a href="tel:+5548984448797" style="text-decoration:none">(48) 98444-8797</a></dd></div>
+      </dl>
+      <div class="info__btns">
+        <a class="btn btn--gold" href="https://www.google.com/maps/dir/?api=1&destination=-27.6552147,-48.6870443" target="_blank" rel="noopener">Como chegar</a>
+        <a class="btn btn--ghost" href="tel:+5548984448797">Ligar</a>
+      </div>
+      <a class="map map--link" href="https://www.google.com/maps/dir/?api=1&destination=-27.6552147,-48.6870443" target="_blank" rel="noopener">
+        <span><b>Abrir no Google Maps</b><small>R. José Cosme Pamplona, 1807, Bela Vista, Palhoça</small></span>
+      </a>
+    </div>
+
+    <div class="ig">
+      <div class="ig__head">
+        <span class="ig__avatar"><span><img src="img/instagram-avatar.webp" alt="" width="60" height="27"></span></span>
+        <div><div class="ig__name">@sushihimawari</div><div class="ig__meta">Mais de 20 mil seguidores</div></div>
+        <a class="btn btn--red" href="https://www.instagram.com/sushihimawari/" target="_blank" rel="noopener">Seguir no Instagram</a>
+      </div>
+      <div class="ig__grid">
+        <a href="https://www.instagram.com/sushihimawari/" target="_blank" rel="noopener" aria-label="Ver no Instagram: tubos de sushi diante do mural de carpas"><img src="img/sushi-no-tubo.webp" alt="" loading="lazy"></a>
+        <a href="https://www.instagram.com/sushihimawari/" target="_blank" rel="noopener" aria-label="Ver no Instagram: roll de salmão com crispy"><img src="img/ig-roll-salmao.webp" alt="" loading="lazy"></a>
+        <a href="https://www.instagram.com/sushihimawari/" target="_blank" rel="noopener" aria-label="Ver no Instagram: hot filadélfia supremo"><img src="img/ig-hot-filadelfia.webp" alt="" loading="lazy"></a>
+        <a href="https://www.instagram.com/sushihimawari/" target="_blank" rel="noopener" aria-label="Ver no Instagram: Sushi Burguer"><img src="img/sushi-burguer.webp" alt="" loading="lazy" style="object-position:30% 60%"></a>
+        <a href="https://www.instagram.com/sushihimawari/" target="_blank" rel="noopener" aria-label="Ver no Instagram: a premiação"><img src="img/premiacao.webp" alt="" loading="lazy" style="object-position:center 35%"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="final" aria-labelledby="fin-h">
+  <div class="wrap">
+    <div class="final__box">
+      <h2 id="fin-h">Hoje é dia de Himawari?</h2>
+      <p>Peça pelo cardápio online, com fotos e cupons, ou mande uma mensagem que a gente monta com você.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--gold" href="https://himawari-sushi.ola.click/products" target="_blank" rel="noopener">Pedir no delivery</a>
+        <a class="btn btn--ghost" href="https://wa.me/5548984448797?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div style="display:grid;gap:.8rem">
+      <img src="img/logo-himawari.webp" alt="Himawari Sushi" width="103" height="46">
+      <p>Qualidade e sabor em cada detalhe.<br>R. José Cosme Pamplona, 1807, Bela Vista, Palhoça, SC</p>
+    </div>
+    <nav aria-label="Rodapé">
+      <a href="#cardapio">Cardápio</a>
+      <a href="https://www.instagram.com/sushihimawari/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://himawari-sushi.ola.click/products" target="_blank" rel="noopener">Delivery</a>
+    </nav>
+    <div class="credit">
+      <span>© <span id="ano"></span> Himawari Sushi</span>
+      <a class="credit__link" href="../" target="_blank" rel="noopener" aria-label="Site feito pela MeKa Studio. Abre o site do estúdio em nova aba">
+        <span class="credit__by" aria-hidden="true">Site por</span>
+        <svg class="credit__mark" viewBox="0 0 132 100" aria-hidden="true">
+          <polyline points="12,90 12,10 42,56 72,10 72,90" fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="miter" stroke-miterlimit="10"/>
+          <line class="k" x1="118" y1="10" x2="74" y2="54" stroke-width="13"/>
+          <line class="k" x1="92" y1="36" x2="120" y2="90" stroke-width="13"/>
+        </svg>
+        <span class="credit__rule" aria-hidden="true"></span>
+        <span class="credit__name" aria-hidden="true"><b>Me<span>K</span>a</b><small>Studio</small></span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5548984448797?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+</a>
+
+<!-- Dados do cardápio, extraídos do delivery (sem valores). Em produção, as fotos viram arquivos .webp separados. -->
+<script id="menu-data" type="application/json">{"tabs":[{"id":"assinaturas","label":"Assinaturas da casa","items":[{"n":"Sushi no tubo","d":"10 peças, no tubo.","i":"f9ba9708","c":"Sushi no tubo"},{"n":"Roleta de Sushi do Hima","d":"5 sashimi salmão + 5 uramaki filadélfia + meio sunomono pepino + 4 joy salmão + 4 rolinho primavera Legumes + 1 molho ostra de\n100ml.","i":"e74cd4e1","c":"Roleta de Sushi"},{"n":"Sushi Burguer Salmão","d":"Arroz empanado e frito, 150g de proteína, crispy de couve e cream cheese, cebola roxa e cebolinha verde.","i":"a18788b8","c":"Hambúrguer Sushi"},{"n":"Sushi Burguer Salmão Selado","d":"Arroz empanado e frito, 150g de proteína, crispy de couve e cream cheese, cebola roxa e cebolinha verde.","i":"88d42987","c":"Hambúrguer Sushi"},{"n":"Sushi Burguer Camarão","d":"Arroz empanado e frito, 150g de proteína, crispy de couve e cream cheese, cebola roxa e cebolinha verde.","i":"23b88df5","c":"Hambúrguer Sushi"},{"n":"Sushi Burguer Misto(camarão+ salmão)","d":"Arroz empanado e frito, 150g de proteína, crispy de couve e cream cheese, cebola roxa e cebolinha verde.","i":"2d1e7fb2","c":"Hambúrguer Sushi"},{"n":"Super Hot Salmão","d":"Arroz e cream cheese empanado e frito, 200g de proteína, cebolinha, cream cheese e tarê.","i":"9b0a52cf","c":"Super Hot 500g"},{"n":"Super Hot Camarão","d":"Arroz e cream cheese empanado e frito, 200g de proteína, cebolinha, cream cheese e tarê.","i":"663fe338","c":"Super Hot 500g"},{"n":"Super Hot Salmão Selado","d":"Arroz e cream cheese empanado e frito, 200g de proteína, cebolinha, cream cheese e tarê.","i":"b698b0cd","c":"Super Hot 500g"},{"n":"Super Hot Salmão+Camarão","d":"Arroz e cream cheese empanado e frito, 200g de proteína, cebolinha, cream cheese e tarê.","i":"da716fb8","c":"Super Hot 500g"},{"n":"Pizza de Sushi do Hima","d":"1 Fatia! Base de alga e arroz empanado e frito, com borda de hossomaki salmão, 100g de proteína, cream cheese, cebola roxa, cebolinha verde e tomate cereja.","i":"2c6a6bcc","c":"Pizza de Sushi"},{"n":"Copo da Felicidade 400g","d":"crispy da sua escolha; uma camada de arroz; muito salmão; acompanha\n1 molho\n30ml da sua preferencia.","i":"3a26e4fb","c":"Sushi No Copo"},{"n":"Copo da Felicidade 200g","d":"crispy da sua escolha; uma camada de arroz; muito salmão; acompanha\n1 molho\n30ml da sua preferencia.","i":"3a26e4fb","c":"Sushi No Copo"}]},{"id":"combos","label":"Combos e barcas","items":[{"n":"Barca Economica 100pç + 2 temaki Hot","d":"Obs: Não Fazemos Troca Nesse Combo.\n10 uramaki filadélfia\n10 uramaki patê\n10 uramaki kani\n10 uramaki skin\n10 hossomaki skin\n10 hossomaki salmão\n10 hossomaki kani\n10 hossomaki pepino \n10 hot filadelfia\n10 hot skin\nAcompanha: 04 Hashis, 12 Shoyu. Nesse Combo Não Fazemos Troca!","i":"0497b58e","c":"COMBOS"},{"n":"Barca R$Olução","d":"Não Há Opção De Trocas.\n5 salmão cream + 5 niguiri salmão + 5 hossomaki salmão + 5 hossomaki skin + 5 hossomaki kani + 5 hossomaki pepino + 10 hot skin + 10 uramaki kani + 10 uramaki skin + 1 mini temaki hot","i":"629dfe36","c":"COMBOS"},{"n":"50 peças + 30 hot skin","d":"10 Uramaki filadélfia\n5 Uramaki misto\n5 Uramaki pate\n5 Uramaki kani\n5 Uramaki skin\n5 Hossomaki kani\n5 Hossomaki salmão\n10 Hot filadélfia\n30 Hot Skin\nAcompanha: 3 HASHI\n3 NOZOKI\n3 GUARDANAPO\n9 SACHE DE SHOYU","i":"35fa48d9","c":"COMBOS"},{"n":"Combo 100 peças + 10 hot skin+ 1 Temaki Skin Gratis","d":"20 uramaki filadélfia\n10 uramaki patê\n10 uramaki kani\n10 uramaki skin\n10 hossomaki salmão\n10 hossomaki kani\n30 hot filadélfia\nAcompanha: 4 HASHI\n4 NOZOKI\n4 GUARDANAPO\n12 SACHE DE SHOYU","i":"fa3e0ffe","c":"COMBOS"},{"n":"Combo 80 peças + 10 Hot skin 1 Temaki Skin Gratis","d":"20 Uramaki filadélfia\n10 Uramaki skin\n10 Uramaki pate\n10 Uramaki kani\n10 Hossomaki salmão\n10 Hossomaki kani\n10 Hot salmão\nAcompanha: 3 HASHI\n3 NOZOKI\n3 GUARDANAPO\n9 SACHE DE SHOYU","i":"f100c18e","c":"COMBOS"},{"n":"Combo 80 peças + 30 mini sashimis + 10hot Skin grátis","d":"20 ura fila\n10 uramaki kani\n10 uramaki skin\n10 hossomaki salmão\n10 hossomaki kani\n10 hot filadélfia\n30 mini sashimi\nAcompanha: 4 HASHI\n4 NOZOKI\n4 GUARDANAPO\n12 SACHE DE SHOYU","i":"7d7d0eae","c":"COMBOS"},{"n":"80 peças + 30 hot skin","d":"20 Uramaki filadélfia\n10 Uramaki patê\n10 Uramaki kani\n10 Uramaki skin\n10 Hossomaki salmão\n10 Hossomaki kani\n10 Hot filadélfia\nAcompanha: 3 HASHI\n3 NOZOKI\n3 GUARDANAPO\n9 SACHE DE SHOYU","i":"9909527c","c":"COMBOS"},{"n":"Combo de 25 peças","d":"5 Uramaki filadélfia\n5uramaki Misto\n5uramaki Pate\n5 Hossomaki kani\n5 Hot (Filadélfia/morango ou banana) de sua preferencia.\nAcompanha: 1 HASHI\n1 GUARDANAPO\n1 NOZOKI\n3 SACHE DE SHOYU","i":"0117bba1","c":"COMBOS"},{"n":"Combo de 30 Hot Filadélfia","d":"30 peças de hot Filadélfia","i":"2c79c8e3","c":"COMBOS"},{"n":"Combo de 30 Hot Skin","d":"Adicione A Quantidade De Hashis No Campo Abaixo!","i":"2c79c8e3","c":"COMBOS"},{"n":"Combo de 50 peças","d":"10 Uramaki filadélfia\n5 Uramaki misto\n5 Uramaki pate\n5 Uramaki skin\n5 Uramaki kani\n5 Hossomaki kani\n5 Hossomaki salmão\n10 Hot filadélfia\nAcompanha: 2 HASHI\n2 NOZOKI\n2 GUARDANAPO\n6 SACHE DE SHOYU","i":"35fa48d9","c":"COMBOS"},{"n":"Combo 70 peças","d":"10 uramaki filadélfia\n10 uramaki pate\n10 uramaki skin\n10 hossomaki kani\n10 hots filadélfia\n20 hots skin\n+ 2 sunomonos (100ml) de brinde\nAcompanha: 2 HASHI\n2 GUARDANAPO\n2 NOZOKI\n6 SACHE DE SHOYU","i":"deef722f","c":"COMBOS"},{"n":"Combo 23 peças + 1 temaki","d":"5 Sashimi de salmão\n3 Djoy salmão\n5 Niguiri salmão (1 brie, 1gorgonzola e\n3 salmão)\n5 Uramaki filadélfia\n5 Hossomaki salmão\n1 Temaki salmão\nAcompanha: 2 HASHI\n2 NOZOKI\n2 GUARDANAPO\n6 SACHE DE SHOYU","i":"0d9f29f8","c":"COMBOS"},{"n":"Combo 150 peças","d":"30 uramakis filadélfia\n20 uramakis pate\n20 uramakis skin\n20 uramakis kani\n10 hossomaki salmão\n10 hossomaki kani\n40 hots filadélfia","i":null,"c":"COMBOS"},{"n":"Combo 40 peças","d":"20 minis sashimis salmão\n2 minis temakis salmão\n5 uramakis filadélfia\n5 uramakis laminado salmão\n4 djoy salmão\n4 eby roll\nAcompanha: 2 HASHI\n2 NOZOKI\n2 GUARDANAPO\n6 SACHE DE SHOYU","i":"d58958b7","c":"COMBOS"},{"n":"Combo 31 peças","d":"10 sashimis salmão\n10 uramakis filadélfia\n5 hossomaki salmão\n4 niguiri salmão\n2 djoy salmão\nAcompanha: 2 HASHI\n2 NOZOKI\n2 GUARDANAPO\n6 SACHE DE SHOYU","i":"b437e200","c":"COMBOS"},{"n":"Combo 130 peças","d":"20 uramakis filadélfia\n10 uramakis pate\n10 uramakis kani\n10 uramakis skin\n10 hossomakis salmão\n10 hossomakis skin\n20 hots filadélfia\n10 hots doce\n10 sashimis salmão\n10 uramakis laminado salmão\n5 niguiris salmão\n5 djoys salmão","i":null,"c":"COMBOS"},{"n":"Combo 60 peças","d":"20 uramakis filadélfia\n20 hots filadélfia\n10 hots doce\n5 djoys salmão\n5 niguiris salmão\nAcompanha: 2 HASHI\n2 NOZOKI\n2 GUARDANAPO\n6 SACHE DE SHOYU","i":"83978f52","c":"COMBOS"},{"n":"Combo Poliana","d":"Meio sunomono pepino Meio ceviche salmão\n10 Uramaki filadélfia\n10 Hot filadélfia supremo\n4 Roll salmão selado\n4 Joy salmão\n4 Niguiri queijo brie\n4 Eby roll super\n5 Sashimi salmão","i":"c875f336","c":"COMBOS"},{"n":"Combo Rolê","d":"40 Uramaki Filadélfia\n10 Uramaki Skin\n10 Uramaki Laminado\n10 Hot Filadélfia\n20 Minis sashimis salmão\n2 Roll Shimeji\n2 Molhos\n100ml (da sua preferencia)","i":"e2389999","c":"COMBOS"},{"n":"Combo Lari","d":"10 Uramaki Laminado\n5 Sashimi Salmão\n5 Joy Salmão\n5 Roll Camarão\n5 Eby Roll\n5 Hot Filadélfia Supremo\n5 Niguiri Salmão","i":"be1cb4ec","c":"COMBOS"}]},{"id":"rolls","label":"Rolls e hots","items":[{"n":"Hossomaki peixe branco (10 peças)","d":"","i":"0afcba77","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Hossomaki polvo (10peças)","d":"","i":null,"c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Hossomaki shimeji (10peças)","d":"","i":null,"c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Hossomaki pepino (10 peças)","d":"","i":"063c25c9","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Hossomaki salmão (10 peças)","d":"","i":"5f12c05f","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Hossomaki kani (10 peças)","d":"","i":"d4d3957f","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Hossomaki camarão (10 peças)","d":"","i":"43527d42","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Hossomaki skin (10 peças)","d":"","i":"08b0a143","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Futomaki califórnia (10 peças)","d":"","i":null,"c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Futomaki camarão (10 peças)","d":"","i":null,"c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Futomaki filadélfia (10 peças)","d":"","i":"3c770be0","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Futomaki skin (10 peças)","d":"","i":null,"c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki califórnia (10 peças)","d":"","i":"92ced49f","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki vegetariano (10 peças)","d":"Tomate seco com cream Cheese ou tomate seco com pepino. ( Favor informar na observação qual sua escolha)","i":"449f62e4","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki camarão (10 peças)","d":"","i":"1f8b7feb","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki camarão+laminado (10 peças)","d":"","i":"ff3401ee","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki filadélfia (10peças)","d":"","i":"5957e314","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki kani (10peças)","d":"","i":"8c0ba57a","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki laminado (10 peças)","d":"","i":"dd162f9c","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki morango (10 peças)","d":"Com chocolate de avela por cima.","i":"ee644394","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki patê (10 peças)","d":"Salmão cozido e temperado","i":"a6c169be","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki peixe branco (10 peças)","d":"","i":"46a29563","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki polvo (10 peças)","d":"","i":null,"c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki shimeji (10 peças)","d":"","i":"c9f5de93","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Uramaki skin (10 peças)","d":"","i":"0e3d7f7e","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Roll de salmão","d":"1 unidade","i":"6dddf8b6","c":"Roll Especial"},{"n":"Roll salmão selado","d":"1 unidade","i":"7dc94179","c":"Roll Especial"},{"n":"Roll salmão + shimeji","d":"1 unidade","i":"5539ee83","c":"Roll Especial"},{"n":"Roll salmão + camarão","d":"1 unidade","i":"f3a5b463","c":"Roll Especial"},{"n":"Hot Camarão","d":"10 peças","i":"e95034a6","c":"Hot"},{"n":"Hot Filadélfia","d":"10 peças","i":"f4e36e3f","c":"Hot"},{"n":"Hot Morango","d":"10 peças","i":"1063e306","c":"Hot"},{"n":"Hot Banana","d":"10 peças","i":"10104a2b","c":"Hot"},{"n":"Hot Filadélfia Supremo","d":"Hot Filadélfia com cream cheese em cima!","i":"4640d196","c":"Hot"},{"n":"Hot Camarão Supremo","d":"Hot Camarão com cream cheese em cima e pedaço de camarão!","i":"2ab38c7f","c":"Hot"}]},{"id":"pecas","label":"Djoy, niguiri e sashimi","items":[{"n":"Djoy Crunch (Doritos)","d":"1 unidade","i":"8ff2ce9a","c":"Djoy"},{"n":"Djoy salmão","d":"1 unidade","i":"9ffb0d6d","c":"Djoy"},{"n":"Djoy camarão","d":"1 unidade","i":"9ac82b92","c":"Djoy"},{"n":"Djoy shimeji","d":"1 unidade","i":"6c153dc9","c":"Djoy"},{"n":"Djoy peixe branco","d":"1 unidade","i":"98040698","c":"Djoy"},{"n":"Djoy Polvo","d":"1 unidade","i":"bc8adb12","c":"Djoy"},{"n":"Djoy green","d":"1 unidade","i":"8288513d","c":"Djoy"},{"n":"Djoy kani","d":"1 unidade","i":null,"c":"Djoy"},{"n":"Djoy Ovas de capelin","d":"1 unidade","i":"0761b586","c":"Djoy"},{"n":"Djoy Amêndoas","d":"1 unidade","i":"973989b7","c":"Djoy"},{"n":"Djoy Pizza","d":"1 unidade","i":null,"c":"Djoy"},{"n":"Djoy Eby furay","d":"1 unidade","i":null,"c":"Djoy"},{"n":"Niguiri salmão","d":"1 unidade","i":"ab99462c","c":"Niguiri"},{"n":"Niguiri peixe branco","d":"1 unidade","i":"c26b873f","c":"Niguiri"},{"n":"Niguiri kani","d":"1 unidade","i":"eaf6279a","c":"Niguiri"},{"n":"Niguiri skin","d":"1 unidade","i":"7ccee20a","c":"Niguiri"},{"n":"Niguiri Polvo","d":"1 unidade","i":"01bc9291","c":"Niguiri"},{"n":"Niguiri Queijo Brie","d":"1 unidade","i":"e47b4078","c":"Niguiri"},{"n":"Niguiri Queijo Gorgonzola","d":"1 unidade","i":"3714c277","c":"Niguiri"},{"n":"Sashimi Eby Roll","d":"1 unidade","i":"a249d456","c":"Sashimi"},{"n":"Sashimi Eby Roll Super","d":"1 unidade","i":"8ac562a3","c":"Sashimi"},{"n":"Sashimi salmão","d":"1 unidade","i":"c2474202","c":"Sashimi"},{"n":"Sashimi salmão selado","d":"1 unidade","i":"8aeae3ce","c":"Sashimi"},{"n":"Sashimi Polvo","d":"1 unidade","i":"4f0b9f33","c":"Sashimi"},{"n":"Sashimi peixe branco","d":"1 unidade","i":"833ebb65","c":"Sashimi"},{"n":"Sashimi kani","d":"1 unidade","i":"43eee598","c":"Sashimi"},{"n":"Carpaccio de Salmão","d":"16 lâminas de salmão marinadas ao molho de ostra com crispy de batata doce.","i":"6582daf6","c":"Carpaccio"},{"n":"Carpaccio de polvo","d":"16 lâminas de polvo marinadas ao molho de ostra com crispy de batata doce.","i":"0ecb1335","c":"Carpaccio"},{"n":"Carpaccio de peixe branco","d":"16 lâminas de peixe prego marinadas ao molho de ostra com crispy de batata doce.","i":null,"c":"Carpaccio"}]},{"id":"temaki","label":"Temakis","items":[{"n":"Temaki filadélfia hot","d":"","i":"a379a13f","c":"Temaki (unidade)"},{"n":"Temaki peixe branco","d":"","i":"079a7959","c":"Temaki (unidade)"},{"n":"Temaki polvo","d":"","i":"68863e46","c":"Temaki (unidade)"},{"n":"Temaki shimeji","d":"","i":"b8c0add0","c":"Temaki (unidade)"},{"n":"Temaki shimeji + salmão","d":"","i":"16bdca8e","c":"Temaki (unidade)"},{"n":"Temaki salmão+camarão hot","d":"","i":"e1b8524c","c":"Temaki (unidade)"},{"n":"Temaki salmão+camarão","d":"","i":null,"c":"Temaki (unidade)"},{"n":"Temaki skin","d":"","i":"a4d77f9e","c":"Temaki (unidade)"},{"n":"Temaki kani","d":"Arroz, kani, cream cheese.","i":"b1146406","c":"Temaki (unidade)"},{"n":"Temaki salmão hot","d":"Arroz, salmão. Empanado","i":"7d37d29f","c":"Temaki (unidade)"},{"n":"Temaki camarão hot","d":"Arroz, camarão, cream cheese. Empanado","i":"669eb32c","c":"Temaki (unidade)"},{"n":"Temaki camarão","d":"Arroz, camarão, cream cheese.","i":"2d35ad1b","c":"Temaki (unidade)"},{"n":"Temaki califórnia","d":"Arroz, kani, manga e pepino","i":"4b17bd9c","c":"Temaki (unidade)"},{"n":"Temaki filadélfia","d":"Arroz, salmão, cream cheese e cebolinha.","i":"c69b8240","c":"Temaki (unidade)"},{"n":"Temaki salmão","d":"Arroz e salmão.","i":"71eee6bd","c":"Temaki (unidade)"},{"n":"Temaki camarão empanado","d":"","i":"b4b8da75","c":"Temaki (unidade)"},{"n":"Temaki mexicano","d":"salmão+ pimenta+ nachos","i":"76ef8a9a","c":"Temaki (unidade)"}]},{"id":"frescos","label":"Pokes, ceviche e sunomono","items":[{"n":"Monte seu poke (até 8 complementos)","d":"1 Base, 1 Proteína\n100g, 8 Complementos. O peso em gramas do Poke, varia entre\n300g a\n400g, De Acordo Com Os Itens Escolhidos","i":"fcb85e79","c":"Pokes"},{"n":"Ceviche Himawari (inteiro 300g)","d":"Salmão, peixe branco, polvo, camarão,pimenta dedo de moça, cebola roxa,suco de laranja,cebolinha,gergelim,azeite de oliva.","i":"23dd9acd","c":"Ceviche"},{"n":"Ceviche Himawari (meio 150g)","d":"Salmão, peixe branco, polvo, camarão,pimenta dedo de moça, cebola roxa,suco de laranja,cebolinha,gergelim,azeite de oliva.","i":"30bc3149","c":"Ceviche"},{"n":"Ceviche Salmão (inteiro 300g)","d":"Salmão, pimenta dedo de moça, cebola roxa, suco de laranja, cebolinha, gergelim, azeite de oliva.","i":"24372007","c":"Ceviche"},{"n":"Ceviche Salmão (meio 150g)","d":"Salmão, pimenta dedo de moça, cebola roxa, suco de laranja, cebolinha, gergelim, azeite de oliva.","i":"27e21f5f","c":"Ceviche"},{"n":"Sunomono Pepino","d":"300g","i":"4ea80dce","c":"Sunomono"},{"n":"Meio sunomono Pepino","d":"150g","i":"4ea80dce","c":"Sunomono"},{"n":"Sunomono com kani","d":"300g","i":"79bf8cbb","c":"Sunomono"},{"n":"Meio sunomono Kani","d":"150g","i":"79bf8cbb","c":"Sunomono"},{"n":"Sunomono com salmão","d":"300g","i":"18621e11","c":"Sunomono"},{"n":"Meio sunomono Salmão","d":"150","i":"3f687fa6","c":"Sunomono"},{"n":"Sunomono salmão+kani","d":"300g","i":"8391f7fe","c":"Sunomono"},{"n":"Meio sunomono salmão+kani","d":"150g","i":"8391f7fe","c":"Sunomono"}]},{"id":"quentes","label":"Cozinha quente","items":[{"n":"Shimeji na manteiga (200gr)","d":"Salteado na manteiga, com shoyu, gergelim e cebolinha.","i":"e5f38b01","c":"Shimeji / Shitake"},{"n":"Shitake na manteiga (200gr)","d":"Salteado na manteiga, com shoyu, gergelim e cebolinha.","i":"e940f595","c":"Shimeji / Shitake"},{"n":"Pastelzinho carne suína 4und","d":"Pastelzinho japonês\n4 unidades","i":"5734f6d7","c":"Guioza Suíno/ Bovino/ Legumes"},{"n":"Pastelzinho carne bovina 4un","d":"Pastelzinho japonês\n4 unidades","i":"293503bd","c":"Guioza Suíno/ Bovino/ Legumes"},{"n":"Pastelzinho de Legumes 4un","d":"Pastelzinho japonês\n4 unidades","i":"01f821eb","c":"Guioza Suíno/ Bovino/ Legumes"},{"n":"Pastelzinho de shimeji 4un","d":"","i":null,"c":"Guioza Suíno/ Bovino/ Legumes"},{"n":"Harumaki chocolate branco (4 unidades)","d":"Rolinho primavera\n(massa folhada com recheio)","i":"2558be90","c":"Harumaki"},{"n":"Harumaki de chocolate preto avelã (4 unidades)","d":"Rolinho primavera (massa folhada com recheio)","i":"16b47547","c":"Harumaki"},{"n":"Harumaki doce de leite (4 unidades)","d":"Rolinho primavera\n(massa folhada com recheio)","i":"2558be90","c":"Harumaki"},{"n":"2 Harumaki de avelã + 2 Harumaki de chocolate branco","d":"Rolinho primavera\n(massa folhada com recheio)","i":"2558be90","c":"Harumaki"},{"n":"Harumaki chocolate preto + banana (4 unidades)","d":"Rolinho primavera\n(massa folhada com recheio)","i":"2558be90","c":"Harumaki"},{"n":"Harumaki de legumes (4 unidades)","d":"Rolinho primavera (massa folhada com recheio)","i":"16b47547","c":"Harumaki"},{"n":"Harumaki de queijo (4 unidades)","d":"Rolinho primavera\n(massa folhada com recheio)","i":"16b47547","c":"Harumaki"},{"n":"Harumaki frango com requeijão","d":"4 unidades","i":"b8f07ff0","c":"Harumaki"},{"n":"Harumaki carne com legumes","d":"4 unidades","i":"92a56f66","c":"Harumaki"},{"n":"Tepan de Salmão","d":"Posta de salmão grelhado com legumes salteados na manteiga ( Aproximadamente\n180gr de salmão, 50gr de brócolis, 50gr de couve flor, 50gr de cenoura e\n50gr de acelga, 100g arroz japones)","i":"af4aa453","c":"Tepan"},{"n":"Yakissoba de Frango 600g","d":"50g cenoura\n50g brócolis\n50g acelga\n20g cebola roxa\n15g de pimentão verde\n150g de massa\n150g de frango cebolinha e gergilim","i":"3fdc0970","c":"Yakissoba"},{"n":"Yakissoba de Carne 600g","d":"50g cenoura\n50g brócolis\n50g acelga\n20g cebola roxa\n15g de pimentão verde\n150g de massa\n150g de carne cebolinha e gergilim","i":"898f00fe","c":"Yakissoba"},{"n":"Yakissoba de legumes 500g","d":"50g cenoura\n50g brócolis\n50g acelga\n20g cebola roxa\n15g de pimentão verde\n150g de massa cebolinha e gergilim","i":"581c277d","c":"Yakissoba"},{"n":"Yakissoba de camarão 600g","d":"50g cenoura\n50g brócolis\n50g acelga\n20g cebola roxa\n15g de pimentão verde\n150g de massa\n150g de camarão cebolinha e gergilim","i":"ace897b6","c":"Yakissoba"},{"n":"Yakissoba misto 650g a 750g","d":"50g cenoura\n50g brócolis\n50g acelga\n20g cebola roxa\n15g de pimentão verde\n150g de massa\n150g de carne\n150g de frango cebolinha e gergilim","i":"9d01857a","c":"Yakissoba"}]},{"id":"porcoes","label":"Porções","items":[{"n":"Camarão à milanesa 400g","d":"400g","i":"f9704d97","c":"Porções"},{"n":"Camarão à milanesa 800g","d":"800g","i":"f9704d97","c":"Porções"},{"n":"Isca de peixe","d":"500g ( peixe espada)","i":"950f2a1b","c":"Porções"},{"n":"Isca de Frango","d":"500g","i":"1ac551c7","c":"Porções"},{"n":"Marisco a milanesa","d":"500gr","i":"c173bd1d","c":"Porções"},{"n":"Casquinha de siri 3un","d":"3 unidades","i":"0b0baaac","c":"Porções"},{"n":"Batata Frita 400g","d":"400g","i":"c348040d","c":"Porções"},{"n":"Batata Frita 800g","d":"800g","i":"360be955","c":"Porções"},{"n":"Batata frita com costela bovina desfiada 400g","d":"Batata com queijos mussarela, cheddar, catupery","i":"c473d08f","c":"Porções"},{"n":"Batata de costela bovina desfiada 800g","d":"Batata com queijos mussarela, cheddar, catupery","i":"f7288ba2","c":"Porções"},{"n":"Batata frita com Bacon 400g","d":"Queijo mussarela, cheddar, Catupiry, bacon","i":"f2dfb592","c":"Porções"},{"n":"Batata frita com Bacon 800g","d":"Queijo mussarela, cheddar, Catupiry, bacon","i":"5518cb51","c":"Porções"},{"n":"Batata frita com calabresa 400g","d":"Queijo mussarela, cheddar, catupery, calabresa","i":"1c492044","c":"Porções"},{"n":"Batata frita com calabresa 800g","d":"Queijo mussarela, cheddar, Catupiry, calabresa","i":"80ffebe9","c":"Porções"},{"n":"Bolinho de peixe 6un","d":"6 unidades","i":"24a05f8e","c":"Porções"},{"n":"Bolinho de peixe 12un","d":"12 unidades","i":"6207b8b3","c":"Porções"},{"n":"Bolinho de siri 6un","d":"6 Unidades","i":"dcb85cd5","c":"Porções"},{"n":"Bolinho de siri 12un","d":"12 Unidades","i":"d30b4720","c":"Porções"},{"n":"Bolinho de camarão 6un","d":"6 unidades","i":"dcb85cd5","c":"Porções"},{"n":"Bolinho de camarão 12un","d":"12 unidades","i":"d30b4720","c":"Porções"},{"n":"Pastel de camarão 6un","d":"6 unidades","i":"dd5ecaf9","c":"Porções"},{"n":"Pastel de camarão 12un","d":"12 unidades","i":"eca547e5","c":"Porções"},{"n":"Pastel de siri 6un","d":"6 unidades","i":"15c9805d","c":"Porções"},{"n":"Pastel de siri 12un","d":"12 Unidades","i":"788a5e3f","c":"Porções"},{"n":"Pastel de berbigão 6un","d":"6 unidades","i":"eca547e5","c":"Porções"},{"n":"Pastel de berbigão 12un","d":"12 unidades","i":"eca547e5","c":"Porções"},{"n":"Pastel de calabresa 6un","d":"6 unidades","i":"5b0fbf7a","c":"Porções"},{"n":"Pastel de calabresa 12un","d":"12 unidades","i":"b83d3928","c":"Porções"},{"n":"Pastel de carne 6un","d":"6 unidades","i":"eca547e5","c":"Porções"},{"n":"Pastel de carne 12un","d":"12 unidades","i":"5b0fbf7a","c":"Porções"},{"n":"Pastel de frango 6un","d":"6 unidades","i":"eca547e5","c":"Porções"},{"n":"Pastel de frango 12un","d":"12 unidades","i":"61c6b10d","c":"Porções"}]},{"id":"bebidas","label":"Bebidas","items":[{"n":"Água s/ gás","d":"500ml","i":"4abece53","c":"Bebidas"},{"n":"H2O","d":"500ml","i":"8638b8c4","c":"Bebidas"},{"n":"Água c/ gás","d":"500ml","i":"95ced324","c":"Bebidas"},{"n":"Coca lata","d":"350ml","i":"2de57e22","c":"Bebidas"},{"n":"Coca-Cola lata Zero","d":"","i":"d39dce79","c":"Bebidas"},{"n":"Guaraná antártica","d":"350ml","i":"c7423fc4","c":"Bebidas"},{"n":"Fanta laranja","d":"350ml","i":"fb108215","c":"Bebidas"},{"n":"Coca-Cola 600ml","d":"","i":"7d44a0f8","c":"Bebidas"},{"n":"Coca-Cola 600ml ZERO","d":"","i":"4553e9a9","c":"Bebidas"},{"n":"Pureza 1 litro","d":"1lt","i":"8f6574be","c":"Bebidas"},{"n":"Coca-Cola 1,5 litro","d":"1,5lts","i":"4035977c","c":"Bebidas"},{"n":"Coca-Cola 2 litros","d":"2lts","i":"af63852b","c":"Bebidas"},{"n":"Cerveja Original","d":"600ml\ngarrafa descartável","i":"17ea6861","c":"Bebidas"},{"n":"Cerveja Brahma","d":"600ml garrafa descartável","i":"639044fb","c":"Bebidas"},{"n":"Cerveja Heineken","d":"600ml garrafa descartável","i":"2ca91a1b","c":"Bebidas"},{"n":"Cerveja Heineken LONG NECK","d":"","i":"2ca91a1b","c":"Bebidas"},{"n":"Suco natural 300ml","d":"","i":"f417cb69","c":"Bebidas"}]},{"id":"extras","label":"Molhos e extras","items":[{"n":"Biscoito da Sorte","d":"Biscoito japonês com mensagens de sorte","i":"303bd6ef","c":"Sushi: uramaki/ hossomaki/ futomaki 10 peças"},{"n":"Adaptador","d":"01 unidade (Clipe de plástico para hashis)","i":"968fce4a","c":"Molhos"},{"n":"Hashi extra","d":"1 par","i":"bf3b71c4","c":"Molhos"},{"n":"Kit extra","d":"3 shoyu\n1 nozoki\n1 hashi","i":"3226dd80","c":"Molhos"},{"n":"Shoyu adicional","d":"4 sachês de shoyu","i":"dfeeb163","c":"Molhos"},{"n":"Gengibre","d":"30ml","i":"5074e4c8","c":"Molhos"},{"n":"Gergelim 30ml","d":"","i":"842f15bf","c":"Molhos"},{"n":"Pimenta Sriracha 30ml","d":"","i":null,"c":"Molhos"},{"n":"Geleia de pimenta","d":"100ml","i":"09f00ad8","c":"Molhos"},{"n":"Geleia de Pimenta","d":"30ml","i":"caa12a62","c":"Molhos"},{"n":"Ostra","d":"100ml","i":"474fd2f6","c":"Molhos"},{"n":"Molho ostra 30ml","d":"30ml","i":"74f5db32","c":"Molhos"},{"n":"Molho de maracujá 30ml","d":"30ml","i":null,"c":"Molhos"},{"n":"Molho de maracujá 100ml","d":"100ml","i":null,"c":"Molhos"},{"n":"Tarê","d":"100ml","i":"0a6e00ef","c":"Molhos"},{"n":"Tarê","d":"30ml","i":"c49c420e","c":"Molhos"},{"n":"Wasabi extra","d":"","i":"8d246052","c":"Molhos"},{"n":"Gengibre","d":"100ml","i":"5074e4c8","c":"Sunomono"},{"n":"Gengibre","d":"30ml","i":"5074e4c8","c":"Sunomono"}]}],"img":{"f9ba9708":"img/cardapio/f9ba9708.webp","0497b58e":"img/cardapio/0497b58e.webp","629dfe36":"img/cardapio/629dfe36.webp","35fa48d9":"img/cardapio/35fa48d9.webp","fa3e0ffe":"img/cardapio/fa3e0ffe.webp","f100c18e":"img/cardapio/f100c18e.webp","7d7d0eae":"img/cardapio/7d7d0eae.webp","9909527c":"img/cardapio/9909527c.webp","0117bba1":"img/cardapio/0117bba1.webp","2c79c8e3":"img/cardapio/2c79c8e3.webp","deef722f":"img/cardapio/deef722f.webp","0d9f29f8":"img/cardapio/0d9f29f8.webp","d58958b7":"img/cardapio/d58958b7.webp","b437e200":"img/cardapio/b437e200.webp","83978f52":"img/cardapio/83978f52.webp","c875f336":"img/cardapio/c875f336.webp","e2389999":"img/cardapio/e2389999.webp","be1cb4ec":"img/cardapio/be1cb4ec.webp","e74cd4e1":"img/cardapio/e74cd4e1.webp","a18788b8":"img/cardapio/a18788b8.webp","88d42987":"img/cardapio/88d42987.webp","23b88df5":"img/cardapio/23b88df5.webp","2d1e7fb2":"img/cardapio/2d1e7fb2.webp","9b0a52cf":"img/cardapio/9b0a52cf.webp","663fe338":"img/cardapio/663fe338.webp","b698b0cd":"img/cardapio/b698b0cd.webp","da716fb8":"img/cardapio/da716fb8.webp","2c6a6bcc":"img/cardapio/2c6a6bcc.webp","3a26e4fb":"img/cardapio/3a26e4fb.webp","fcb85e79":"img/cardapio/fcb85e79.webp","0afcba77":"img/cardapio/0afcba77.webp","063c25c9":"img/cardapio/063c25c9.webp","5f12c05f":"img/cardapio/5f12c05f.webp","d4d3957f":"img/cardapio/d4d3957f.webp","43527d42":"img/cardapio/43527d42.webp","08b0a143":"img/cardapio/08b0a143.webp","3c770be0":"img/cardapio/3c770be0.webp","92ced49f":"img/cardapio/92ced49f.webp","449f62e4":"img/cardapio/449f62e4.webp","1f8b7feb":"img/cardapio/1f8b7feb.webp","ff3401ee":"img/cardapio/ff3401ee.webp","5957e314":"img/cardapio/5957e314.webp","8c0ba57a":"img/cardapio/8c0ba57a.webp","dd162f9c":"img/cardapio/dd162f9c.webp","ee644394":"img/cardapio/ee644394.webp","a6c169be":"img/cardapio/a6c169be.webp","46a29563":"img/cardapio/46a29563.webp","c9f5de93":"img/cardapio/c9f5de93.webp","0e3d7f7e":"img/cardapio/0e3d7f7e.webp","303bd6ef":"img/cardapio/303bd6ef.webp","6dddf8b6":"img/cardapio/6dddf8b6.webp","7dc94179":"img/cardapio/7dc94179.webp","5539ee83":"img/cardapio/5539ee83.webp","f3a5b463":"img/cardapio/f3a5b463.webp","8ff2ce9a":"img/cardapio/8ff2ce9a.webp","9ffb0d6d":"img/cardapio/9ffb0d6d.webp","9ac82b92":"img/cardapio/9ac82b92.webp","6c153dc9":"img/cardapio/6c153dc9.webp","98040698":"img/cardapio/98040698.webp","bc8adb12":"img/cardapio/bc8adb12.webp","8288513d":"img/cardapio/8288513d.webp","0761b586":"img/cardapio/0761b586.webp","973989b7":"img/cardapio/973989b7.webp","ab99462c":"img/cardapio/ab99462c.webp","c26b873f":"img/cardapio/c26b873f.webp","eaf6279a":"img/cardapio/eaf6279a.webp","7ccee20a":"img/cardapio/7ccee20a.webp","01bc9291":"img/cardapio/01bc9291.webp","e47b4078":"img/cardapio/e47b4078.webp","3714c277":"img/cardapio/3714c277.webp","a249d456":"img/cardapio/a249d456.webp","8ac562a3":"img/cardapio/8ac562a3.webp","c2474202":"img/cardapio/c2474202.webp","8aeae3ce":"img/cardapio/8aeae3ce.webp","4f0b9f33":"img/cardapio/4f0b9f33.webp","833ebb65":"img/cardapio/833ebb65.webp","43eee598":"img/cardapio/43eee598.webp","6582daf6":"img/cardapio/6582daf6.webp","0ecb1335":"img/cardapio/0ecb1335.webp","e5f38b01":"img/cardapio/e5f38b01.webp","e940f595":"img/cardapio/e940f595.webp","5734f6d7":"img/cardapio/5734f6d7.webp","293503bd":"img/cardapio/293503bd.webp","01f821eb":"img/cardapio/01f821eb.webp","23dd9acd":"img/cardapio/23dd9acd.webp","30bc3149":"img/cardapio/30bc3149.webp","24372007":"img/cardapio/24372007.webp","27e21f5f":"img/cardapio/27e21f5f.webp","e95034a6":"img/cardapio/e95034a6.webp","f4e36e3f":"img/cardapio/f4e36e3f.webp","1063e306":"img/cardapio/1063e306.webp","10104a2b":"img/cardapio/10104a2b.webp","4640d196":"img/cardapio/4640d196.webp","2ab38c7f":"img/cardapio/2ab38c7f.webp","2558be90":"img/cardapio/2558be90.webp","16b47547":"img/cardapio/16b47547.webp","b8f07ff0":"img/cardapio/b8f07ff0.webp","92a56f66":"img/cardapio/92a56f66.webp","a379a13f":"img/cardapio/a379a13f.webp","079a7959":"img/cardapio/079a7959.webp","68863e46":"img/cardapio/68863e46.webp","b8c0add0":"img/cardapio/b8c0add0.webp","16bdca8e":"img/cardapio/16bdca8e.webp","e1b8524c":"img/cardapio/e1b8524c.webp","a4d77f9e":"img/cardapio/a4d77f9e.webp","b1146406":"img/cardapio/b1146406.webp","7d37d29f":"img/cardapio/7d37d29f.webp","669eb32c":"img/cardapio/669eb32c.webp","2d35ad1b":"img/cardapio/2d35ad1b.webp","4b17bd9c":"img/cardapio/4b17bd9c.webp","c69b8240":"img/cardapio/c69b8240.webp","71eee6bd":"img/cardapio/71eee6bd.webp","b4b8da75":"img/cardapio/b4b8da75.webp","76ef8a9a":"img/cardapio/76ef8a9a.webp","968fce4a":"img/cardapio/968fce4a.webp","bf3b71c4":"img/cardapio/bf3b71c4.webp","3226dd80":"img/cardapio/3226dd80.webp","dfeeb163":"img/cardapio/dfeeb163.webp","5074e4c8":"img/cardapio/5074e4c8.webp","842f15bf":"img/cardapio/842f15bf.webp","09f00ad8":"img/cardapio/09f00ad8.webp","caa12a62":"img/cardapio/caa12a62.webp","474fd2f6":"img/cardapio/474fd2f6.webp","74f5db32":"img/cardapio/74f5db32.webp","0a6e00ef":"img/cardapio/0a6e00ef.webp","c49c420e":"img/cardapio/c49c420e.webp","8d246052":"img/cardapio/8d246052.webp","4ea80dce":"img/cardapio/4ea80dce.webp","79bf8cbb":"img/cardapio/79bf8cbb.webp","18621e11":"img/cardapio/18621e11.webp","3f687fa6":"img/cardapio/3f687fa6.webp","8391f7fe":"img/cardapio/8391f7fe.webp","af4aa453":"img/cardapio/af4aa453.webp","3fdc0970":"img/cardapio/3fdc0970.webp","898f00fe":"img/cardapio/898f00fe.webp","581c277d":"img/cardapio/581c277d.webp","ace897b6":"img/cardapio/ace897b6.webp","9d01857a":"img/cardapio/9d01857a.webp","f9704d97":"img/cardapio/f9704d97.webp","950f2a1b":"img/cardapio/950f2a1b.webp","1ac551c7":"img/cardapio/1ac551c7.webp","c173bd1d":"img/cardapio/c173bd1d.webp","0b0baaac":"img/cardapio/0b0baaac.webp","c348040d":"img/cardapio/c348040d.webp","360be955":"img/cardapio/360be955.webp","c473d08f":"img/cardapio/c473d08f.webp","f7288ba2":"img/cardapio/f7288ba2.webp","f2dfb592":"img/cardapio/f2dfb592.webp","5518cb51":"img/cardapio/5518cb51.webp","1c492044":"img/cardapio/1c492044.webp","80ffebe9":"img/cardapio/80ffebe9.webp","24a05f8e":"img/cardapio/24a05f8e.webp","6207b8b3":"img/cardapio/6207b8b3.webp","dcb85cd5":"img/cardapio/dcb85cd5.webp","d30b4720":"img/cardapio/d30b4720.webp","dd5ecaf9":"img/cardapio/dd5ecaf9.webp","eca547e5":"img/cardapio/eca547e5.webp","15c9805d":"img/cardapio/15c9805d.webp","788a5e3f":"img/cardapio/788a5e3f.webp","5b0fbf7a":"img/cardapio/5b0fbf7a.webp","b83d3928":"img/cardapio/b83d3928.webp","61c6b10d":"img/cardapio/61c6b10d.webp","4abece53":"img/cardapio/4abece53.webp","8638b8c4":"img/cardapio/8638b8c4.webp","95ced324":"img/cardapio/95ced324.webp","2de57e22":"img/cardapio/2de57e22.webp","d39dce79":"img/cardapio/d39dce79.webp","c7423fc4":"img/cardapio/c7423fc4.webp","fb108215":"img/cardapio/fb108215.webp","7d44a0f8":"img/cardapio/7d44a0f8.webp","4553e9a9":"img/cardapio/4553e9a9.webp","8f6574be":"img/cardapio/8f6574be.webp","4035977c":"img/cardapio/4035977c.webp","af63852b":"img/cardapio/af63852b.webp","17ea6861":"img/cardapio/17ea6861.webp","639044fb":"img/cardapio/639044fb.webp","2ca91a1b":"img/cardapio/2ca91a1b.webp","f417cb69":"img/cardapio/f417cb69.webp"}}</script>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO
+   ========================================================= */
+const WA = '5548984448797';
+const DELIVERY = 'https://himawari-sushi.ola.click/products';
+const BAIRROS = ['Alto Aririu','Aririu','Aririu da Formiga','Barra do Aririu','Barreiros','Bela Vista','Brejaru','Caminho Novo','Campinas','Centro da Palhoça','Coqueiros','Enseada de Brito','Forquilhas','Forquilhinhas','Guarda do Cubatão','Jardim Eldorado','Kobrasol','Madri','Nova Palhoça','Pachecos','Pagani','Passa Vinte','Pedra Branca','Ponte do Imaruim','Praia Comprida','Praia de Fora','Sertão do Imaruim','Sul do Rio','São Sebastião','Vila Becker','Vila Nova'];
+document.getElementById('ano').textContent = new Date().getFullYear();
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const DATA = JSON.parse(document.getElementById('menu-data').textContent);
+const IMG = DATA.img;
+
+/* =========================================================
+   CABEÇALHO SÓLIDO AO ROLAR
+   ========================================================= */
+const topBar = document.getElementById('top');
+const onScroll = () => topBar.classList.toggle('is-solid', scrollY > innerHeight * .6);
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => document.getElementById('menu').hidePopover?.()));
+
+/* =========================================================
+   ABERTO AGORA? (horário de Brasília)
+   ========================================================= */
+(function status(){
+  const el = document.getElementById('status');
+  const parts = new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());
+  const get = t => parts.find(p => p.type === t).value;
+  const day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(get('weekday'));
+  const min = (+get('hour')) * 60 + (+get('minute'));
+  const open = 18*60, close = 22*60 + 30;
+  let txt, isOpen = false;
+  if (day === 1) txt = 'Fechado hoje. Voltamos terça, às 18h';
+  else if (min < open) txt = day === 0 ? 'Delivery abre hoje às 18h' : 'Abre hoje às 18h';
+  else if (min < close){ isOpen = true; txt = day === 0 ? 'Delivery aberto até 22h30' : 'Aberto agora até 22h30'; }
+  else txt = day === 0 ? 'Fechado. Voltamos terça, às 18h' : 'Fechado. Abre amanhã às 18h';
+  el.querySelector('span').textContent = txt;
+  el.classList.toggle('is-open', isOpen);
+  // destaca o horário do dia
+  document.getElementById(day === 0 ? 'h-sun' : 'h-tue').classList.toggle('today', day !== 1);
+})();
+
+/* =========================================================
+   VÍDEO DO HERO: carrega sem economia de dados e sem pedido de menos movimento
+   ========================================================= */
+(function video(){
+  const v = document.getElementById('heroVideo');
+  const btn = document.getElementById('heroPause');
+  const src = v.dataset.src;
+  const save = navigator.connection && navigator.connection.saveData;
+  const PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg>';
+  const PAUSE = btn.innerHTML;
+  /* quadro parado na moldura enquanto o vídeo não toca */
+  const still = () => { v.poster = document.querySelector('.hero__media img').src; v.classList.add('is-still'); };
+  if (!src) { still(); return; }
+  let userPaused = false, loaded = false;
+  // muted precisa estar na propriedade (não só no atributo) para o autoplay ser liberado
+  v.muted = true; v.defaultMuted = true; v.playsInline = true;
+  function load(){
+    if (loaded) return; loaded = true; v.preload = 'auto';
+    // Vídeo embutido (data:) vira Blob; com arquivo separado usa o caminho direto.
+    if (src.startsWith('data:')){
+      try{
+        const bin = atob(src.slice(src.indexOf(',') + 1));
+        const bytes = new Uint8Array(bin.length);
+        for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        v.src = URL.createObjectURL(new Blob([bytes], {type:'video/mp4'}));
+      }catch(e){ v.src = src; }
+    } else v.src = src;
+    v.load();
+  }
+  function showPlay(){
+    still(); btn.classList.add('is-on','is-big');
+    btn.innerHTML = PLAY + '<span>' + (document.documentElement.lang === 'en' ? 'Play video' : 'Ver vídeo') + '</span>';
+    btn.setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Play video' : 'Tocar vídeo');
+  }
+  function showPause(){
+    btn.classList.add('is-on'); btn.classList.remove('is-big');
+    btn.innerHTML = PAUSE; btn.setAttribute('aria-label','Pausar vídeo');
+  }
+  const play = () => { load(); return v.play().then(() => {
+      v.classList.add('is-playing'); v.classList.remove('is-still'); showPause(); userPaused = false;
+    }).catch(() => { showPlay(); userPaused = true; }); };
+  btn.addEventListener('click', () => {
+    if (!v.paused) { userPaused = true; v.pause(); showPlay(); }
+    else { userPaused = false; play(); }
+  });
+  /* Quem pediu menos movimento ou economia de dados: não toca sozinho,
+     mostra o quadro parado com o botão "Ver vídeo". */
+  if (reduce || save) { showPlay(); userPaused = true; }
+  else { load(); v.addEventListener('loadeddata', () => { if (!userPaused) play(); }, {once:true}); play(); }
+  // pausa quando o topo sai da tela, para economizar bateria
+  new IntersectionObserver(([e]) => { if (userPaused || !loaded) return; e.isIntersecting ? play() : v.pause(); }).observe(document.getElementById('inicio'));
+})();
+
+/* =========================================================
+   ROLETA DO HIMAWARI
+   ========================================================= */
+const wheel = document.getElementById('wheel');
+const platesEl = document.getElementById('plates');
+const center = document.getElementById('center');
+const petals = document.getElementById('petals');
+const tabsEl = document.getElementById('tabs');
+const dCat = document.getElementById('dCat'), dName = document.getElementById('dName'),
+      dDesc = document.getElementById('dDesc'), dCount = document.getElementById('dCount'),
+      dWa = document.getElementById('dWa');
+const SLOTS = 12;             // pratos visíveis na roda
+let list = [], cur = 0, target = 0, nodes = [], raf = null, activeTab = null, shown = -1;
+
+const catLabel = {};
+DATA.tabs.forEach(t => t.items.forEach(i => catLabel[i.n] = t.label));
+const initials = n => n.replace(/[^A-Za-zÀ-ú ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w => w[0]).join('').toUpperCase();
+const imgFor = it => it.i ? IMG[it.i] : null;
+
+function plateHTML(it){
+  const src = imgFor(it);
+  return src ? `<img src="${src}" alt="" loading="lazy" decoding="async">` : `<span class="ph">${initials(it.n)}</span>`;
+}
+
+// cria as abas
+DATA.tabs.forEach((t, k) => {
+  const b = document.createElement('button');
+  b.className = 'tab'; b.role = 'tab'; b.id = 'tab-' + t.id;
+  b.setAttribute('aria-selected', 'false'); b.setAttribute('aria-controls','stage');
+  b.innerHTML = `${t.label}<small>${t.items.length}</small>`;
+  b.addEventListener('click', () => { document.getElementById('q').value=''; setList(t.items, t.id); b.scrollIntoView({block:'nearest',inline:'center',behavior: reduce?'auto':'smooth'}); });
+  tabsEl.append(b);
+});
+
+// troca o conjunto de pratos da roda
+function setList(items, tabId, startAt = 0){
+  const run = () => {
+    activeTab = tabId;
+    tabsEl.querySelectorAll('.tab').forEach(b => b.setAttribute('aria-selected', String(b.id === 'tab-' + tabId)));
+    list = items;
+    document.getElementById('empty').hidden = items.length > 0;
+    document.getElementById('stage').style.display = items.length ? '' : 'none';
+    platesEl.innerHTML = '';
+    nodes = items.map((it, i) => {
+      const b = document.createElement('button');
+      b.className = 'plate'; b.type = 'button'; b.tabIndex = -1;
+      b.setAttribute('aria-label', it.n);
+      b.innerHTML = plateHTML(it);
+      b.addEventListener('click', e => { if (moved) return; goTo(i); });
+      platesEl.append(b);
+      return b;
+    });
+    shown = -1;
+    // efeito de "giro" ao entrar: a roda chega girando
+    cur = reduce ? startAt : startAt - Math.min(SLOTS, items.length) * .75;
+    target = startAt;
+    animate();
+  };
+  if (document.startViewTransition && !reduce && list.length) document.startViewTransition(run); else run();
+}
+
+// distância circular entre índices
+function wrapDiff(i, c, n){ let d = i - c; d = ((d % n) + n) % n; if (d > n/2) d -= n; return d; }
+
+function render(){
+  const n = list.length; if (!n) return;
+  const slots = Math.min(SLOTS, n);
+  const step = 360 / slots;
+  const size = wheel.clientWidth;
+  const r = size / 2 - size * .085 - size * .015;
+  for (let i = 0; i < n; i++){
+    const d = n <= SLOTS ? wrapDiff(i, cur, n) : wrapDiff(i, cur, n);
+    const vis = n <= SLOTS ? 1 : Math.max(0, Math.min(1, (slots/2 - Math.abs(d)) * 1.2));
+    const ang = d * step;
+    const rad = ang * Math.PI / 180;
+    const x = Math.sin(rad) * r, y = -Math.cos(rad) * r;
+    const near = Math.max(0, 1 - Math.abs(d));
+    const s = .82 + near * .32;
+    const el = nodes[i];
+    el.style.transform = `translate(${x}px, ${y}px) scale(${s})`;
+    el.style.opacity = vis;
+    el.style.zIndex = Math.round(near * 10) + 1;
+    el.style.pointerEvents = vis > .5 ? 'auto' : 'none';
+    el.classList.toggle('is-active', Math.abs(d) < .5);
+  }
+  petals.style.rotate = (-cur * step) + 'deg';
+  const idx = ((Math.round(cur) % n) + n) % n;
+  if (idx !== shown) show(idx);
+}
+
+// atualiza o centro e os detalhes
+function show(i){
+  shown = i;
+  const it = list[i];
+  const src = imgFor(it);
+  const old = center.firstElementChild;
+  const nu = document.createElement(src ? 'img' : 'div');
+  if (src){ nu.src = src; nu.alt = ''; nu.className = 'is-out'; } else { nu.innerHTML = `<span class="ph" style="font-size:2.4rem">${initials(it.n)}</span>`; nu.style.cssText='position:absolute;inset:0'; }
+  center.append(nu);
+  requestAnimationFrame(() => { nu.classList?.remove('is-out'); if (old){ old.classList.add('is-out'); setTimeout(() => old.remove(), 450); } });
+  dCat.textContent = activeTab === 'busca' ? catLabel[it.n] : DATA.tabs.find(t => t.id === activeTab).label;
+  dName.textContent = it.n;
+  dDesc.textContent = it.d || 'Peça pelo delivery para ver valores e opções.';
+  dCount.textContent = `${i + 1} de ${list.length}`;
+  dWa.href = `https://wa.me/${WA}?text=` + encodeURIComponent(`Olá! Vim pelo site e quero pedir: ${it.n}.`);
+}
+
+function animate(){
+  cancelAnimationFrame(raf);
+  const tick = () => {
+    const diff = target - cur;
+    if (Math.abs(diff) < .002){ cur = target; render(); return; }
+    cur += diff * (reduce ? 1 : .14);
+    render();
+    raf = requestAnimationFrame(tick);
+  };
+  tick();
+}
+function goTo(i){
+  const n = list.length;
+  target = cur + wrapDiff(i, cur, n);
+  animate();
+}
+const step = dir => { target = Math.round(target) + dir; animate(); };
+
+// botões e teclado
+const ctrl = document.createElement('div');
+ctrl.className = 'wheel__ctrl';
+ctrl.innerHTML = `<button class="round" type="button" aria-label="Prato anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+<button class="round" type="button" aria-label="Próximo prato"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>`;
+wheel.append(ctrl);
+ctrl.children[0].addEventListener('click', () => step(-1));
+ctrl.children[1].addEventListener('click', () => step(1));
+wheel.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown'){ e.preventDefault(); step(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp'){ e.preventDefault(); step(-1); }
+});
+
+// arrastar para girar (mouse e toque)
+let dragging = false, moved = false, lastAng = 0;
+const angleAt = e => { const r = wheel.getBoundingClientRect(); return Math.atan2(e.clientX - (r.left + r.width/2), -(e.clientY - (r.top + r.height/2))) * 180 / Math.PI; };
+wheel.addEventListener('pointerdown', e => {
+  if (e.target.closest('.wheel__ctrl')) return;
+  dragging = true; moved = false; lastAng = angleAt(e);
+  wheel.classList.add('is-drag'); cancelAnimationFrame(raf);
+});
+addEventListener('pointermove', e => {
+  if (!dragging) return;
+  const a = angleAt(e); let da = a - lastAng;
+  if (da > 180) da -= 360; if (da < -180) da += 360;
+  if (Math.abs(da) > .5){ if (!moved) wheel.setPointerCapture?.(e.pointerId); moved = true; }
+  lastAng = a;
+  cur -= da / (360 / Math.min(SLOTS, list.length || 1));
+  target = cur; render();
+});
+addEventListener('pointerup', () => {
+  if (!dragging) return;
+  dragging = false; wheel.classList.remove('is-drag');
+  target = Math.round(cur); animate();
+  setTimeout(() => moved = false, 0);
+});
+// roda do mouse, só com Shift ou dentro da roda em desktop, para não travar a rolagem
+wheel.addEventListener('wheel', e => {
+  if (Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey){ e.preventDefault(); step((e.deltaX || e.deltaY) > 0 ? 1 : -1); }
+}, {passive:false});
+addEventListener('resize', render);
+
+// busca em todo o cardápio
+const ALL = DATA.tabs.flatMap(t => t.items);
+const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+let qt;
+document.getElementById('q').addEventListener('input', e => {
+  clearTimeout(qt);
+  qt = setTimeout(() => {
+    const q = norm(e.target.value.trim());
+    if (!q){ setList(DATA.tabs[0].items, DATA.tabs[0].id); return; }
+    const res = ALL.filter(i => norm(i.n + ' ' + i.d).includes(q));
+    tabsEl.querySelectorAll('.tab').forEach(b => b.setAttribute('aria-selected','false'));
+    setList(res, 'busca');
+  }, 220);
+});
+
+// atalhos do bento: abre a roleta no prato
+document.querySelectorAll('[data-img]').forEach(t => {
+  const it = ALL.find(i => i.n === t.dataset.img);
+  if (it && imgFor(it)) t.querySelector('img').src = imgFor(it);
+});
+document.querySelectorAll('[data-jump]').forEach(t => t.addEventListener('click', () => {
+  const tab = DATA.tabs.find(tb => tb.items.some(i => i.n === t.dataset.jump));
+  const idx = tab.items.findIndex(i => i.n === t.dataset.jump);
+  document.getElementById('q').value = '';
+  document.getElementById('cardapio').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  setList(tab.items, tab.id, idx);
+}));
+
+setList(DATA.tabs[0].items, DATA.tabs[0].id);
+
+/* =========================================================
+   ENTREGAMOS AÍ?
+   ========================================================= */
+(function delivery(){
+  const dl = document.getElementById('bairros'), ul = document.getElementById('hoodList');
+  const out = document.getElementById('checkOut'), inp = document.getElementById('bairro');
+  BAIRROS.forEach(b => { dl.append(new Option(b)); const li = document.createElement('li'); li.textContent = b; ul.append(li); });
+  inp.addEventListener('input', () => {
+    const q = norm(inp.value.trim());
+    out.className = 'check__out';
+    if (q.length < 3){ out.textContent = 'A resposta aparece aqui enquanto você digita.'; return; }
+    const hit = BAIRROS.find(b => norm(b) === q) || BAIRROS.find(b => norm(b).startsWith(q)) || BAIRROS.find(b => norm(b).includes(q));
+    if (hit){ out.classList.add('ok'); out.innerHTML = `Sim, entregamos em <b>${hit}</b>. A taxa aparece no carrinho do delivery.`; }
+    else { out.innerHTML = `Ainda não achamos “${inp.value.trim()}” na lista. <a href="https://wa.me/${WA}?text=${encodeURIComponent('Olá! Vocês entregam no bairro ' + inp.value.trim() + '?')}" target="_blank" rel="noopener">Pergunte pelo WhatsApp</a>.`; }
+  });
+})();
+</script>
+</body>
+</html>

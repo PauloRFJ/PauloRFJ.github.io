@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eletricista em Palhoça e São José | Damaceno Instalações</title>
+<meta name="description" content="Eletricista em Palhoça e São José: instalações, quadro de distribuição, iluminação e manutenção. Visita sem custo. Peça seu orçamento no WhatsApp.">
+<meta name="theme-color" content="#0A1B4D">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Damaceno Instalações Elétricas | Eletricista em Palhoça e São José">
+<meta property="og:description" content="Instalações, quadro de distribuição, iluminação e manutenção. Visita sem custo para orçamento.">
+<meta property="og:url" content="https://paulorfj.github.io/damaceno-instalacoes/">
+<meta property="og:image" content="https://paulorfj.github.io/damaceno-instalacoes/img/og-damaceno.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo da Damaceno Instalações Elétricas sobre azul-noite">
+<meta name="twitter:card" content="summary_large_image">
+<!-- PENDENTE: quando o site tiver domínio, trocar por endereço completo (https://.../img/og-damaceno.jpg) -->
+<link rel="icon" type="image/svg+xml" href="logos/damaceno-favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="logos/damaceno-favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="logos/damaceno-favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500..800&family=Inter:wght@400..700&display=swap" rel="stylesheet">
+<!-- Fonte da MeKa Studio, carregada só com as letras do crédito -->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&text=MeKaStudioSiteporby&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/pendente-palha-sala.webp" fetchpriority="high">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "name": "Damaceno Instalações Elétricas",
+  "founder": {"@type": "Person", "name": "Diego Damaceno"},
+  "telephone": "+55-48-99127-0289",
+  "email": "damaceno.dd@gmail.com",
+  "areaServed": [{"@type": "City", "name": "Palhoça"}, {"@type": "City", "name": "São José"}],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "08:00", "closes": "18:00"
+  }],
+  "sameAs": ["https://www.instagram.com/dieegodamacenoo/"],
+  "url": "https://paulorfj.github.io/damaceno-instalacoes/",
+  "image": "https://paulorfj.github.io/damaceno-instalacoes/img/og-damaceno.jpg"
+}
+</script>
+
+<style>
+/* =========================================================
+   1. TOKENS (cores da identidade, espaços e curvas)
+   ========================================================= */
+:root {
+  color-scheme: light dark;
+  --azul: #1450D2;          /* Azul Elétrico: marca */
+  --noite: #0A1B4D;         /* Azul-Noite: topo, títulos */
+  --amarelo: #FFC21A;       /* Amarelo Faísca: orçamento e brilho */
+  --laranja: #F28C1B;       /* Laranja Capacete: só detalhes */
+  --bg: #FFFFFF;
+  --bg-alt: #EEF2F8;        /* Névoa */
+  --surface: #FFFFFF;
+  --ink: #0A1B4D;
+  --soft: #4A5878;          /* Grafite: texto corrido (7:1) */
+  --link: #1450D2;
+  --line: #DCE3EF;
+  --wa: #1A8F4F;
+
+  --space-m: clamp(1.25rem, 1rem + 1.2vw, 2rem);
+  --space-l: clamp(2.5rem, 1.8rem + 3vw, 5rem);
+  --space-xl: clamp(4rem, 2.8rem + 5.5vw, 8rem);
+  --wrap: min(1180px, 100% - 2 * clamp(1rem, 4vw, 2.5rem));
+  --ease: cubic-bezier(.22, .8, .24, 1);
+  --display: "Sora", "Arial Black", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+/* Modo escuro: segue o sistema do visitante. O topo é sempre escuro. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0B1638; --bg-alt: #0F1E4A; --surface: #13265A;
+    --ink: #EEF2F8; --soft: #AFBCDB; --link: #8AAAFF; --line: #22346E;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 84px); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 clamp(1rem, .96rem + .2vw, 1.0625rem)/1.6 var(--body); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.05; letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+/* Foco: azul-noite nas áreas claras, amarelo nas escuras (contraste ≥ 3:1 nos dois casos) */
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
+.hero :focus-visible, .svc--destaque :focus-visible, .motivo--1 :focus-visible, .onde__card :focus-visible, .final__box :focus-visible, .foto--insta :focus-visible, .lightbox :focus-visible, .skip:focus-visible { outline-color: var(--amarelo); }
+.foto button:focus-visible { outline-color: var(--ink); }
+.wrap { width: var(--wrap); margin-inline: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: fixed; left: 1rem; top: -100px; z-index: 100; background: var(--amarelo); color: var(--noite); padding: .75rem 1.25rem; border-radius: 999px; font-weight: 700; text-decoration: none; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + .75rem); }
+.kicker { display: inline-flex; align-items: center; gap: .55rem; font: 600 .8rem/1 var(--display); letter-spacing: .22em; text-transform: uppercase; color: var(--link); }
+.kicker svg { width: 14px; height: 14px; flex: none; }
+
+/* =========================================================
+   2. BOTÕES
+   ========================================================= */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 52px; padding: .8rem 1.5rem; border-radius: 999px; border: 0; cursor: pointer; font: 700 1rem/1.2 var(--display); text-decoration: none; transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .3s; }
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn:active { transform: scale(.98); }
+.btn--orcamento { background: var(--amarelo); color: var(--noite); box-shadow: 0 12px 28px -14px rgba(242,140,27,.9); }
+.btn--orcamento:hover { transform: translateY(-2px); box-shadow: 0 0 0 5px rgba(255,194,26,.22), 0 16px 32px -14px rgba(242,140,27,.9); }
+.btn--azul { background: var(--azul); color: #FFFFFF; }
+.btn--azul:hover { transform: translateY(-2px); background: #1145B8; }
+.btn--contorno { background: transparent; color: inherit; box-shadow: inset 0 0 0 2px currentColor; }
+.btn--contorno:hover { transform: translateY(-2px); }
+.btn--sm { min-height: 44px; padding: .55rem 1.1rem; font-size: .92rem; }
+
+/* =========================================================
+   3. CABEÇALHO
+   ========================================================= */
+.top { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+.top__in { width: var(--wrap); margin-inline: auto; display: flex; align-items: center; gap: 1.2rem; min-height: 70px; }
+.marca { display: inline-flex; align-items: center; gap: .65rem; min-height: 48px; margin-right: auto; text-decoration: none; color: var(--ink); }
+.marca svg { width: 40px; height: 40px; flex: none; }
+.marca b { display: block; font: 800 1.3rem/1 var(--display); letter-spacing: -.02em; }
+.marca small { display: block; margin-top: 4px; font: 600 .5rem/1 var(--display); letter-spacing: .33em; color: var(--link); }
+.nav { display: flex; align-items: center; gap: 1.6rem; }
+.nav a:not(.btn) { text-decoration: none; font-weight: 600; font-size: .95rem; color: var(--soft); padding-block: .7rem; transition: color .2s; }
+.nav a:not(.btn):hover { color: var(--ink); }
+.menu-btn { display: none; }
+@media (max-width: 880px) {
+  .nav { display: none; }
+  .menu-btn { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+  .top__in { gap: .6rem; }
+}
+@media (max-width: 400px) { .marca small { display: none; } .top .btn--sm { padding-inline: .9rem; } }
+@media (max-width: 380px) {
+  .marca { gap: .45rem; }
+  .marca svg { width: 32px; height: 32px; }
+  .marca b { font-size: 1.05rem; }
+  .top .btn--sm { padding-inline: .7rem; font-size: .85rem; }
+}
+#menu { border: 0; margin: 0; inset: 0 0 auto auto; height: 100dvh; width: min(86vw, 360px); padding: calc(env(safe-area-inset-top, 0px) + 1.5rem) 1.6rem calc(env(safe-area-inset-bottom, 0px) + 1.5rem); background: var(--bg); color: var(--ink); box-shadow: -20px 0 60px -20px rgba(0,0,0,.45); opacity: 0; translate: 30px 0; transition: opacity .35s var(--ease), translate .35s var(--ease), overlay .35s allow-discrete, display .35s allow-discrete; }
+#menu:popover-open { opacity: 1; translate: 0 0; display: flex; flex-direction: column; gap: .9rem; }
+@starting-style { #menu:popover-open { opacity: 0; translate: 30px 0; } }
+#menu::backdrop { background: rgba(6, 15, 45, .55); }
+#menu a:not(.btn) { font: 800 1.6rem/1.2 var(--display); text-decoration: none; padding-block: .3rem; }
+#menu .fechar { align-self: flex-end; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+#menu .btn { margin-top: auto; }
+
+/* =========================================================
+   4. TOPO COM O INTERRUPTOR (momento uau)
+   A página começa na penumbra; o interruptor acende a foto,
+   o brilho, o LED do interruptor e a linha de faísca.
+   O texto é sempre legível, apagado ou aceso.
+   ========================================================= */
+.hero { position: relative; isolation: isolate; overflow: clip; background: #081436; color: #FFFFFF; }
+.hero::before { /* luz quente que "acende" atrás da cena */
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(60% 70% at 72% 58%, rgba(255,194,26,.30), rgba(242,140,27,.10) 40%, transparent 70%);
+  opacity: 0; transition: opacity 1.1s var(--ease);
+}
+.hero[data-luz="on"]::before { opacity: 1; }
+.hero__in { width: var(--wrap); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: var(--space-l); align-items: center; padding-block: var(--space-l) calc(var(--space-l) + 40px); min-height: min(88svh, 820px); }
+.hero__texto { display: grid; gap: var(--space-m); align-content: center; }
+.hero .kicker { color: var(--amarelo); }
+.hero h1 { font-size: clamp(2.3rem, 1.3rem + 3.2vw, 3.9rem); }
+@media (max-width: 520px) { .kicker { letter-spacing: .12em; font-size: .74rem; } }
+.hero h1 .luz { color: #FFFFFF; transition: color .8s var(--ease), text-shadow .8s var(--ease); }
+.hero[data-luz="on"] h1 .luz { color: var(--amarelo); text-shadow: 0 0 34px rgba(255,194,26,.45); }
+.hero__sub { font-size: clamp(1.05rem, 1rem + .4vw, 1.3rem); color: #C9D4EE; max-width: 40ch; }
+.hero__ctas { display: flex; flex-wrap: wrap; gap: .75rem; }
+.hero .btn--contorno { color: #FFFFFF; }
+.pilulas { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0; list-style: none; }
+.pilulas li { display: inline-flex; align-items: center; gap: .5rem; min-height: 40px; padding: .45rem .9rem; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); font-size: .9rem; font-weight: 600; color: #EEF2F8; }
+.pilulas svg { width: 16px; height: 16px; flex: none; color: var(--amarelo); }
+.status i { width: 9px; height: 9px; border-radius: 50%; background: #8C96B2; flex: none; }
+.status.aberto i { background: #3DDC84; box-shadow: 0 0 0 0 rgba(61,220,132,.6); animation: ping 2s infinite; }
+@keyframes ping { 70% { box-shadow: 0 0 0 8px rgba(61,220,132,0); } 100% { box-shadow: 0 0 0 0 rgba(61,220,132,0); } }
+
+/* Cena: foto real do pendente + interruptor */
+.cena { position: relative; justify-self: center; width: min(100%, 440px); }
+.cena__foto { position: relative; aspect-ratio: 4 / 5; border-radius: 28px; overflow: hidden; background: #050C24; box-shadow: 0 40px 80px -40px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08); }
+.cena__foto img { width: 100%; height: 100%; object-fit: cover; object-position: center 64%; filter: brightness(.16) saturate(.5); transition: filter 1.1s var(--ease); }
+.hero[data-luz="on"] .cena__foto img { filter: brightness(1) saturate(1.05); }
+.cena__foto::after { content: ""; position: absolute; inset: 0; background: radial-gradient(45% 30% at 50% 66%, rgba(255,200,90,.38), transparent 70%); mix-blend-mode: screen; opacity: 0; transition: opacity 1.2s var(--ease) .15s; }
+.hero[data-luz="on"] .cena__foto::after { opacity: 1; }
+.cena__legenda { position: absolute; left: 14px; top: 14px; padding: .35rem .8rem; border-radius: 999px; background: rgba(8,20,54,.7); backdrop-filter: blur(6px); font-size: .8rem; font-weight: 600; color: #EEF2F8; opacity: 0; transition: opacity .6s var(--ease) .6s; }
+.hero[data-luz="on"] .cena__legenda { opacity: 1; }
+
+/* O interruptor: placa de parede com tecla que vira */
+.interruptor { position: absolute; left: -38px; bottom: 34px; display: flex; align-items: center; gap: 14px; background: none; border: 0; padding: 0; cursor: pointer; color: #FFFFFF; font: inherit; text-align: left; }
+.placa { position: relative; width: 92px; height: 140px; border-radius: 18px; background: linear-gradient(160deg, #FFFFFF, #E6EBF4); box-shadow: 0 24px 40px -18px rgba(0,0,0,.85), inset 0 -3px 0 rgba(10,27,77,.12); display: grid; place-items: center; flex: none; }
+.tecla { position: relative; width: 48px; height: 84px; border-radius: 10px; background: #F4F6FA; box-shadow: inset 0 0 0 1px rgba(10,27,77,.12); overflow: hidden; transform-style: preserve-3d; perspective: 200px; }
+.tecla span { position: absolute; inset: 0; background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 46%, #D8DEEA 50%, #EEF1F7 100%); transition: background .25s var(--ease); }
+.interruptor[aria-pressed="true"] .tecla span { background: linear-gradient(180deg, #EEF1F7 0%, #D8DEEA 50%, #FFFFFF 54%, #FFFFFF 100%); }
+.led { position: absolute; left: 50%; top: 12px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: #9AA6C2; transition: background .3s, box-shadow .3s; }
+.interruptor[aria-pressed="true"] .led { background: var(--amarelo); box-shadow: 0 0 10px 2px rgba(255,194,26,.8); }
+.interruptor__txt { display: grid; gap: 2px; padding: .55rem .9rem; border-radius: 14px; background: rgba(8,20,54,.75); backdrop-filter: blur(6px); }
+.interruptor__txt b { font: 700 .95rem/1.2 var(--display); }
+.interruptor__txt small { font-size: .78rem; color: #AFBCDB; }
+.interruptor:hover .placa { transform: translateY(-2px); }
+.placa { transition: transform .3s var(--ease); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero[data-luz="off"] .interruptor__txt { animation: chama 2.4s ease-in-out infinite; }
+  @keyframes chama { 50% { box-shadow: 0 0 0 6px rgba(255,194,26,.18); } }
+}
+
+/* Linha de faísca que percorre a base do topo ao acender */
+.faisca-topo { position: absolute; left: 0; right: 0; bottom: 18px; height: 80px; width: 100%; pointer-events: none; }
+.faisca-topo polyline { fill: none; stroke: var(--amarelo); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s var(--ease) .2s; filter: drop-shadow(0 0 6px rgba(255,194,26,.7)); }
+.hero[data-luz="on"] .faisca-topo polyline { stroke-dashoffset: 0; }
+
+@media (max-width: 860px) {
+  .hero__in { grid-template-columns: minmax(0, 1fr); min-height: 0; padding-block: var(--space-l) calc(var(--space-l) + 50px); }
+  .cena { width: min(100%, 380px); }
+  .interruptor { left: 12px; bottom: 12px; }
+  .placa { width: 74px; height: 112px; border-radius: 15px; }
+  .tecla { width: 38px; height: 66px; }
+}
+
+/* =========================================================
+   5. SEÇÕES
+   ========================================================= */
+section { padding-block: var(--space-xl); }
+.cabeca { display: grid; gap: .8rem; margin-bottom: var(--space-l); max-width: 46rem; }
+.cabeca h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.6rem); }
+.cabeca p { color: var(--soft); font-size: clamp(1.02rem, 1rem + .3vw, 1.2rem); max-width: 44ch; }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .revela { animation: sobe linear both; animation-timeline: view(); animation-range: entry 0% entry 45%; }
+    @keyframes sobe { from { opacity: 0; transform: translateY(28px); } }
+  }
+}
+
+/* Divisor: linha de faísca */
+.divisor { display: block; width: 100%; height: 60px; color: var(--amarelo); }
+.divisor polyline { fill: none; stroke: currentColor; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .divisor polyline { stroke-dasharray: 1; animation: traca linear both; animation-timeline: view(); animation-range: entry 10% cover 45%; }
+    @keyframes traca { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  }
+}
+
+/* =========================================================
+   6. SERVIÇOS: cards que abrem com um toque (<details>)
+   ========================================================= */
+.servicos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.75rem, 1.2vw, 1rem); align-items: start; }
+.svc { position: relative; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); overflow: hidden; transition: border-color .3s, box-shadow .3s var(--ease), transform .3s var(--ease); }
+.svc:hover { transform: translateY(-3px); box-shadow: 0 22px 44px -30px rgba(10,27,77,.55); }
+.svc[open] { border-color: var(--azul); box-shadow: 0 22px 44px -30px rgba(20,80,210,.6); }
+.svc summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 1rem; align-items: start; padding: clamp(1.1rem, 2vw, 1.5rem); min-height: 44px; }
+.svc summary::-webkit-details-marker { display: none; }
+.svc .ic { width: 52px; height: 52px; border-radius: 15px; background: color-mix(in srgb, var(--azul) 12%, transparent); color: var(--link); display: grid; place-items: center; }
+.svc .ic svg { width: 26px; height: 26px; }
+.svc h3 { font-size: clamp(1.15rem, 1.05rem + .4vw, 1.35rem); margin-bottom: .35rem; }
+.svc summary p { color: var(--soft); font-size: .97rem; }
+.svc .mais { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--line); display: grid; place-items: center; transition: rotate .35s var(--ease), background .3s, border-color .3s; color: var(--ink); }
+.svc .mais svg { width: 16px; height: 16px; }
+.svc[open] .mais { rotate: 45deg; background: var(--amarelo); border-color: var(--amarelo); color: var(--noite); }
+.svc__corpo { padding: 0 clamp(1.1rem, 2vw, 1.5rem) clamp(1.1rem, 2vw, 1.5rem); display: grid; gap: 1rem; }
+.svc__corpo p { color: var(--ink); }
+@media (prefers-reduced-motion: no-preference) {
+  .svc[open] .svc__corpo { animation: abre .4s var(--ease) both; }
+  @keyframes abre { from { opacity: 0; transform: translateY(-6px); } }
+}
+/* Destaque: quadro de distribuição (o diferencial de indústria) */
+.svc--destaque { background: var(--noite); border-color: var(--noite); color: #FFFFFF; grid-row: span 2; display: flex; flex-direction: column; gap: 1rem; padding: clamp(1.3rem, 2.4vw, 1.9rem); }
+.svc--destaque:hover { transform: none; }
+.svc--destaque .ic { background: var(--amarelo); color: var(--noite); }
+.svc--destaque h3 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); margin-top: .4rem; }
+.svc--destaque p { color: #C9D4EE; }
+.svc--destaque .selo { align-self: flex-start; display: inline-flex; align-items: center; gap: .4rem; padding: .4rem .8rem; border-radius: 999px; background: rgba(255,194,26,.14); color: var(--amarelo); font: 700 .8rem/1.2 var(--display); }
+.svc--destaque .btn { align-self: flex-start; margin-top: auto; }
+.svc--destaque svg.faisca { display: block; width: calc(100% + 2 * clamp(1.3rem, 2.4vw, 1.9rem)); margin-inline: calc(-1 * clamp(1.3rem, 2.4vw, 1.9rem)); height: 60px; }
+@media (max-width: 960px) { .servicos { grid-template-columns: repeat(2, minmax(0, 1fr)); } .svc--destaque { grid-row: auto; grid-column: 1 / -1; } }
+@media (max-width: 620px) { .servicos { grid-template-columns: minmax(0, 1fr); } }
+
+/* =========================================================
+   7. POR QUE ME CHAMAR
+   ========================================================= */
+.porque { background: var(--bg-alt); }
+.motivos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.75rem, 1.4vw, 1.2rem); }
+.motivo { background: var(--surface); border-radius: 22px; padding: clamp(1.3rem, 2.4vw, 2rem); display: grid; gap: .7rem; align-content: start; }
+.motivo .num { font: 800 .85rem/1 var(--display); letter-spacing: .12em; color: var(--link); }
+.motivo h3 { font-size: clamp(1.3rem, 1.15rem + .6vw, 1.65rem); }
+.motivo p { color: var(--soft); }
+.motivo ul { margin: .2rem 0 0; padding: 0; list-style: none; display: grid; gap: .45rem; }
+.motivo li { display: flex; gap: .55rem; align-items: flex-start; color: var(--ink); font-size: .96rem; }
+.motivo li svg { width: 18px; height: 18px; flex: none; margin-top: .2rem; color: var(--azul); }
+.motivo--1 { background: var(--azul); color: #FFFFFF; }
+.motivo--1 .num { color: var(--amarelo); }
+.motivo--1 p { color: #DCE6FF; }
+@media (max-width: 860px) { .motivos { grid-template-columns: minmax(0, 1fr); } }
+
+/* =========================================================
+   8. COMO FUNCIONA: fio que energiza os 3 passos ao rolar
+   Padrão: tudo energizado. Com suporte a scroll-driven e sem
+   "reduzir movimento", começa apagado e acende ao rolar.
+   ========================================================= */
+.passos { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 2rem); }
+.fio { position: absolute; left: 0; right: 0; top: 30px; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.fio i { position: absolute; inset: 0; background: linear-gradient(90deg, var(--amarelo), var(--laranja)); transform-origin: left; box-shadow: 0 0 14px rgba(255,194,26,.8); }
+.passo { position: relative; display: grid; gap: .6rem; align-content: start; }
+.no { width: 66px; height: 66px; border-radius: 50%; display: grid; place-items: center; background: var(--amarelo); color: var(--noite); font: 800 1.5rem/1 var(--display); box-shadow: 0 0 0 6px var(--bg), 0 0 24px rgba(255,194,26,.7); position: relative; z-index: 1; }
+.passo h3 { font-size: clamp(1.3rem, 1.15rem + .6vw, 1.6rem); margin-top: .6rem; }
+.passo p { color: var(--soft); }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .passos { view-timeline: --passos block; }
+    .fio i { animation: energiza linear both; animation-timeline: --passos; animation-range: entry 40% cover 55%; }
+    @keyframes energiza { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    .no { animation: acende linear both; animation-timeline: --passos; }
+    .passo:nth-child(2) .no { animation-range: entry 40% entry 70%; }
+    .passo:nth-child(3) .no { animation-range: entry 70% cover 40%; }
+    .passo:nth-child(4) .no { animation-range: cover 40% cover 55%; }
+    @keyframes acende { from { background: var(--line); color: var(--soft); box-shadow: 0 0 0 6px var(--bg); } 80%, to { background: var(--amarelo); color: var(--noite); box-shadow: 0 0 0 6px var(--bg), 0 0 24px rgba(255,194,26,.7); } }
+  }
+}
+@media (max-width: 760px) {
+  .passos { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; padding-left: 0; }
+  .fio { left: 30px; right: auto; top: 0; bottom: 0; width: 6px; height: auto; }
+  .fio i { transform-origin: top; background: linear-gradient(180deg, var(--amarelo), var(--laranja)); }
+  @supports (animation-timeline: view()) { @keyframes energiza { from { transform: scaleY(0); } to { transform: scaleY(1); } } }
+  .passo { grid-template-columns: 66px minmax(0, 1fr); column-gap: 1rem; }
+  .passo h3 { margin-top: .9rem; }
+  .passo p { grid-column: 2; }
+}
+
+/* =========================================================
+   9. TRABALHOS: fotos verticais em faixa deslizante + lightbox
+   ========================================================= */
+.trabalhos { background: var(--bg-alt); overflow: clip; }
+.faixa { --edge: max(clamp(1rem, 4vw, 2.5rem), calc((100% - 1180px) / 2)); display: flex; gap: clamp(.75rem, 1.4vw, 1.1rem); overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; padding: 4px var(--edge) 10px; scroll-padding-inline: var(--edge); }
+.faixa::-webkit-scrollbar { display: none; }
+.foto { flex: 0 0 clamp(230px, 24vw, 290px); scroll-snap-align: start; margin: 0; display: grid; gap: .6rem; }
+.foto button { all: unset; cursor: zoom-in; display: block; border-radius: 22px; overflow: hidden; aspect-ratio: 3 / 5; background: var(--line); }
+.foto button:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 3px; }
+.foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+.foto button:hover img { transform: scale(1.05); }
+.foto figcaption { font-weight: 600; font-size: .95rem; }
+.foto--insta { flex-basis: clamp(230px, 24vw, 290px); align-self: stretch; border-radius: 22px; background: var(--noite); color: #FFFFFF; display: grid; align-content: center; gap: 1rem; padding: 1.6rem; aspect-ratio: 3 / 5; height: fit-content; }
+.foto--insta h3 { font-size: 1.5rem; }
+.foto--insta p { color: #C9D4EE; }
+.faixa-ui { display: flex; align-items: center; justify-content: flex-end; gap: .6rem; margin-top: -1.5rem; margin-bottom: 1rem; }
+.seta { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); display: grid; place-items: center; cursor: pointer; }
+.seta svg { width: 20px; height: 20px; }
+.seta:hover { border-color: var(--azul); }
+.lightbox { border: 0; padding: 0; background: transparent; max-width: min(92vw, 520px); max-height: 94dvh; color: #FFFFFF; }
+.lightbox::backdrop { background: rgba(5, 12, 36, .92); }
+.lightbox figure { margin: 0; display: grid; gap: .7rem; }
+.lightbox img { max-height: 82dvh; width: auto; margin-inline: auto; border-radius: 18px; }
+.lightbox figcaption { text-align: center; font-weight: 600; }
+.lb-ctrl { display: flex; justify-content: center; gap: .6rem; }
+.lb-ctrl button { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.08); color: #FFFFFF; cursor: pointer; display: grid; place-items: center; }
+.lb-ctrl svg { width: 20px; height: 20px; }
+
+/* =========================================================
+   10. SOBRE: linha do tempo indústria → eletricista
+   ========================================================= */
+.sobre__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-l); align-items: center; }
+.sobre h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.6rem); margin-bottom: var(--space-m); }
+.sobre p { color: var(--soft); font-size: 1.1rem; max-width: 48ch; }
+.sobre p + p { margin-top: 1rem; }
+.tempo { position: relative; list-style: none; margin: 0; padding: 0 0 0 2.4rem; display: grid; gap: 1.4rem; }
+.tempo::before { content: ""; position: absolute; left: 11px; top: 8px; bottom: 8px; width: 3px; border-radius: 2px; background: linear-gradient(180deg, var(--azul), var(--amarelo)); }
+.tempo li { position: relative; display: grid; gap: .2rem; }
+.tempo li::before { content: ""; position: absolute; left: -2.4rem; top: 4px; width: 25px; height: 25px; border-radius: 50%; background: var(--bg); border: 3px solid var(--azul); }
+.tempo li:last-child::before { border-color: var(--amarelo); background: var(--amarelo); box-shadow: 0 0 16px rgba(255,194,26,.7); }
+.tempo b { font: 800 1.35rem/1.1 var(--display); }
+.tempo span { color: var(--soft); }
+@media (max-width: 860px) { .sobre__grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* =========================================================
+   11. ONDE E QUANDO
+   ========================================================= */
+.onde__card { border-radius: 30px; background: var(--noite); color: #FFFFFF; padding: clamp(1.5rem, 4vw, 3.2rem); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: var(--space-l); }
+.onde h2 { font-size: clamp(2rem, 1.3rem + 3vw, 3.4rem); margin-bottom: 1.4rem; }
+.dados { display: grid; gap: 1.1rem; margin: 0; }
+.dados > div { display: grid; gap: .15rem; }
+.dados dt { font: 700 .78rem/1.2 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--amarelo); }
+.dados dd { margin: 0; font-size: 1.1rem; color: #EEF2F8; }
+.dados dd a { color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; }
+.cidades { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; }
+.cidades span { padding: .5rem 1rem; border-radius: 999px; background: var(--azul); font: 700 1rem/1 var(--display); }
+.contatos { display: grid; gap: .7rem; align-content: start; }
+.contato { display: flex; align-items: center; gap: .9rem; min-height: 56px; padding: .8rem 1rem; border-radius: 18px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); text-decoration: none; color: #FFFFFF; transition: background .25s, transform .25s var(--ease); }
+.contato:hover { background: rgba(255,255,255,.12); transform: translateX(3px); }
+.contato svg { width: 24px; height: 24px; flex: none; color: var(--amarelo); }
+.contato b { display: block; font: 700 1rem/1.2 var(--display); }
+.contato small { color: #AFBCDB; font-size: .88rem; overflow-wrap: anywhere; }
+@media (max-width: 860px) { .onde__card { grid-template-columns: minmax(0, 1fr); } }
+
+/* =========================================================
+   12. CHAMADA FINAL E RODAPÉ
+   ========================================================= */
+.final__box { position: relative; overflow: hidden; isolation: isolate; border-radius: 30px; background: var(--azul); color: #FFFFFF; padding: clamp(2rem, 6vw, 4.5rem); display: grid; gap: 1.2rem; justify-items: start; }
+.final__box svg.raios { position: absolute; right: -40px; top: -30px; width: min(420px, 60%); height: auto; z-index: -1; opacity: .16; }
+.final h2 { font-size: clamp(2.1rem, 1.3rem + 3.6vw, 4.2rem); max-width: 16ch; }
+.final p { font-size: 1.15rem; color: #DCE6FF; max-width: 42ch; }
+.rodape { padding-block: var(--space-l) calc(var(--space-l) + 70px); border-top: 1px solid var(--line); color: var(--soft); font-size: .95rem; }
+.rodape__in { width: var(--wrap); margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; }
+.rodape nav { display: flex; flex-wrap: wrap; gap: .2rem 1.4rem; }
+.rodape a { display: inline-flex; align-items: center; min-height: 44px; color: var(--soft); }
+.rodape a:hover { color: var(--ink); }
+
+/* WhatsApp flutuante */
+.wa { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 60; width: 60px; height: 60px; border-radius: 50%; background: var(--wa); color: #FFFFFF; display: grid; place-items: center; box-shadow: 0 12px 30px -8px rgba(0,0,0,.45); transition: transform .3s var(--ease); }
+.wa:hover { transform: scale(1.07); }
+.wa svg { width: 30px; height: 30px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* =========================================================
+   CRÉDITO MEKA STUDIO (padrão em todos os sites)
+   Claro: versão monocromática do manual. Escuro: K em verde-limão.
+   ========================================================= */
+.credit{--mk-ink:#0E1014;--mk-k:#0E1014;--mk-sub:#4A4E57}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .credit{--mk-ink:#EDEBE6;--mk-k:#C8F542;--mk-sub:#8E939C} }
+:root[data-theme="dark"] .credit{--mk-ink:#EDEBE6;--mk-k:#C8F542;--mk-sub:#8E939C}
+.credit{grid-column:1/-1;flex-basis:100%;border-top:1px solid var(--line);padding-top:var(--space-m);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.credit__link{display:inline-flex;align-items:center;gap:.7rem;min-height:44px;text-decoration:none;font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;color:var(--mk-ink)}
+.credit__by{font-size:.8rem;font-weight:500;color:var(--mk-sub)}
+.credit__mark{width:34px;height:26px;flex:none;overflow:visible}
+.credit__mark .k{stroke:var(--mk-k);stroke-dasharray:70;stroke-dashoffset:0}
+.credit__rule{width:1.5px;height:24px;background:color-mix(in srgb,var(--mk-sub) 45%,transparent)}
+.credit__name{display:flex;flex-direction:column;line-height:.95}
+.credit__name b{font-size:1.2rem;font-weight:700;letter-spacing:-.035em}
+.credit__name b span{color:var(--mk-k)}
+.credit__name small{font-size:.72rem;font-weight:500;letter-spacing:-.02em;color:var(--mk-sub)}
+@media (prefers-reduced-motion: no-preference){
+  .credit__link:hover .k,.credit__link:focus-visible .k{animation:mkDraw .7s var(--ease-out,var(--ease,cubic-bezier(.22,1,.36,1)))}
+  .credit__link:hover .credit__mark{transform:translateY(-1px)}
+  .credit__mark{transition:transform .3s var(--ease-out,var(--ease,cubic-bezier(.22,1,.36,1)))}
+}
+@keyframes mkDraw{from{stroke-dashoffset:70}to{stroke-dashoffset:0}}
+
+/* O crédito vence os estilos genéricos de links e textos do rodapé de cada site */
+.credit .credit__link{color:var(--mk-ink);font-size:1rem;min-height:44px}
+.credit .credit__link:hover,.credit .credit__link:focus-visible{color:var(--mk-ink)}
+.credit .credit__by{display:inline;min-height:0;font-size:.8rem;color:var(--mk-sub)}
+.credit .credit__rule{display:block;min-height:0}
+.credit .credit__name{display:flex;min-height:0;color:inherit}
+.credit .credit__name b span{display:inline;min-height:0;font-size:inherit;color:var(--mk-k)}
+.credit .credit__name small{color:var(--mk-sub)}
+.credit > span, .credit > span span{display:inline;min-height:0}
+</style>
+</head>
+<body>
+<a class="skip" href="#servicos">Pular para o conteúdo</a>
+
+<!-- Ícones reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <mask id="m-raio" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect x="-10" y="-10" width="120" height="120" fill="#fff"/>
+      <path d="M60 4 L31 56 H50 L38 98 L74 41 H55 L68 4 Z" fill="#000" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="i-simbolo" viewBox="0 0 100 100"><path d="M16 12 H46 C72 12 90 30 90 51 C90 72 72 90 46 90 H16 Z" fill="#1450D2" mask="url(#m-raio)"/><path d="M60 4 L31 56 H50 L38 98 L74 41 H55 L68 4 Z" fill="#FFC21A"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3Z"/></symbol>
+  <symbol id="i-raio" viewBox="0 0 24 24"><path fill="currentColor" d="M14 2 L5 14 H11 L9 22 L19 9 H13 L15 2 Z"/></symbol>
+  <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17 19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<!-- ============ CABEÇALHO ============ -->
+<header class="top">
+  <div class="top__in">
+    <a class="marca" href="#inicio" aria-label="Damaceno Instalações Elétricas, início">
+      <svg aria-hidden="true"><use href="#i-simbolo"/></svg>
+      <span><b>DAMACENO</b><small>INSTALAÇÕES ELÉTRICAS</small></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#como">Como funciona</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#sobre">Sobre</a>
+      <a class="btn btn--orcamento btn--sm js-wa" href="#">Pedir orçamento</a>
+    </nav>
+    <a class="btn btn--orcamento btn--sm js-wa mob-cta" href="#" style="display:none">Orçamento</a>
+    <button class="menu-btn" popovertarget="menu" aria-label="Abrir menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<div id="menu" popover>
+  <button class="fechar" popovertarget="menu" popovertargetaction="hide" aria-label="Fechar menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <a href="#servicos">Serviços</a>
+  <a href="#como">Como funciona</a>
+  <a href="#trabalhos">Trabalhos</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#onde">Onde atendo</a>
+  <a class="btn btn--orcamento js-wa" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Peça seu orçamento no WhatsApp</a>
+</div>
+
+<main>
+  <!-- ============ TOPO COM O INTERRUPTOR ============ -->
+  <section class="hero" id="inicio" data-luz="off" style="padding-block:0">
+    <div class="hero__in">
+      <div class="hero__texto">
+        <span class="kicker"><svg aria-hidden="true"><use href="#i-raio"/></svg>Eletricista em Palhoça e São José</span>
+        <h1>Instalação elétrica bem-feita, do quadro à <span class="luz">última tomada.</span></h1>
+        <p class="hero__sub">Eu vou até a sua casa, avalio o serviço e passo o orçamento sem cobrar a visita.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--orcamento js-wa" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Peça seu orçamento no WhatsApp</a>
+          <a class="btn btn--contorno" href="#servicos">Ver serviços</a>
+        </div>
+        <ul class="pilulas" aria-label="Respostas rápidas">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Visita sem custo</li>
+          <li class="status" id="status"><i aria-hidden="true"></i><span>Todos os dias, das 8h às 18h</span></li>
+          <li><svg aria-hidden="true"><use href="#i-raio"/></svg>Emergência sob consulta</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Palhoça e São José</li>
+        </ul>
+      </div>
+
+      <div class="cena">
+        <div class="cena__foto">
+          <img src="img/pendente-palha-sala.webp" width="675" height="1500" alt="Luminária pendente de palha instalada pelo Diego, acesa sobre a sala" fetchpriority="high">
+          <span class="cena__legenda">Pendente instalado pelo Diego</span>
+        </div>
+        <button class="interruptor" type="button" id="interruptor" aria-pressed="false" aria-label="Acender a luz da página">
+          <span class="placa" aria-hidden="true"><span class="led"></span><span class="tecla"><span></span></span></span>
+          <span class="interruptor__txt" aria-hidden="true"><b id="int-titulo">Acenda a luz</b><small id="int-sub">Toque no interruptor</small></span>
+        </button>
+      </div>
+    </div>
+    <svg class="faisca-topo" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+      <polyline pathLength="1" points="0,52 520,52 552,22 588,72 624,8 656,52 1200,52"/>
+    </svg>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section id="servicos">
+    <div class="wrap">
+      <div class="cabeca">
+        <span class="kicker"><svg aria-hidden="true"><use href="#i-raio"/></svg>Serviços</span>
+        <h2>O que eu faço</h2>
+        <p>Toque no serviço para ver como funciona e já pedir o orçamento.</p>
+      </div>
+      <div class="servicos">
+        <!-- Destaque sempre aberto: é o serviço ligado ao diferencial de indústria -->
+        <article class="svc svc--destaque revela">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h2v8H7zM11 8h2v8h-2zM15 8h2v8h-2z"/></svg></span>
+          <span class="selo"><svg width="14" height="14" aria-hidden="true"><use href="#i-raio"/></svg>Experiência de painéis industriais</span>
+          <h3>Troca de quadro de distribuição</h3>
+          <p>Quadro organizado e disjuntores certos, para parar de desarmar.</p>
+          <p>De 2009 a 2024, montei painéis elétricos na indústria. No seu quadro, entra o mesmo cuidado com organização.</p>
+          <svg class="faisca" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,40 170,40 188,16 210,54 232,6 252,40 400,40" fill="none" stroke="#FFC21A" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <a class="btn btn--orcamento btn--sm js-wa" data-servico="troca de quadro de distribuição" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento deste serviço</a>
+        </article>
+
+        <details class="svc revela">
+          <summary>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-6h6v6"/></svg></span>
+            <span><h3>Instalações residenciais e comerciais</h3><p>Pontos novos, reforma ou obra, com a fiação certa para o que você vai ligar.</p></span>
+            <span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span>
+          </summary>
+          <div class="svc__corpo">
+            <p>Da casa à loja: planejo os circuitos para não sobrecarregar e deixo tudo identificado no quadro.</p>
+            <a class="btn btn--orcamento btn--sm js-wa" data-servico="instalação elétrica residencial ou comercial" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento deste serviço</a>
+          </div>
+        </details>
+
+        <details class="svc revela">
+          <summary>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></span>
+            <span><h3>Iluminação</h3><p>Pendentes, trilhos, spots e LED embutido instalados no lugar certo.</p></span>
+            <span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span>
+          </summary>
+          <div class="svc__corpo">
+            <p>Instalo a luminária que você escolheu e deixo a fiação escondida e o acabamento limpo.</p>
+            <a class="btn btn--orcamento btn--sm js-wa" data-servico="instalação de iluminação" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento deste serviço</a>
+          </div>
+        </details>
+
+        <details class="svc revela">
+          <summary>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v5a5 5 0 0 0 10 0V4M9 4v3M15 4v3M12 14v7"/></svg></span>
+            <span><h3>Chuveiro</h3><p>Instalação e troca com fio e disjuntor do tamanho certo para a potência.</p></span>
+            <span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span>
+          </summary>
+          <div class="svc__corpo">
+            <p>Chuveiro com fiação fraca esquenta e desarma. Confiro tudo antes de ligar.</p>
+            <a class="btn btn--orcamento btn--sm js-wa" data-servico="instalação ou troca de chuveiro" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento deste serviço</a>
+          </div>
+        </details>
+
+        <details class="svc revela">
+          <summary>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="4"/><path d="M9.5 9v2M14.5 9v2M10 15.5a2.5 2.5 0 0 0 4 0"/></svg></span>
+            <span><h3>Tomadas e interruptores</h3><p>Tomada nova, troca ou mudança de lugar, com acabamento caprichado.</p></span>
+            <span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span>
+          </summary>
+          <div class="svc__corpo">
+            <!-- PENDENTE: confirmar com o Diego as tomadas para ar-condicionado e forno -->
+            <p>Inclusive tomadas para ar-condicionado, forno e outros aparelhos que pedem circuito próprio.</p>
+            <a class="btn btn--orcamento btn--sm js-wa" data-servico="tomadas e interruptores" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento deste serviço</a>
+          </div>
+        </details>
+
+        <details class="svc revela">
+          <summary>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.4-.4-2.6z"/></svg></span>
+            <span><h3>Manutenção</h3><p>Tomada esquentando, luz piscando ou disjuntor caindo? Eu verifico a causa.</p></span>
+            <span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span>
+          </summary>
+          <div class="svc__corpo">
+            <p>Vou até aí, identifico o problema e explico o que precisa ser feito antes de começar.</p>
+            <a class="btn btn--orcamento btn--sm js-wa" data-servico="manutenção elétrica" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento deste serviço</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE ME CHAMAR ============ -->
+  <section class="porque" id="porque">
+    <div class="wrap">
+      <div class="cabeca">
+        <span class="kicker"><svg aria-hidden="true"><use href="#i-raio"/></svg>Diferenciais</span>
+        <h2>Por que me chamar</h2>
+      </div>
+      <div class="motivos">
+        <article class="motivo motivo--1 revela">
+          <span class="num">01</span>
+          <h3>Capricho de indústria</h3>
+          <p>De 2009 a 2024, montei painéis e equipamentos elétricos na indústria. Esse cuidado vai junto para a sua casa.</p>
+        </article>
+        <article class="motivo revela">
+          <span class="num">02</span>
+          <h3>Organização e compromisso</h3>
+          <p>Combino o serviço antes, cumpro o combinado e explico o que foi feito.</p>
+        </article>
+        <article class="motivo revela">
+          <span class="num">03</span>
+          <h3>Formação em dia</h3>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Formação de Eletricista Residencial e Predial</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Curso de Montagem de Quadros Elétricos</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Treinamento em NR-10</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>NR-35, trabalho em altura</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA ============ -->
+  <section id="como">
+    <div class="wrap">
+      <div class="cabeca">
+        <span class="kicker"><svg aria-hidden="true"><use href="#i-raio"/></svg>Como funciona</span>
+        <h2>Simples assim</h2>
+      </div>
+      <div class="passos" role="list" aria-label="Passos do atendimento">
+        <span class="fio" aria-hidden="true"><i></i></span>
+        <div class="passo" role="listitem"><span class="no" aria-hidden="true">1</span><h3>Me chama no WhatsApp</h3><p>Conte o que precisa. Se for um serviço simples, uma foto já basta para o orçamento.</p></div>
+        <div class="passo" role="listitem"><span class="no" aria-hidden="true">2</span><h3>Visita sem custo</h3><p>Para serviços maiores, vou até você, avalio e passo o valor antes de começar.</p></div>
+        <div class="passo" role="listitem"><span class="no" aria-hidden="true">3</span><h3>Serviço feito</h3><p>Com tudo combinado, faço o serviço e só vou embora com tudo funcionando.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divisor" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><polyline pathLength="1" points="0,36 540,36 566,12 594,54 622,4 648,36 1200,36"/></svg>
+
+  <!-- ============ TRABALHOS ============ -->
+  <section class="trabalhos" id="trabalhos">
+    <div class="wrap">
+      <div class="cabeca">
+        <span class="kicker"><svg aria-hidden="true"><use href="#i-raio"/></svg>Trabalhos</span>
+        <h2>Trabalhos recentes</h2>
+        <p>Alguns serviços de iluminação que fiz. Mais trabalhos no Instagram.</p>
+      </div>
+      <div class="faixa-ui">
+        <button class="seta" type="button" id="f-ant" aria-label="Trabalho anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="seta" type="button" id="f-prox" aria-label="Próximo trabalho"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+    <div class="faixa" id="faixa" tabindex="0" role="region" aria-label="Fotos de trabalhos">
+      <figure class="foto"><button type="button" data-i="0" aria-label="Ampliar: pendente de palha na sala"><img style="object-position:50% 72%" src="img/pendente-palha-sala.webp" width="675" height="1500" loading="lazy" decoding="async" alt="Luminária pendente de palha acesa sobre a sala, com vista para o mar pela janela"></button><figcaption>Pendente de palha na sala</figcaption></figure>
+      <figure class="foto"><button type="button" data-i="1" aria-label="Ampliar: perfil de LED embutido no teto"><img style="object-position:50% 40%" src="img/perfil-led-embutido.webp" width="675" height="1502" loading="lazy" decoding="async" alt="Linha de LED embutida no teto, atravessando o cômodo e descendo pela parede"></button><figcaption>Perfil de LED embutido no teto</figcaption></figure>
+      <figure class="foto"><button type="button" data-i="2" aria-label="Ampliar: trilho com spots"><img style="object-position:50% 32%" src="img/trilho-spots.webp" width="675" height="1502" loading="lazy" decoding="async" alt="Trilho preto no teto com três spots direcionáveis acesos"></button><figcaption>Trilho com spots</figcaption></figure>
+      <figure class="foto"><button type="button" data-i="3" aria-label="Ampliar: plafon de LED no banheiro"><img style="object-position:50% 26%" src="img/plafon-led-banheiro.webp" width="675" height="1500" loading="lazy" decoding="async" alt="Plafon redondo de LED com espelho central no teto do banheiro"></button><figcaption>Plafon de LED no banheiro</figcaption></figure>
+      <div class="foto foto--insta">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFC21A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="#FFC21A"/></svg>
+        <h3>Mais trabalhos no Instagram</h3>
+        <p>Acompanhe os serviços novos no @dieegodamacenoo.</p>
+        <a class="btn btn--orcamento btn--sm" href="https://www.instagram.com/dieegodamacenoo/" target="_blank" rel="noopener">Ver no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Foto do trabalho">
+    <figure>
+      <img id="lb-img" src="" alt="">
+      <figcaption id="lb-cap"></figcaption>
+    </figure>
+    <div class="lb-ctrl">
+      <button type="button" id="lb-ant" aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" id="lb-fechar" aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button type="button" id="lb-prox" aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </dialog>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="sobre" id="sobre">
+    <div class="wrap sobre__grid">
+      <div class="revela">
+        <span class="kicker"><svg aria-hidden="true"><use href="#i-raio"/></svg>Sobre</span>
+        <h2 style="margin-top:.8rem">Prazer, eu sou o Diego.</h2>
+        <p>Comecei na indústria em 2009, montando equipamentos e painéis elétricos. Desde 2024 levo essa experiência para casas e comércios de Palhoça e São José.</p>
+        <p>Gosto de serviço organizado e combinado direito, do orçamento ao acabamento.</p>
+      </div>
+      <ol class="tempo revela" aria-label="Linha do tempo">
+        <li><b>2009</b><span>Começo na indústria, montando equipamentos eletrônicos e lendo desenhos elétricos</span></li>
+        <li><b>2016 a 2024</b><span>No-breaks, painéis e equipamentos industriais</span></li>
+        <li><b>2024</b><span>Formação de Eletricista Residencial e Predial e início do atendimento em casas e comércios</span></li>
+        <li><b>Hoje</b><span>Eletricista em Palhoça e São José</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ ONDE E QUANDO ============ -->
+  <section class="onde" id="onde" style="padding-top:0">
+    <div class="wrap">
+      <div class="onde__card">
+        <div>
+          <h2>Onde e quando eu atendo</h2>
+          <dl class="dados">
+            <div><dt>Atendo em</dt><dd>Na sua casa ou no seu comércio<div class="cidades"><span>Palhoça</span><span>São José</span></div></dd></div>
+            <div><dt>Horário</dt><dd>Segunda a domingo, das 8h às 18h</dd></div>
+            <div><dt>Emergência</dt><dd>Atendimento de emergência sob consulta. <a class="js-wa" data-emergencia href="#">Falar agora</a></dd></div>
+            <div><dt>Orçamento</dt><dd>Visita sem custo. Serviços simples, orçamento por foto no WhatsApp.</dd></div>
+          </dl>
+        </div>
+        <div class="contatos">
+          <a class="contato js-wa" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg><span><b>WhatsApp</b><small>(48) 99127-0289</small></span></a>
+          <a class="contato" href="tel:+5548991270289"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span><b>Ligar</b><small>(48) 99127-0289</small></span></a>
+          <a class="contato" href="mailto:damaceno.dd@gmail.com?subject=Or%C3%A7amento%20pelo%20site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><span><b>E-mail</b><small>damaceno.dd@gmail.com</small></span></a>
+          <a class="contato" href="https://www.instagram.com/dieegodamacenoo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><span><b>Instagram</b><small>@dieegodamacenoo</small></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHAMADA FINAL ============ -->
+  <section class="final" style="padding-top:0">
+    <div class="wrap">
+      <div class="final__box">
+        <svg class="raios" viewBox="0 0 100 100" aria-hidden="true"><path d="M60 4 L31 56 H50 L38 98 L74 41 H55 L68 4 Z" fill="#FFFFFF"/></svg>
+        <h2>Precisa de um eletricista?</h2>
+        <p>Me manda uma mensagem contando o que você precisa. Eu respondo e a gente combina a visita.</p>
+        <a class="btn btn--orcamento js-wa" href="#"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="rodape__in">
+    <span>Damaceno Instalações Elétricas · Eletricista em Palhoça e São José</span>
+    <nav aria-label="Contatos">
+      <a class="js-wa" href="#">WhatsApp</a>
+      <a href="mailto:damaceno.dd@gmail.com">E-mail</a>
+      <a href="https://www.instagram.com/dieegodamacenoo/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div class="credit">
+      <span>© <span id="ano">2026</span> Damaceno Instalações Elétricas</span>
+      <a class="credit__link" href="../" target="_blank" rel="noopener" aria-label="Site feito pela MeKa Studio. Abre o site do estúdio em nova aba">
+        <span class="credit__by" aria-hidden="true">Site por</span>
+        <svg class="credit__mark" viewBox="0 0 132 100" aria-hidden="true">
+          <polyline points="12,90 12,10 42,56 72,10 72,90" fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="miter" stroke-miterlimit="10"/>
+          <line class="k" x1="118" y1="10" x2="74" y2="54" stroke-width="13"/>
+          <line class="k" x1="92" y1="36" x2="120" y2="90" stroke-width="13"/>
+        </svg>
+        <span class="credit__rule" aria-hidden="true"></span>
+        <span class="credit__name" aria-hidden="true"><b>Me<span>K</span>a</b><small>Studio</small></span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa js-wa" href="#" aria-label="Pedir orçamento pelo WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<script>
+const WHATSAPP = "5548991270289";
+const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- WhatsApp: mensagem conforme o botão ---------- */
+document.querySelectorAll(".js-wa").forEach(a => {
+  let msg = "Olá, Diego! Vim pelo site e gostaria de um orçamento.";
+  if (a.dataset.servico) msg = `Olá, Diego! Vim pelo site e gostaria de um orçamento para ${a.dataset.servico}.`;
+  if ("emergencia" in a.dataset) msg = "Olá, Diego! Vim pelo site e estou com uma emergência elétrica. Você consegue atender?";
+  a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+  a.target = "_blank"; a.rel = "noopener";
+});
+
+/* ---------- Interruptor do topo ---------- */
+const hero = document.getElementById("inicio");
+const sw = document.getElementById("interruptor");
+function luz(acesa) {
+  hero.dataset.luz = acesa ? "on" : "off";
+  sw.setAttribute("aria-pressed", String(acesa));
+  sw.setAttribute("aria-label", acesa ? "Apagar a luz da página" : "Acender a luz da página");
+  document.getElementById("int-titulo").textContent = acesa ? "Luz acesa" : "Acenda a luz";
+  document.getElementById("int-sub").textContent = acesa ? "Toque de novo para apagar" : "Toque no interruptor";
+}
+sw.addEventListener("click", () => luz(hero.dataset.luz !== "on"));
+/* No celular e para quem pediu menos movimento, a página já abre acesa */
+if (reduz || matchMedia("(max-width: 860px)").matches) luz(true);
+
+/* ---------- Selo de horário ao vivo (horário de Palhoça) ---------- */
+(function status() {
+  const el = document.getElementById("status");
+  const partes = new Intl.DateTimeFormat("pt-BR", { timeZone: "America/Sao_Paulo", hour: "numeric", minute: "numeric", hourCycle: "h23" }).formatToParts(new Date());
+  const h = +partes.find(p => p.type === "hour").value, m = +partes.find(p => p.type === "minute").value;
+  const min = h * 60 + m, aberto = min >= 8 * 60 && min < 18 * 60;
+  el.classList.toggle("aberto", aberto);
+  el.querySelector("span").textContent = aberto ? "Atendendo agora, até as 18h" : "Fora do horário: emergência sob consulta";
+})();
+
+/* ---------- Menu mobile: fecha ao tocar num link ---------- */
+const menu = document.getElementById("menu");
+menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { try { menu.hidePopover(); } catch (e) {} }));
+/* Botão "Orçamento" compacto no cabeçalho do celular */
+const mobCta = document.querySelector(".mob-cta");
+const mq = matchMedia("(max-width: 880px)");
+const ajustaCta = () => { mobCta.style.display = mq.matches ? "inline-flex" : "none"; };
+mq.addEventListener("change", ajustaCta); ajustaCta();
+
+/* ---------- Faixa de trabalhos: setas ---------- */
+const faixa = document.getElementById("faixa");
+const passo = () => faixa.querySelector(".foto").getBoundingClientRect().width + 16;
+document.getElementById("f-prox").addEventListener("click", () => faixa.scrollBy({ left: passo(), behavior: reduz ? "auto" : "smooth" }));
+document.getElementById("f-ant").addEventListener("click", () => faixa.scrollBy({ left: -passo(), behavior: reduz ? "auto" : "smooth" }));
+
+/* ---------- Lightbox ---------- */
+const fotos = [...faixa.querySelectorAll(".foto button")].map(b => ({ src: b.querySelector("img").src, alt: b.querySelector("img").alt, cap: b.parentElement.querySelector("figcaption").textContent }));
+const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
+let atual = 0;
+function mostra(i) { atual = (i + fotos.length) % fotos.length; lbImg.src = fotos[atual].src; lbImg.alt = fotos[atual].alt; lbCap.textContent = fotos[atual].cap; }
+faixa.querySelectorAll(".foto button").forEach(b => b.addEventListener("click", () => { mostra(+b.dataset.i); lb.showModal(); }));
+document.getElementById("lb-ant").addEventListener("click", () => mostra(atual - 1));
+document.getElementById("lb-prox").addEventListener("click", () => mostra(atual + 1));
+document.getElementById("lb-fechar").addEventListener("click", () => lb.close());
+lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+lb.addEventListener("keydown", e => { if (e.key === "ArrowRight") mostra(atual + 1); if (e.key === "ArrowLeft") mostra(atual - 1); });
+
+document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
