@@ -292,20 +292,91 @@ section { padding-block: var(--space-xl); }
 @media (max-width: 760px) { .bento { grid-template-columns: 1fr; } .tile.a, .tile.b, .tile.c, .tile.d { grid-column: auto; min-height: 200px; } }
 
 /* ===== Diferenciais ===== */
-.why { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-m); }
-.why div { padding-top: 1.4rem; border-top: 1px solid var(--line); position: relative; }
-.why div::before { content: ""; position: absolute; top: -1px; left: 0; width: 48px; height: 2px; background: var(--accent); }
-.why h3 { font-size: 1.5rem; margin-bottom: .6rem; }
-.why p { color: var(--ink-soft); }
-@media (max-width: 760px) { .why { grid-template-columns: 1fr; } }
+.why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.75rem, 1.2vw, 1rem); }
+.wcard { position: relative; isolation: isolate; overflow: hidden; padding: clamp(1.4rem, 2.5vw, 2rem); border-radius: 24px; background: var(--surface);
+  border: 1px solid var(--line); display: flex; flex-direction: column; gap: .6rem; transition: border-color .4s var(--ease), transform .4s var(--ease); --mx: 50%; --my: 0%; }
+.wcard::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .5s var(--ease);
+  background: radial-gradient(380px circle at var(--mx) var(--my), rgba(200,245,66,.09), transparent 60%); }
+.wcard:hover { border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); transform: translateY(-3px); }
+.wcard:hover::before { opacity: 1; }
+.wcard h3 { font-size: clamp(1.35rem, 1.2rem + .6vw, 1.65rem); }
+.wcard p { color: var(--ink-soft); }
+.wv { position: relative; height: 150px; margin-bottom: 1rem; border-radius: 14px; background: #0A0B0E; border: 1px solid var(--line); overflow: hidden; }
+.wv b, .wv i { display: block; }
+@media (max-width: 860px) { .why { grid-template-columns: 1fr; } }
+
+/* 1. Bilíngue: seletor que alterna e a mensagem trocando de idioma */
+.wv-lang { display: grid; place-items: center; align-content: center; gap: 1rem; }
+.wv-lang .tg { position: relative; display: flex; padding: 4px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); }
+.wv-lang .tg span { position: relative; z-index: 1; width: 46px; text-align: center; padding: .4rem 0; font: 600 .78rem/1 var(--mono); color: var(--ink-soft); transition: color .35s; }
+.wv-lang .tg i { position: absolute; top: 4px; left: 4px; width: 46px; height: calc(100% - 8px); border-radius: 99px; background: var(--accent); transition: translate .45s var(--ease); }
+.wv-lang .tg span:first-child { color: var(--accent-ink); }
+.wv-lang.en .tg i { translate: 46px 0; }
+.wv-lang.en .tg span:first-child { color: var(--ink-soft); } .wv-lang.en .tg span:nth-child(2) { color: var(--accent-ink); }
+.wv-lang .bolha { display: grid; padding: .6rem .95rem; border-radius: 14px 14px 14px 4px; background: var(--wa); color: #fff; font: 500 .88rem/1.3 var(--body); }
+.wv-lang .bolha b { grid-area: 1 / 1; font-weight: 500; transition: opacity .35s var(--ease), translate .35s var(--ease); }
+.wv-lang .bolha .en, .wv-lang.en .bolha .pt { opacity: 0; translate: 0 6px; }
+.wv-lang.en .bolha .en { opacity: 1; translate: 0 0; }
+
+/* 2. Celular primeiro: a mesma página estica do celular ao computador e se reorganiza */
+.wv-resp { display: grid; place-items: center; }
+.wv-resp .fr { container-type: inline-size; width: 30%; height: 78%; border-radius: 12px; border: 1px solid #3A3F4A; background: var(--surface); padding: 10px; overflow: hidden; }
+.wv-resp .fr > b { border-radius: 5px; margin-bottom: 6px; background: #2A2F38; }
+.wv-resp .t1 { height: 9px; width: 70%; background: var(--ink) !important; opacity: .8; }
+.wv-resp .t2 { height: 6px; width: 50%; }
+.wv-resp .bt { height: 11px; width: 42%; border-radius: 99px !important; background: var(--accent) !important; }
+.wv-resp .gr { display: grid; grid-template-columns: 1fr; gap: 5px; }
+.wv-resp .gr b { height: 22px; border-radius: 5px; background: #1C2028; border: 1px solid #2A2F38; }
+@container (min-width: 170px) { .wv-resp .gr { grid-template-columns: repeat(3, 1fr); } .wv-resp .gr b { height: 40px; } .wv-resp .bt { width: 22%; } }
+.wv-resp .px { position: absolute; right: 10px; bottom: 8px; display: grid; font: 500 .66rem/1 var(--mono); color: var(--ink-soft); }
+.wv-resp .px span { grid-area: 1 / 1; text-align: right; }
+.wv-resp .px span + span { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .wcard.on .wv-resp .fr { animation: resp 7s var(--ease) infinite; }
+  .wcard.on .wv-resp .px span { animation: px-a 7s linear infinite; }
+  .wcard.on .wv-resp .px span + span { animation-name: px-b; }
+  @keyframes resp { 0%, 22% { width: 30%; } 45%, 75% { width: 90%; } 96%, 100% { width: 30%; } }
+  @keyframes px-a { 0%, 30% { opacity: 1; } 34%, 84% { opacity: 0; } 88%, 100% { opacity: 1; } }
+  @keyframes px-b { 0%, 30% { opacity: 0; } 34%, 84% { opacity: 1; } 88%, 100% { opacity: 0; } }
+}
+
+/* 3. Aprovação: as etapas vão sendo aprovadas, uma por vez */
+.wv-ok { display: grid; align-content: center; gap: .55rem; padding: 0 1.1rem; }
+.wv-ok .ln { display: flex; align-items: center; gap: .65rem; font: 500 .9rem/1 var(--body); color: var(--ink-soft); transition: color .35s; }
+.wv-ok .ck { flex: none; width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #3A3F4A; display: grid; place-items: center; transition: background .35s var(--ease), border-color .35s; }
+.wv-ok .ck svg { width: 12px; height: 12px; stroke: var(--accent-ink); stroke-dasharray: 20; stroke-dashoffset: 20; transition: stroke-dashoffset .4s var(--ease) .1s; }
+.wv-ok .ln.ok { color: var(--ink); }
+.wv-ok .ln.ok .ck { background: var(--accent); border-color: var(--accent); }
+.wv-ok .ln.ok .ck svg { stroke-dashoffset: 0; }
+.wv-ok .ln em { margin-left: auto; font: 500 .66rem/1 var(--mono); letter-spacing: .06em; color: var(--accent); opacity: 0; transition: opacity .35s; font-style: normal; }
+.wv-ok .ln.ok em { opacity: 1; }
 
 /* ===== Como funciona ===== */
-.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(.75rem, 1.2vw, 1rem); }
-.steps li { padding: clamp(1.4rem, 2.5vw, 2rem); border-radius: 24px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: .7rem; align-content: start; }
-.steps .mono { color: var(--accent); }
-.steps h3 { font-size: 1.6rem; }
-.steps p { color: var(--ink-soft); }
-@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+.steps { --g: clamp(1rem, 2.5vw, 2rem); list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--g); }
+.steps li { position: relative; display: grid; gap: .7rem; align-content: start; }
+.steps .no { position: relative; z-index: 1; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; margin-bottom: .6rem;
+  background: var(--surface); border: 1px solid var(--line); color: var(--ink-soft); transition: background .5s var(--ease), border-color .5s, color .5s, box-shadow .6s var(--ease); }
+.steps .no svg { width: 24px; height: 24px; }
+.steps li.ativo .no { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); box-shadow: 0 0 0 8px rgba(200,245,66,.12); }
+/* trilho entre um passo e o próximo, que se enche quando o próximo acende */
+.steps li:not(:last-child)::before, .steps li:not(:last-child)::after { content: ""; position: absolute; top: 28px; left: 66px; width: calc(100% + var(--g) - 74px); height: 2px; border-radius: 2px; background: var(--line); }
+.steps li:not(:last-child)::after { background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .7s var(--ease); }
+.steps li.feito::after { transform: scaleX(1); }
+.steps .mono { color: var(--ink-soft); transition: color .5s; }
+.steps li.ativo .mono { color: var(--accent); }
+.steps h3 { font-size: clamp(1.45rem, 1.2rem + .8vw, 1.8rem); }
+.steps p { color: var(--ink-soft); max-width: 34ch; }
+@media (max-width: 760px) {
+  .steps { grid-template-columns: 1fr; --g: 2.2rem; }
+  .steps li { padding-left: 78px; min-height: 58px; }
+  .steps .no { position: absolute; left: 0; top: 0; margin: 0; }
+  .steps li:not(:last-child)::before, .steps li:not(:last-child)::after { top: 66px; left: 28px; width: 2px; height: calc(100% + var(--g) - 74px); }
+  .steps li:not(:last-child)::after { transform: scaleY(0); transform-origin: top; }
+  .steps li.feito::after { transform: scaleY(1); }
+}
+.how-cta { margin-top: var(--space-l); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
+  padding: clamp(1.4rem, 3vw, 2rem) clamp(1.4rem, 3vw, 2.25rem); border-radius: 24px; border: 1px dashed #3A3F4A; }
+.how-cta p { font: 600 clamp(1.2rem, 1.05rem + .6vw, 1.6rem)/1.25 var(--display); letter-spacing: -.01em; max-width: 26ch; }
 
 /* ===== Sobre ===== */
 .about .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: var(--space-l); align-items: center; }
@@ -756,9 +827,18 @@ section { padding-block: var(--space-xl); }
     <div class="wrap">
       <div class="head"><h2 data-i18n="why_h">Por que o MeKa Studio</h2></div>
       <div class="why">
-        <div class="reveal"><h3 data-i18n="w1h">Português e inglês</h3><p data-i18n="w1p">Sites bilíngues, prontos para clientes do Brasil e de fora.</p></div>
-        <div class="reveal"><h3 data-i18n="w2h">Celular em primeiro lugar</h3><p data-i18n="w2p">Cada projeto nasce pensado para quem acessa pelo telefone.</p></div>
-        <div class="reveal"><h3 data-i18n="w3h">Processo com aprovação</h3><p data-i18n="w3p">Você aprova cada etapa: briefing, textos, visual e site final.</p></div>
+        <div class="wcard reveal">
+          <div class="wv wv-lang" aria-hidden="true"><div class="tg"><span>PT</span><span>EN</span><i></i></div><div class="bolha"><b class="pt">Olá! Quero um orçamento.</b><b class="en">Hi! I’d like a quote.</b></div></div>
+          <h3 data-i18n="w1h">Português e inglês</h3><p data-i18n="w1p">Sites bilíngues, prontos para clientes do Brasil e de fora.</p>
+        </div>
+        <div class="wcard reveal">
+          <div class="wv wv-resp" aria-hidden="true"><div class="fr"><b class="t1"></b><b class="t2"></b><b class="bt"></b><div class="gr"><b></b><b></b><b></b></div></div><span class="px"><span>390 px</span><span>1440 px</span></span></div>
+          <h3 data-i18n="w2h">Celular em primeiro lugar</h3><p data-i18n="w2p">Cada projeto nasce pensado para quem acessa pelo telefone.</p>
+        </div>
+        <div class="wcard reveal">
+          <div class="wv wv-ok" aria-hidden="true"><div class="ln"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span><span data-i18n="ap1">Briefing</span><em data-i18n="ap_ok">OK</em></div><div class="ln"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span><span data-i18n="ap2">Textos</span><em data-i18n="ap_ok">OK</em></div><div class="ln"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span><span data-i18n="ap3">Visual</span><em data-i18n="ap_ok">OK</em></div><div class="ln"><span class="ck"><svg viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2 5 8.5l4.5-5"/></svg></span><span data-i18n="ap4">Site final</span><em data-i18n="ap_ok">OK</em></div></div>
+          <h3 data-i18n="w3h">Processo com aprovação</h3><p data-i18n="w3p">Você aprova cada etapa: briefing, textos, visual e site final.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -767,10 +847,11 @@ section { padding-block: var(--space-xl); }
     <div class="wrap">
       <div class="head"><h2 data-i18n="how_h">Como funciona</h2></div>
       <ol class="steps">
-        <li class="reveal"><span class="mono" data-i18n="st1t">01 / BRIEFING</span><h3 data-i18n="st1h">Conversa e briefing</h3><p data-i18n="st1p">Entendo o seu negócio e o que o site precisa fazer.</p></li>
-        <li class="reveal"><span class="mono" data-i18n="st2t">02 / DESIGN</span><h3 data-i18n="st2h">Textos e design</h3><p data-i18n="st2p">Crio os textos, a identidade e o layout, e você aprova cada um.</p></li>
-        <li class="reveal"><span class="mono" data-i18n="st3t">03 / NO AR</span><h3 data-i18n="st3h">Site no ar</h3><p data-i18n="st3p">Publico com o seu domínio e deixo tudo pronto para os clientes te acharem.</p></li>
+        <li class="reveal"><span class="no" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v10.5H9.5L5 19.5v-3.5H4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span><span class="mono" data-i18n="st1t">01 / BRIEFING</span><h3 data-i18n="st1h">Conversa e briefing</h3><p data-i18n="st1p">Entendo o seu negócio e o que o site precisa fazer.</p></li>
+        <li class="reveal"><span class="no" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1-4.5L16 4.5l3.5 3.5L8.5 19z"/><path d="M14 7l3 3"/></svg></span><span class="mono" data-i18n="st2t">02 / DESIGN</span><h3 data-i18n="st2h">Textos e design</h3><p data-i18n="st2p">Crio os textos, a identidade e o layout, e você aprova cada um.</p></li>
+        <li class="reveal"><span class="no" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c3 3 3 14 0 17M12 3.5c-3 3-3 14 0 17"/></svg></span><span class="mono" data-i18n="st3t">03 / NO AR</span><h3 data-i18n="st3h">Site no ar</h3><p data-i18n="st3p">Publico com o seu domínio e deixo tudo pronto para os clientes te acharem.</p></li>
       </ol>
+      <div class="how-cta reveal"><p data-i18n="how_cta_p">O primeiro passo é só uma conversa.</p><a class="btn js-wa" href="#"><svg aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="how_cta">Começar pelo briefing</span></a></div>
     </div>
   </section>
 
@@ -939,6 +1020,20 @@ function trocar(lang) {
 langBox.querySelectorAll("button").forEach(b => b.addEventListener("click", () => trocar(b.dataset.lang)));
 
 T.pt.pal = "PALETA"; T.en.pal = "PALETTE";
+T.pt.ap1 = 'Briefing';
+T.pt.ap2 = 'Textos';
+T.pt.ap3 = 'Visual';
+T.pt.ap4 = 'Site final';
+T.pt.ap_ok = 'APROVADO';
+T.pt.how_cta_p = 'O primeiro passo é só uma conversa.';
+T.pt.how_cta = 'Começar pelo briefing';
+T.en.ap1 = 'Brief';
+T.en.ap2 = 'Copy';
+T.en.ap3 = 'Design';
+T.en.ap4 = 'Final site';
+T.en.ap_ok = 'APPROVED';
+T.en.how_cta_p = 'The first step is just a chat.';
+T.en.how_cta = 'Start with the brief';
 T.pt.srv_p = 'Do primeiro rascunho ao site no ar, tudo num só lugar. Escolha por onde começar.';
 T.pt.srv_cta = 'Pedir orçamento';
 T.pt.df_ap = 'Aprovar';
@@ -1197,6 +1292,44 @@ if (mouseFino && !reduz) {
     clearInterval(timer);
     if (e.isIntersecting) timer = setInterval(proxima, 2200);
   }, { threshold: .35 }).observe(marca);
+})();
+
+/* ===== Por que o MeKa Studio: demonstrações ===== */
+(() => {
+  const cards = [...document.querySelectorAll(".wcard")]; if (!cards.length) return;
+  cards.forEach(c => c.addEventListener("pointermove", e => {
+    const r = c.getBoundingClientRect();
+    c.style.setProperty("--mx", (e.clientX - r.left) + "px"); c.style.setProperty("--my", (e.clientY - r.top) + "px");
+  }));
+  const lang = document.querySelector(".wv-lang"), linhas = [...document.querySelectorAll(".wv-ok .ln")];
+  if (reduz) { linhas.forEach(l => l.classList.add("ok")); return; }
+  let tLang = 0, tOk = 0, k = 0;
+  function aprovar() {
+    if (k < linhas.length) { linhas[k++].classList.add("ok"); tOk = setTimeout(aprovar, 850); }
+    else tOk = setTimeout(() => { linhas.forEach(l => l.classList.remove("ok")); k = 0; tOk = setTimeout(aprovar, 700); }, 2000);
+  }
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    const c = e.target; c.classList.toggle("on", e.isIntersecting);
+    if (lang && c.contains(lang)) { clearInterval(tLang); if (e.isIntersecting) tLang = setInterval(() => lang.classList.toggle("en"), 2400); }
+    if (linhas.length && c.contains(linhas[0])) {
+      clearTimeout(tOk);
+      if (e.isIntersecting) { linhas.forEach(l => l.classList.remove("ok")); k = 0; tOk = setTimeout(aprovar, 500); }
+    }
+  }), { threshold: .4 });
+  cards.forEach(c => io.observe(c));
+})();
+
+/* ===== Como funciona: a linha do tempo acende passo a passo ===== */
+(() => {
+  const passos = [...document.querySelectorAll(".steps li")]; if (!passos.length) return;
+  const acender = i => { passos[i].classList.add("ativo"); if (i > 0) passos[i - 1].classList.add("feito"); };
+  if (reduz) { passos.forEach((p, i) => acender(i)); return; }
+  const io = new IntersectionObserver(([e]) => {
+    if (!e.isIntersecting) return;
+    io.disconnect();
+    passos.forEach((p, i) => setTimeout(() => acender(i), 250 + i * 750));
+  }, { threshold: .45 });
+  io.observe(passos[0].parentElement);
 })();
 </script>
 </body>
