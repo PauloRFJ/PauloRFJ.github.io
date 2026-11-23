@@ -289,7 +289,8 @@ section { padding-block: var(--space-xl); }
 .tile.b { grid-column: span 2; }
 .tile.c { grid-column: span 3; }
 .tile.d { grid-column: span 3; }
-@media (max-width: 760px) { .bento { grid-template-columns: 1fr; } .tile.a, .tile.b, .tile.c, .tile.d { grid-column: auto; min-height: 200px; } }
+.tile.e { grid-column: span 6; }
+@media (max-width: 760px) { .bento { grid-template-columns: 1fr; } .tile.a, .tile.b, .tile.c, .tile.d, .tile.e { grid-column: auto; min-height: 200px; } }
 
 /* ===== Diferenciais ===== */
 .why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.75rem, 1.2vw, 1rem); }
@@ -702,6 +703,34 @@ section { padding-block: var(--space-xl); }
   .tile.on .demo-site .rolo { transform: translateY(-38%); transition-delay: 1.4s; transition-duration: 5s; }
 }
 @media (max-width: 760px) { .tile { min-height: 0; } .tile .demo { min-height: 190px; } }
+
+/* 5. Fotos antigas: antes e depois com barra para arrastar (cena desenhada, não é foto real) */
+@property --pos { syntax: "<percentage>"; inherits: true; initial-value: 50%; }
+@media (min-width: 761px) {
+  .tile.e { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); grid-template-rows: 1fr auto auto auto; column-gap: var(--space-l); min-height: 320px; }
+  .tile.e .demo { grid-column: 1; grid-row: 1 / -1; margin: 0; }
+  .tile.e h3, .tile.e p, .tile.e .srv-link { grid-column: 2; }
+  .tile.e h3 { grid-row: 2; } .tile.e p { grid-row: 3; } .tile.e .srv-link { grid-row: 4; }
+}
+.demo-foto { --pos: 50%; min-height: 230px; border-radius: 14px; overflow: hidden; background: #0A0B0E; touch-action: pan-y; }
+.demo-foto svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.demo-foto .ff-antes { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.demo-foto .ff-antes > svg:first-child { filter: sepia(.92) saturate(.55) contrast(.74) brightness(1.08) blur(.7px); }
+.demo-foto .ff-linha { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: #fff; box-shadow: 0 0 12px rgba(0,0,0,.45); pointer-events: none; }
+.demo-foto .ff-linha::after { content: ""; position: absolute; top: 50%; left: 50%; width: 38px; height: 38px; translate: -50% -50%; border-radius: 50%;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E1014' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 7l-5 5 5 5M15 7l5 5-5 5'/%3E%3C/svg%3E") center / 20px no-repeat;
+  box-shadow: 0 6px 18px -4px rgba(0,0,0,.6); }
+.demo-foto:has(input:focus-visible) .ff-linha::after { outline: 2px solid var(--accent); outline-offset: 3px; }
+.demo-foto input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
+.demo-foto .ff-tag { position: absolute; top: 10px; padding: .35rem .6rem; border-radius: 99px; background: rgba(14,16,20,.72); color: var(--ink);
+  font: 500 .66rem/1 var(--mono); letter-spacing: .08em; pointer-events: none; }
+.demo-foto .ff-tag.a { left: 10px; } .demo-foto .ff-tag.d { right: 10px; }
+.demo-foto .ff-ilu { position: absolute; right: 10px; bottom: 9px; font: 500 .6rem/1 var(--mono); letter-spacing: .08em; color: rgba(255,255,255,.75); pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .tile.on .demo-foto:not(.mexeu) { animation: ff-varre 5.5s ease-in-out infinite alternate; }
+  @keyframes ff-varre { from { --pos: 24%; } to { --pos: 76%; } }
+}
+
 </style>
 </head>
 <body>
@@ -869,6 +898,39 @@ section { padding-block: var(--space-xl); }
           <div class="demo demo-pub mini" aria-hidden="true"><div class="dp-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span class="u" data-i18n="dp_url">seunegocio.com.br</span><em><i></i><span data-i18n="dp_on">No ar</span></em></div><div class="dp-bars"><i style="--h:92%;--i:0"></i><i style="--h:100%;--i:1"></i><i style="--h:96%;--i:2"></i><i style="--h:100%;--i:3"></i><i style="--h:88%;--i:4"></i><i style="--h:100%;--i:5"></i><i style="--h:100%;--i:6"></i><i style="--h:94%;--i:7"></i><i style="--h:100%;--i:8"></i><i style="--h:98%;--i:9"></i><i style="--h:100%;--i:10"></i><i style="--h:90%;--i:11"></i><i style="--h:100%;--i:12"></i><i style="--h:100%;--i:13"></i><i style="--h:97%;--i:14"></i><i style="--h:100%;--i:15"></i><i style="--h:93%;--i:16"></i><i style="--h:100%;--i:17"></i><i style="--h:100%;--i:18"></i><i style="--h:95%;--i:19"></i><i style="--h:100%;--i:20"></i><i style="--h:99%;--i:21"></i><i style="--h:100%;--i:22"></i><i style="--h:91%;--i:23"></i><i style="--h:100%;--i:24"></i><i style="--h:100%;--i:25"></i><i style="--h:96%;--i:26"></i><i style="--h:100%;--i:27"></i></div><div class="dp-g"><small data-i18n="dp_gurl">seunegocio.com.br › servicos</small><b data-i18n="dp_gt">Seu Negócio | Palhoça e região</b><span></span><span></span></div></div>
                     <h3 data-i18n="s4h">Publicação e manutenção</h3><p data-i18n="s4p">Domínio, hospedagem, Google e atualizações, sem você precisar se preocupar.</p><a class="srv-link js-wa" data-srv="s4h" href="#"><span data-i18n="srv_cta">Pedir orçamento</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
+        <div class="tile e reveal">
+          <div class="demo demo-foto">
+            <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><symbol id="foto-cena" viewBox="0 0 400 220">
+  <defs><linearGradient id="ff-ceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7DB8E0"/><stop offset="1" stop-color="#F4D9A6"/></linearGradient></defs>
+  <rect width="400" height="220" fill="url(#ff-ceu)"/>
+  <circle cx="318" cy="58" r="22" fill="#FFD56A"/>
+  <path d="M0 150 C60 112 120 118 180 138 S300 110 400 132 V220 H0Z" fill="#7FAE6E"/>
+  <path d="M0 178 C80 160 160 166 240 176 S350 168 400 172 V220 H0Z" fill="#4F8A55"/>
+  <rect x="92" y="120" width="78" height="54" fill="#EDE4D0"/>
+  <path d="M84 122 L131 88 L178 122Z" fill="#B4553C"/>
+  <rect x="122" y="142" width="18" height="32" fill="#6E4A33"/>
+  <rect x="100" y="132" width="16" height="14" fill="#9CCBE8"/><rect x="148" y="132" width="16" height="14" fill="#9CCBE8"/>
+  <rect x="246" y="128" width="9" height="48" fill="#6E4A33"/>
+  <circle cx="250" cy="116" r="26" fill="#3A7347"/><circle cx="236" cy="128" r="16" fill="#3A7347"/><circle cx="265" cy="128" r="16" fill="#3A7347"/>
+  <path d="M196 176 L204 150 L212 176Z" fill="#E7B04B"/><circle cx="204" cy="146" r="6" fill="#C98E62"/>
+</symbol><use href="#foto-cena"/></svg>
+            <div class="ff-antes" aria-hidden="true"><svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice"><use href="#foto-cena"/></svg><svg class="ff-danos" viewBox="0 0 400 220" preserveAspectRatio="none" aria-hidden="true">
+  <defs><filter id="ff-grao"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs>
+  <rect width="400" height="220" filter="url(#ff-grao)" opacity=".22" style="mix-blend-mode:multiply"/>
+  <circle cx="322" cy="160" r="34" fill="#6B4A22" opacity=".28"/><circle cx="64" cy="58" r="20" fill="#5A3E1C" opacity=".22"/>
+  <g stroke="#fff" fill="none" stroke-linecap="round">
+    <path d="M38 12 L96 206" stroke-opacity=".55" stroke-width=".9"/><path d="M214 0 L190 92" stroke-opacity=".45" stroke-width=".7"/>
+    <path d="M286 40 L340 214" stroke-opacity=".5" stroke-width=".8"/><path d="M0 126 Q200 108 400 134" stroke-opacity=".35" stroke-width="1.6"/>
+  </g>
+  <path d="M352 0 H400 V52 L388 36 L377 27 L364 12Z" fill="#0A0B0E"/>
+</svg></div>
+            <span class="ff-tag a" aria-hidden="true" data-i18n="ff_antes">ANTES</span><span class="ff-tag d" aria-hidden="true" data-i18n="ff_depois">DEPOIS</span>
+            <i class="ff-linha" aria-hidden="true"></i>
+            <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar antes e depois" data-i18n-aria="ff_aria">
+            <span class="ff-ilu" aria-hidden="true" data-i18n="ff_ilu">ILUSTRAÇÃO</span>
+          </div>
+          <h3 data-i18n="s5h">Recuperação de fotos antigas</h3><p data-i18n="s5p">Fotos de família riscadas, manchadas ou desbotadas, restauradas com cuidado e prontas para imprimir ou emoldurar.</p><a class="srv-link js-wa" data-srv="s5h" href="#"><span data-i18n="srv_cta">Pedir orçamento</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
@@ -929,7 +991,7 @@ section { padding-block: var(--space-xl); }
         </div>
         <div class="pick">
           <span class="mono" id="fin-q" data-i18n="fin_q">O QUE VOCÊ PRECISA? (OPCIONAL)</span>
-          <div class="fin-chips" role="group" aria-labelledby="fin-q"><button type="button" aria-pressed="false" data-k="s1h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s1h">Sites e landing pages</span></button><button type="button" aria-pressed="false" data-k="s2h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s2h">Identidade visual</span></button><button type="button" aria-pressed="false" data-k="s3h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s3h">Design no Figma</span></button><button type="button" aria-pressed="false" data-k="s4h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s4h">Publicação e manutenção</span></button><button type="button" aria-pressed="false" data-k="fin_foto"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="fin_foto">Recuperação de fotos antigas</span></button></div>
+          <div class="fin-chips" role="group" aria-labelledby="fin-q"><button type="button" aria-pressed="false" data-k="s1h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s1h">Sites e landing pages</span></button><button type="button" aria-pressed="false" data-k="s2h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s2h">Identidade visual</span></button><button type="button" aria-pressed="false" data-k="s3h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s3h">Design no Figma</span></button><button type="button" aria-pressed="false" data-k="s4h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s4h">Publicação e manutenção</span></button><button type="button" aria-pressed="false" data-k="s5h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s5h">Recuperação de fotos antigas</span></button></div>
           <a class="btn js-wa" data-fin href="#"><svg aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="cta_wa">Peça seu orçamento pelo WhatsApp</span></a>
           <span class="mail"><span data-i18n="fin_mail">ou escreva para</span> <a href="mailto:roberto.mekastudio@gmail.com?subject=Or%C3%A7amento%20pelo%20site">roberto.mekastudio@gmail.com</a></span>
         </div>
@@ -1095,7 +1157,9 @@ T.pt.ft_nav = 'Navegação';
 T.pt.ft_ct = 'Contato';
 T.pt.ft_top = 'Voltar ao topo';
 T.pt.ft_made = 'Feito à mão, sem modelo pronto.';
-T.pt.fin_foto = 'Recuperação de fotos antigas';
+T.pt.s5h = 'Recuperação de fotos antigas';
+T.pt.s5p = 'Fotos de família riscadas, manchadas ou desbotadas, restauradas com cuidado e prontas para imprimir ou emoldurar.';
+T.pt.ff_antes = 'ANTES'; T.pt.ff_depois = 'DEPOIS'; T.pt.ff_ilu = 'ILUSTRAÇÃO'; T.pt.ff_aria = 'Arraste para comparar antes e depois';
 T.en.fin_q = 'WHAT DO YOU NEED? (OPTIONAL)';
 T.en.fin_mail = 'or email';
 T.en._wa_fin = 'Hi! I found MeKa Studio’s website and I’d like a quote for: {s}.';
@@ -1104,7 +1168,9 @@ T.en.ft_nav = 'Menu';
 T.en.ft_ct = 'Contact';
 T.en.ft_top = 'Back to top';
 T.en.ft_made = 'Handmade, no templates.';
-T.en.fin_foto = 'Old photo restoration';
+T.en.s5h = 'Old photo restoration';
+T.en.s5p = 'Scratched, stained or faded family photos, carefully restored and ready to print or frame.';
+T.en.ff_antes = 'BEFORE'; T.en.ff_depois = 'AFTER'; T.en.ff_ilu = 'ILLUSTRATION'; T.en.ff_aria = 'Drag to compare before and after';
 T.pt.ap1 = 'Briefing';
 T.pt.ap2 = 'Textos';
 T.pt.ap3 = 'Visual';
@@ -1459,6 +1525,13 @@ function msgFinal(t) {
     });
     footer.addEventListener("pointerleave", () => { marca.classList.remove("seguindo"); marca.style.removeProperty("--fx"); marca.style.removeProperty("--fy"); });
   }
+})();
+
+/* ===== Serviços: antes e depois das fotos antigas ===== */
+(() => {
+  const d = document.querySelector(".demo-foto"); if (!d) return;
+  const r = d.querySelector("input");
+  r.addEventListener("input", () => { d.classList.add("mexeu"); d.style.setProperty("--pos", r.value + "%"); });
 })();
 </script>
 </body>
