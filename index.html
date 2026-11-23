@@ -462,6 +462,125 @@ section { padding-block: var(--space-xl); }
 .cursor.mini b { opacity: 0; }
 .cursor b { font-weight: 600; transition: opacity .2s; }
 .track.custom-cursor, .track.custom-cursor .browser { cursor: none; }
+
+/* =====================================================================
+   Serviços: cada cartão mostra uma mini demonstração do serviço
+   ===================================================================== */
+#servicos .head p { max-width: 44ch; }
+.tile { justify-content: flex-start; min-height: 360px; isolation: isolate; --mx: 50%; --my: 0%; }
+.tile::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .5s var(--ease);
+  background: radial-gradient(420px circle at var(--mx) var(--my), rgba(200,245,66,.09), transparent 60%); }
+.tile:hover::before { opacity: 1; }
+.tile:hover { border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
+.tile .demo { position: relative; flex: 1; min-height: 170px; margin-bottom: 1.1rem; }
+.tile .srv-link { margin-top: .5rem; align-self: flex-start; display: inline-flex; align-items: center; gap: .45rem; min-height: 44px;
+  font: 600 .95rem/1 var(--body); color: var(--accent); text-decoration: none; }
+.tile .srv-link svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
+.tile .srv-link:hover svg, .tile .srv-link:focus-visible svg { transform: translate(3px, -3px); }
+.tile .srv-link:hover span { text-decoration: underline; text-underline-offset: 4px; }
+.mini b, .mini i { display: block; }
+
+/* 1. Sites: um site que se monta, no computador e no celular */
+.demo-site .ds-desk { position: absolute; left: 0; top: 0; width: 90%; height: 100%; border-radius: 12px; border: 1px solid var(--line); background: #0A0B0E; overflow: hidden; }
+.demo-site .ds-bar { height: 20px; display: flex; gap: 5px; align-items: center; padding-inline: 9px; border-bottom: 1px solid var(--line); }
+.demo-site .ds-bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
+.demo-site .ds-body { position: absolute; inset: 20px 0 0; overflow: hidden; padding: 14px; }
+.demo-site .ds-phone { position: absolute; right: 0; top: 12%; height: 88%; aspect-ratio: 9 / 17; border-radius: 16px; border: 1px solid #3A3F4A;
+  background: #0A0B0E; overflow: hidden; padding: 16px 8px; box-shadow: 0 18px 40px -12px rgba(0,0,0,.7); }
+.demo-site .rolo { transition: transform 4s cubic-bezier(.45,.05,.4,1); }
+.demo-site .rolo > * { margin-bottom: 8px; border-radius: 6px; background: #252A33; }
+.demo-site .t1 { height: 14px; width: 58%; background: var(--ink) !important; opacity: .85; }
+.demo-site .t2 { height: 7px; width: 42%; }
+.demo-site .t3 { height: 7px; width: 70%; }
+.demo-site .bt { height: 16px; width: 24%; border-radius: 99px !important; background: var(--accent) !important; }
+.demo-site .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; background: none !important; }
+.demo-site .cards b { height: 46px; border-radius: 7px; background: #1C2028; border: 1px solid #262A33; }
+.demo-site .foto { height: 48px; background: linear-gradient(135deg, #2E3A1A, #1A1F14) !important; }
+.demo-site .ds-phone .t1 { width: 80%; } .demo-site .ds-phone .bt { width: 60%; }
+.tile:hover .demo-site .rolo { transform: translateY(-38%); }
+
+/* 2. Identidade: letra, cores e nome trocando entre as marcas criadas */
+.demo-marca { display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
+.demo-marca .dm-aa { font: 700 clamp(3.6rem, 2.8rem + 2.4vw, 5.2rem)/.9 var(--display); letter-spacing: -.03em; color: var(--k1, var(--accent));
+  transition: opacity .3s var(--ease), color .5s var(--ease), translate .3s var(--ease); }
+.demo-marca .dm-sw { display: flex; }
+.demo-marca .dm-sw i { width: 30px; height: 30px; border-radius: 50%; margin-right: -9px; border: 2px solid var(--surface);
+  transition: background .6s var(--ease), margin .45s var(--ease); }
+.demo-marca .dm-sw i:nth-child(1) { background: var(--k1, #C8F542); } .demo-marca .dm-sw i:nth-child(2) { background: var(--k2, #EDEBE6); }
+.demo-marca .dm-sw i:nth-child(3) { background: var(--k3, #8E939C); } .demo-marca .dm-sw i:nth-child(4) { background: var(--k4, #262A33); }
+.tile:hover .demo-marca .dm-sw i { margin-right: 6px; }
+.demo-marca .dm-nome { font: 500 .74rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); transition: opacity .3s; }
+.demo-marca.troca .dm-aa { opacity: 0; translate: 0 8px; }
+.demo-marca.troca .dm-nome { opacity: 0; }
+
+/* 3. Figma: a prancheta selecionada e o cliente aprovando */
+.demo-figma { border-radius: 12px; border: 1px solid var(--line); overflow: hidden;
+  background: #0A0B0E radial-gradient(circle, rgba(237,235,230,.08) 1px, transparent 1.4px) 0 0 / 14px 14px; }
+.demo-figma .df-frame { position: absolute; left: 9%; top: 20%; width: 40%; height: 70%; background: #EDEBE6; border-radius: 4px; padding: 10px;
+  outline: 1.5px solid #0D99FF; outline-offset: 3px; }
+.demo-figma .df-frame > b { margin-bottom: 6px; border-radius: 4px; background: #CFCBC2; }
+.demo-figma .df-frame .t1 { height: 10px; width: 70%; background: #22252B; }
+.demo-figma .df-frame .t2 { height: 6px; width: 50%; }
+.demo-figma .df-frame .bt { height: 12px; width: 40%; border-radius: 99px; background: #0E1014; }
+.demo-figma .df-frame .foto { height: 34%; background: #B9C99A; }
+.demo-figma .df-tag { position: absolute; left: 9%; top: calc(20% - 22px); font: 500 .64rem/1 var(--mono); color: #0D99FF; }
+.demo-figma .df-h { position: absolute; width: 7px; height: 7px; background: #fff; border: 1.5px solid #0D99FF; }
+.demo-figma .df-h:nth-of-type(1) { left: calc(9% - 7px); top: calc(20% - 7px); } .demo-figma .df-h:nth-of-type(2) { left: calc(49% + 0px); top: calc(20% - 7px); }
+.demo-figma .df-h:nth-of-type(3) { left: calc(9% - 7px); top: calc(90% + 0px); } .demo-figma .df-h:nth-of-type(4) { left: calc(49% + 0px); top: calc(90% + 0px); }
+.demo-figma .df-chip { position: absolute; right: 7%; top: 44%; display: grid; padding: .5rem .9rem; border-radius: 99px; border: 1px solid #3A3F4A;
+  background: var(--surface-2); font: 600 .82rem/1 var(--body); color: var(--ink); }
+.demo-figma .df-chip span { grid-area: 1 / 1; text-align: center; }
+.demo-figma .df-chip .ok { opacity: 0; color: var(--accent-ink); }
+.demo-figma .df-cur { position: absolute; left: 30%; top: 60%; display: flex; align-items: flex-start; gap: 2px; pointer-events: none; }
+.demo-figma .df-cur svg { width: 18px; height: 18px; color: var(--accent); filter: drop-shadow(0 2px 4px rgba(0,0,0,.5)); }
+.demo-figma .df-cur span { margin-top: 14px; padding: 3px 7px; border-radius: 6px; background: var(--accent); color: var(--accent-ink); font: 600 .68rem/1 var(--body); }
+@media (prefers-reduced-motion: no-preference) {
+  .tile.on .demo-figma .df-cur { animation: df-cur 7s var(--ease) infinite; }
+  .tile.on .demo-figma .df-cur svg { animation: df-clique 7s linear infinite; }
+  .tile.on .demo-figma .df-chip { animation: df-chip 7s linear infinite; }
+  .tile.on .demo-figma .df-chip .ok { animation: df-ok 7s linear infinite; }
+  .tile.on .demo-figma .df-chip .pedir { animation: df-pedir 7s linear infinite; }
+  @keyframes df-cur { 0%, 12% { left: 30%; top: 60%; } 42%, 78% { left: 73%; top: 61%; } 100% { left: 30%; top: 60%; } }
+  @keyframes df-clique { 0%, 48% { scale: 1; } 51% { scale: .78; } 55%, 100% { scale: 1; } }
+  @keyframes df-chip { 0%, 50% { background: var(--surface-2); border-color: #3A3F4A; } 52%, 90% { background: var(--accent); border-color: var(--accent); } 93%, 100% { background: var(--surface-2); border-color: #3A3F4A; } }
+  @keyframes df-ok { 0%, 50% { opacity: 0; } 52%, 90% { opacity: 1; } 93%, 100% { opacity: 0; } }
+  @keyframes df-pedir { 0%, 50% { opacity: 1; } 52%, 90% { opacity: 0; } 93%, 100% { opacity: 1; } }
+}
+/* sem animação, mostra o estado final: aprovado */
+@media (prefers-reduced-motion: reduce) {
+  .demo-figma .df-cur { left: 73%; top: 61%; }
+  .demo-figma .df-chip { background: var(--accent); border-color: var(--accent); }
+  .demo-figma .df-chip .ok { opacity: 1; } .demo-figma .df-chip .pedir { opacity: 0; }
+}
+
+/* 4. Publicação: endereço no ar, disponibilidade e resultado no Google */
+.demo-pub { display: flex; flex-direction: column; gap: .8rem; justify-content: center; }
+.demo-pub .dp-url { display: flex; align-items: center; gap: .5rem; padding: .6rem .8rem; border-radius: 12px; border: 1px solid var(--line); background: #0A0B0E;
+  font: 500 .8rem/1 var(--mono); color: var(--ink); min-width: 0; }
+.demo-pub .dp-url svg { width: 14px; height: 14px; color: var(--ink-soft); flex: none; }
+.demo-pub .dp-url .u { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.demo-pub .dp-url em { margin-left: auto; display: inline-flex; align-items: center; gap: .4rem; font: 600 .72rem/1 var(--body); color: var(--accent); flex: none; }
+.demo-pub .dp-url em i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 var(--accent-glow); }
+.demo-pub .dp-bars { display: flex; align-items: flex-end; gap: 3px; height: 34px; }
+.demo-pub .dp-bars i { flex: 1; height: var(--h, 100%); border-radius: 2px; background: color-mix(in srgb, var(--accent) 75%, transparent); transform-origin: bottom; }
+.demo-pub .dp-g { padding: .75rem .85rem; border-radius: 12px; background: var(--surface-2); display: grid; gap: .35rem; }
+.demo-pub .dp-g small { font: 500 .68rem/1.2 var(--mono); color: var(--ink-soft); }
+.demo-pub .dp-g b { font: 600 .95rem/1.2 var(--body); color: #8AB4F8; }
+.demo-pub .dp-g span { display: block; height: 6px; border-radius: 4px; background: #2A2F38; width: 92%; }
+.demo-pub .dp-g span + span { width: 64%; }
+@media (prefers-reduced-motion: no-preference) {
+  .tile.on .demo-pub .dp-url em i { animation: dp-pulso 2s ease-out infinite; }
+  @keyframes dp-pulso { 0% { box-shadow: 0 0 0 0 var(--accent-glow); } 100% { box-shadow: 0 0 0 9px transparent; } }
+  .tile.on .demo-pub .dp-bars i { animation: dp-sobe .7s var(--ease) both; animation-delay: calc(var(--i) * 25ms); }
+  @keyframes dp-sobe { from { transform: scaleY(0); } }
+  .tile.on .demo-site .rolo > *, .tile.on .demo-site .cards b { animation: ds-monta .6s var(--ease) both; animation-delay: calc(var(--i, 0) * 90ms + 150ms); }
+  @keyframes ds-monta { from { opacity: 0; transform: translateY(8px); } }
+}
+/* No celular não há hover: o site da demonstração rola sozinho, uma vez */
+@media (hover: none) and (prefers-reduced-motion: no-preference) {
+  .tile.on .demo-site .rolo { transform: translateY(-38%); transition-delay: 1.4s; transition-duration: 5s; }
+}
+@media (max-width: 760px) { .tile { min-height: 0; } .tile .demo { min-height: 190px; } }
 </style>
 </head>
 <body>
@@ -611,23 +730,23 @@ section { padding-block: var(--space-xl); }
 
   <section id="servicos">
     <div class="wrap">
-      <div class="head"><h2 data-i18n="srv_h">O que eu faço</h2></div>
+      <div class="head"><h2 data-i18n="srv_h">O que eu faço</h2><p data-i18n="srv_p">Do primeiro rascunho ao site no ar, tudo num só lugar. Escolha por onde começar.</p></div>
       <div class="bento">
         <div class="tile a reveal">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg>
-          <h3 data-i18n="s1h">Sites e landing pages</h3><p data-i18n="s1p">Rápidos, bonitos no celular e com o botão de contato sempre à mão.</p>
+          <div class="demo demo-site mini" aria-hidden="true"><div class="ds-desk"><div class="ds-bar"><i></i><i></i><i></i></div><div class="ds-body"><div class="rolo"><b class="t1" style="--i:0"></b><b class="t2" style="--i:1"></b><b class="bt" style="--i:2"></b><div class="cards" style="--i:3"><b style="--i:3"></b><b style="--i:4"></b><b style="--i:5"></b></div><b class="t3" style="--i:4"></b><b class="foto" style="--i:5"></b><div class="cards" style="--i:6"><b style="--i:6"></b><b style="--i:7"></b><b style="--i:8"></b></div><b class="t2" style="--i:7"></b></div></div></div><div class="ds-phone"><div class="rolo"><b class="t1" style="--i:0"></b><b class="t2" style="--i:1"></b><b class="bt" style="--i:2"></b><b class="foto" style="--i:3"></b><b class="t3" style="--i:4"></b><b class="t2" style="--i:5"></b><b class="foto" style="--i:6"></b><b class="t3" style="--i:7"></b></div></div></div>
+                    <h3 data-i18n="s1h">Sites e landing pages</h3><p data-i18n="s1p">Rápidos, bonitos no celular e com o botão de contato sempre à mão.</p><a class="srv-link js-wa" data-srv="s1h" href="#"><span data-i18n="srv_cta">Pedir orçamento</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
         <div class="tile b reveal">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16" opacity=".5"/></svg>
-          <h3 data-i18n="s2h">Identidade visual</h3><p data-i18n="s2p">Logo, cores e tipografia que deixam o seu negócio reconhecível.</p>
+          <div class="demo demo-marca mini" aria-hidden="true"><span class="dm-aa">Aa</span><div class="dm-sw"><i></i><i></i><i></i><i></i></div><span class="dm-nome">MeKa Studio</span></div>
+                    <h3 data-i18n="s2h">Identidade visual</h3><p data-i18n="s2p">Logo, cores e tipografia que deixam o seu negócio reconhecível.</p><a class="srv-link js-wa" data-srv="s2h" href="#"><span data-i18n="srv_cta">Pedir orçamento</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
         <div class="tile c reveal">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="11" height="18" rx="2"/><rect x="16" y="9" width="5" height="12" rx="1.5"/></svg>
-          <h3 data-i18n="s3h">Design no Figma</h3><p data-i18n="s3p">Você vê e aprova o site no desktop e no celular antes de ele ser construído.</p>
+          <div class="demo demo-figma mini" aria-hidden="true"><span class="df-tag">Home · 390</span><div class="df-frame"><b class="t1"></b><b class="t2"></b><b class="foto"></b><b class="t2"></b><b class="bt"></b></div><i class="df-h"></i><i class="df-h"></i><i class="df-h"></i><i class="df-h"></i><div class="df-chip"><span class="pedir" data-i18n="df_ap">Aprovar</span><span class="ok" data-i18n="df_ok">Aprovado ✓</span></div><div class="df-cur"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="#0E1014" stroke-width="1.2" d="M4 3l7.5 17 2.2-7.2L21 10.6z"/></svg><span data-i18n="df_voce">Você</span></div></div>
+                    <h3 data-i18n="s3h">Design no Figma</h3><p data-i18n="s3p">Você vê e aprova o site no desktop e no celular antes de ele ser construído.</p><a class="srv-link js-wa" data-srv="s3h" href="#"><span data-i18n="srv_cta">Pedir orçamento</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
         <div class="tile d reveal">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 16V5M7 10l5-5 5 5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
-          <h3 data-i18n="s4h">Publicação e manutenção</h3><p data-i18n="s4p">Domínio, hospedagem, Google e atualizações, sem você precisar se preocupar.</p>
+          <div class="demo demo-pub mini" aria-hidden="true"><div class="dp-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span class="u" data-i18n="dp_url">seunegocio.com.br</span><em><i></i><span data-i18n="dp_on">No ar</span></em></div><div class="dp-bars"><i style="--h:92%;--i:0"></i><i style="--h:100%;--i:1"></i><i style="--h:96%;--i:2"></i><i style="--h:100%;--i:3"></i><i style="--h:88%;--i:4"></i><i style="--h:100%;--i:5"></i><i style="--h:100%;--i:6"></i><i style="--h:94%;--i:7"></i><i style="--h:100%;--i:8"></i><i style="--h:98%;--i:9"></i><i style="--h:100%;--i:10"></i><i style="--h:90%;--i:11"></i><i style="--h:100%;--i:12"></i><i style="--h:100%;--i:13"></i><i style="--h:97%;--i:14"></i><i style="--h:100%;--i:15"></i><i style="--h:93%;--i:16"></i><i style="--h:100%;--i:17"></i><i style="--h:100%;--i:18"></i><i style="--h:95%;--i:19"></i><i style="--h:100%;--i:20"></i><i style="--h:99%;--i:21"></i><i style="--h:100%;--i:22"></i><i style="--h:91%;--i:23"></i><i style="--h:100%;--i:24"></i><i style="--h:100%;--i:25"></i><i style="--h:96%;--i:26"></i><i style="--h:100%;--i:27"></i></div><div class="dp-g"><small data-i18n="dp_gurl">seunegocio.com.br › servicos</small><b data-i18n="dp_gt">Seu Negócio | Palhoça e região</b><span></span><span></span></div></div>
+                    <h3 data-i18n="s4h">Publicação e manutenção</h3><p data-i18n="s4p">Domínio, hospedagem, Google e atualizações, sem você precisar se preocupar.</p><a class="srv-link js-wa" data-srv="s4h" href="#"><span data-i18n="srv_cta">Pedir orçamento</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </div>
@@ -804,7 +923,8 @@ function aplicar(lang) {
   document.querySelectorAll("[data-i18n-aria]").forEach(el => { const v = t[el.dataset.i18nAria]; if (v) el.setAttribute("aria-label", v); });
   document.querySelectorAll("[data-i18n-alt]").forEach(el => { const v = t[el.dataset.i18nAlt]; if (v) el.alt = v; });
   document.querySelectorAll(".js-wa").forEach(a => {
-    a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t._wa)}`; a.target = "_blank"; a.rel = "noopener";
+    const msg = a.dataset.srv ? t._wa_srv.replace("{s}", t[a.dataset.srv]) : t._wa;
+    a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`; a.target = "_blank"; a.rel = "noopener";
   });
   langBox.dataset.active = lang;
   langBox.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
@@ -819,6 +939,26 @@ function trocar(lang) {
 langBox.querySelectorAll("button").forEach(b => b.addEventListener("click", () => trocar(b.dataset.lang)));
 
 T.pt.pal = "PALETA"; T.en.pal = "PALETTE";
+T.pt.srv_p = 'Do primeiro rascunho ao site no ar, tudo num só lugar. Escolha por onde começar.';
+T.pt.srv_cta = 'Pedir orçamento';
+T.pt.df_ap = 'Aprovar';
+T.pt.df_ok = 'Aprovado ✓';
+T.pt.df_voce = 'Você';
+T.pt.dp_url = 'seunegocio.com.br';
+T.pt.dp_on = 'No ar';
+T.pt.dp_gurl = 'seunegocio.com.br › servicos';
+T.pt.dp_gt = 'Seu Negócio | Palhoça e região';
+T.pt._wa_srv = 'Olá! Vim pelo site do MeKa Studio e gostaria de um orçamento de: {s}.';
+T.en.srv_p = 'From the first sketch to a live website, all in one place. Pick where to start.';
+T.en.srv_cta = 'Get a quote';
+T.en.df_ap = 'Approve';
+T.en.df_ok = 'Approved ✓';
+T.en.df_voce = 'You';
+T.en.dp_url = 'yourbusiness.com';
+T.en.dp_on = 'Live';
+T.en.dp_gurl = 'yourbusiness.com › services';
+T.en.dp_gt = 'Your Business | Your city';
+T.en._wa_srv = 'Hi! I found MeKa Studio’s website and I’d like a quote for: {s}.';
 let inicial = "pt";
 try { inicial = localStorage.getItem("meka-lang") || ""; } catch (e) { inicial = ""; }
 if (!T[inicial]) inicial = (navigator.language || "pt").toLowerCase().startsWith("pt") ? "pt" : "en";
@@ -1019,6 +1159,44 @@ if (mouseFino && !reduz) {
   });
   track.addEventListener("pointerdown", () => { c.style.scale = ".85"; });
   window.addEventListener("pointerup", () => { c.style.scale = ""; });
+})();
+
+/* ===== Serviços: demonstrações animadas ===== */
+(() => {
+  const tiles = [...document.querySelectorAll("#servicos .tile")];
+  /* a demonstração só anima quando o cartão está na tela */
+  const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("on", e.isIntersecting)), { threshold: .35 });
+  tiles.forEach(t => io.observe(t));
+  /* luz que segue o mouse */
+  tiles.forEach(t => t.addEventListener("pointermove", e => {
+    const r = t.getBoundingClientRect();
+    t.style.setProperty("--mx", (e.clientX - r.left) + "px"); t.style.setProperty("--my", (e.clientY - r.top) + "px");
+  }));
+  /* identidade: troca entre as marcas, com as cores de cada uma */
+  const marca = document.querySelector(".demo-marca"); if (!marca) return;
+  const MARCAS = [
+    { n: "MeKa Studio", f: 'var(--display)', w: 700, s: "normal", c: ["#C8F542", "#EDEBE6", "#8E939C", "#262A33"] },
+    { n: "CH Pinturas", f: '"Arial Black", "Archivo", sans-serif', w: 900, s: "normal", c: ["#F2541B", "#FAF8F3", "#E2DED4", "#22252B"] },
+    { n: "Himawari Sushi", f: 'Georgia, "Times New Roman", serif', w: 700, s: "italic", c: ["#E8323F", "#F2B523", "#F0642C", "#F3ECE2"] },
+    { n: "Damaceno", f: 'var(--body)', w: 800, s: "normal", c: ["#FFC21A", "#1450D2", "#EEF2F8", "#0A1B4D"] },
+    { n: "Studio Bella Vista", f: 'Georgia, "Times New Roman", serif', w: 400, s: "italic", c: ["#E5C07A", "#FAF6EE", "#7E5A1C", "#4B3226"] },
+  ];
+  const aa = marca.querySelector(".dm-aa"), nome = marca.querySelector(".dm-nome");
+  let i = 0, timer = 0;
+  function aplicarMarca(m) {
+    aa.style.fontFamily = m.f; aa.style.fontWeight = m.w; aa.style.fontStyle = m.s; nome.textContent = m.n;
+    m.c.forEach((c, k) => marca.style.setProperty("--k" + (k + 1), c));
+  }
+  function proxima() {
+    i = (i + 1) % MARCAS.length; marca.classList.add("troca");
+    setTimeout(() => { aplicarMarca(MARCAS[i]); marca.classList.remove("troca"); }, 300);
+  }
+  aplicarMarca(MARCAS[0]);
+  if (reduz) return;
+  new IntersectionObserver(([e]) => {
+    clearInterval(timer);
+    if (e.isIntersecting) timer = setInterval(proxima, 2200);
+  }, { threshold: .35 }).observe(marca);
 })();
 </script>
 </body>
