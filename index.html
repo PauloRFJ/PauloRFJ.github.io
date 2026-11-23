@@ -468,7 +468,8 @@ section { padding-block: var(--space-xl); }
 .ft-marca { position: relative; display: block; margin-top: var(--space-l); text-align: center; white-space: nowrap; user-select: none;
   font: 800 clamp(3rem, 15.2vw, 14.5rem)/.9 var(--display); letter-spacing: -.055em; color: #171A20; }
 /* a luz é uma cópia do texto por cima, recortada pelas letras */
-.ft-marca::after { content: attr(data-t); position: absolute; inset: 0; color: transparent;
+/* a área da luz passa um pouco das bordas: a última letra sai da caixa por causa do espaçamento apertado */
+.ft-marca::after { content: attr(data-t); position: absolute; inset: 0 -.2em; padding-inline: .2em; color: transparent;
   background: radial-gradient(clamp(140px, 22vw, 320px) circle at var(--fx) var(--fy), var(--accent), rgba(200,245,66,.22) 45%, transparent 70%);
   -webkit-background-clip: text; background-clip: text; }
 @media (prefers-reduced-motion: no-preference) {
@@ -928,7 +929,7 @@ section { padding-block: var(--space-xl); }
         </div>
         <div class="pick">
           <span class="mono" id="fin-q" data-i18n="fin_q">O QUE VOCÊ PRECISA? (OPCIONAL)</span>
-          <div class="fin-chips" role="group" aria-labelledby="fin-q"><button type="button" aria-pressed="false" data-k="s1h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s1h">Sites e landing pages</span></button><button type="button" aria-pressed="false" data-k="s2h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s2h">Identidade visual</span></button><button type="button" aria-pressed="false" data-k="s3h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s3h">Design no Figma</span></button><button type="button" aria-pressed="false" data-k="s4h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s4h">Publicação e manutenção</span></button></div>
+          <div class="fin-chips" role="group" aria-labelledby="fin-q"><button type="button" aria-pressed="false" data-k="s1h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s1h">Sites e landing pages</span></button><button type="button" aria-pressed="false" data-k="s2h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s2h">Identidade visual</span></button><button type="button" aria-pressed="false" data-k="s3h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s3h">Design no Figma</span></button><button type="button" aria-pressed="false" data-k="s4h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s4h">Publicação e manutenção</span></button><button type="button" aria-pressed="false" data-k="fin_foto"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="fin_foto">Recuperação de fotos antigas</span></button></div>
           <a class="btn js-wa" data-fin href="#"><svg aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="cta_wa">Peça seu orçamento pelo WhatsApp</span></a>
           <span class="mail"><span data-i18n="fin_mail">ou escreva para</span> <a href="mailto:roberto.mekastudio@gmail.com?subject=Or%C3%A7amento%20pelo%20site">roberto.mekastudio@gmail.com</a></span>
         </div>
@@ -1094,6 +1095,7 @@ T.pt.ft_nav = 'Navegação';
 T.pt.ft_ct = 'Contato';
 T.pt.ft_top = 'Voltar ao topo';
 T.pt.ft_made = 'Feito à mão, sem modelo pronto.';
+T.pt.fin_foto = 'Recuperação de fotos antigas';
 T.en.fin_q = 'WHAT DO YOU NEED? (OPTIONAL)';
 T.en.fin_mail = 'or email';
 T.en._wa_fin = 'Hi! I found MeKa Studio’s website and I’d like a quote for: {s}.';
@@ -1102,6 +1104,7 @@ T.en.ft_nav = 'Menu';
 T.en.ft_ct = 'Contact';
 T.en.ft_top = 'Back to top';
 T.en.ft_made = 'Handmade, no templates.';
+T.en.fin_foto = 'Old photo restoration';
 T.pt.ap1 = 'Briefing';
 T.pt.ap2 = 'Textos';
 T.pt.ap3 = 'Visual';
