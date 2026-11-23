@@ -419,16 +419,65 @@ section { padding-block: var(--space-xl); }
   mask-image: radial-gradient(ellipse 60% 80% at 100% 100%, #000, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse 60% 80% at 100% 100%, #000, transparent 70%);
 }
-.final h2 { position: relative; font-size: clamp(2.2rem, 1.3rem + 4vw, 5rem); max-width: 16ch; }
+.final .box { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: var(--space-l); align-items: end; isolation: isolate; --mx: 80%; --my: 80%; }
+.final .box::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .6s var(--ease);
+  background: radial-gradient(560px circle at var(--mx) var(--my), rgba(200,245,66,.11), transparent 60%); }
+.final .box:hover::after { opacity: 1; }
+.final h2 { position: relative; font-size: clamp(2.2rem, 1.3rem + 3.6vw, 4.6rem); max-width: 14ch; }
+.final h2 .accent { color: var(--accent); }
 .final p { position: relative; margin-top: 1.25rem; max-width: 44ch; color: var(--ink-soft); font-size: 1.12rem; }
-.final .btn { position: relative; margin-top: var(--space-m); }
+.final .pick { position: relative; display: grid; gap: 1rem; }
+.final .pick .mono { color: var(--ink-soft); font-size: .78rem; }
+.fin-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.fin-chips button { display: inline-flex; align-items: center; gap: .45rem; min-height: 44px; padding: .55rem 1rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid #3A3F4A; background: var(--bg); color: var(--ink); font: 500 .95rem/1.1 var(--body);
+  transition: background .3s var(--ease), border-color .3s, color .3s, transform .2s var(--ease); }
+.fin-chips button:hover { border-color: var(--accent); }
+.fin-chips button:active { transform: scale(.96); }
+.fin-chips button svg { width: 15px; height: 15px; margin-left: -.2rem; stroke: currentColor; opacity: .55; transition: opacity .3s; }
+.fin-chips button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.fin-chips button[aria-pressed="true"] svg { opacity: 1; }
+.fin-chips button svg .mais { transition: opacity .25s; } .fin-chips button svg .ok { opacity: 0; transition: opacity .25s; }
+.fin-chips button[aria-pressed="true"] svg .mais { opacity: 0; } .fin-chips button[aria-pressed="true"] svg .ok { opacity: 1; }
+.final .btn { position: relative; margin-top: .4rem; justify-self: start; }
+.final .mail { font-size: .95rem; color: var(--ink-soft); }
+.final .mail a { color: var(--ink); text-underline-offset: 4px; }
+.final .mail a:hover { color: var(--accent); }
+@media (max-width: 900px) { .final .box { grid-template-columns: 1fr; align-items: start; } }
 
 /* ===== Rodapé ===== */
-.footer { padding-block: var(--space-l) calc(var(--space-l) + 70px); border-top: 1px solid var(--line); }
-.footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem; }
-.contacts { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
-.contacts a, .contacts span { display: inline-flex; align-items: center; gap: .45rem; min-height: 44px; text-decoration: none; color: var(--ink-soft); font-size: .95rem; }
+@property --fx { syntax: "<percentage>"; inherits: true; initial-value: 30%; }
+@property --fy { syntax: "<percentage>"; inherits: true; initial-value: 50%; }
+.footer { padding-block: var(--space-l) calc(var(--space-m) + 84px); border-top: 1px solid var(--line); overflow: hidden; }
+.ft-cols { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .8fr) minmax(0, 1.2fr) auto; gap: var(--space-m) var(--space-l); align-items: start; }
+.ft-brand { display: grid; gap: .9rem; justify-items: start; }
+.ft-brand svg { width: 44px; height: auto; }
+.ft-brand p { color: var(--ink-soft); max-width: 26ch; font-size: 1rem; }
+.ft-col h3 { font: 500 .74rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .6rem; }
+.ft-col a { display: flex; align-items: center; min-height: 40px; color: var(--ink); text-decoration: none; font-size: .98rem; width: fit-content; }
+.ft-col a:hover { color: var(--accent); }
+.contacts { display: grid; }
+.contacts a, .contacts span { display: inline-flex; align-items: center; gap: .45rem; min-height: 40px; text-decoration: none; color: var(--ink); font-size: .98rem; }
 .contacts a:hover { color: var(--accent); }
+.ft-top { justify-self: start; display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: .6rem 1.1rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 .92rem/1 var(--body); transition: border-color .3s, color .3s; }
+.ft-top svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
+.ft-top:hover { border-color: var(--accent); color: var(--accent); }
+.ft-top:hover svg { transform: translateY(-3px); }
+/* a assinatura gigante: contorno que acende onde o mouse passa (sem mouse, a luz passeia sozinha) */
+.ft-marca { position: relative; display: block; margin-top: var(--space-l); text-align: center; white-space: nowrap; user-select: none;
+  font: 800 clamp(3rem, 15.2vw, 14.5rem)/.9 var(--display); letter-spacing: -.055em; color: #171A20; }
+/* a luz é uma cópia do texto por cima, recortada pelas letras */
+.ft-marca::after { content: attr(data-t); position: absolute; inset: 0; color: transparent;
+  background: radial-gradient(clamp(140px, 22vw, 320px) circle at var(--fx) var(--fy), var(--accent), rgba(200,245,66,.22) 45%, transparent 70%);
+  -webkit-background-clip: text; background-clip: text; }
+@media (prefers-reduced-motion: no-preference) {
+  .ft-marca:not(.seguindo) { animation: ft-drift 11s ease-in-out infinite alternate; }
+  @keyframes ft-drift { 0% { --fx: 8%; --fy: 40%; } 50% { --fx: 60%; --fy: 75%; } 100% { --fx: 95%; --fy: 35%; } }
+}
+.ft-base { margin-top: var(--space-m); padding-top: 1.1rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; }
+@media (max-width: 900px) { .ft-cols { grid-template-columns: 1fr 1fr; } .ft-brand { grid-column: 1 / -1; } }
+@media (max-width: 480px) { .ft-cols { grid-template-columns: 1fr; } }
 .contacts .soon { opacity: .7; }
 .contacts .soon em { font: 500 .68rem/1 var(--mono); font-style: normal; color: var(--accent); border: 1px solid rgba(200,245,66,.4); border-radius: 999px; padding: .25rem .5rem; }
 .copy { color: var(--ink-soft); font-size: .9rem; }
@@ -873,9 +922,16 @@ section { padding-block: var(--space-xl); }
   <section class="final" style="padding-top:0">
     <div class="wrap">
       <div class="box reveal">
-        <h2 data-i18n="final_h">Vamos criar a presença digital do seu negócio?</h2>
-        <p data-i18n="final_p">Conte um pouco sobre o seu projeto e receba um orçamento sob medida.</p>
-        <a class="btn js-wa" href="#"><svg aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="cta_wa">Peça seu orçamento pelo WhatsApp</span></a>
+        <div>
+          <h2 data-i18n="final_h">Vamos criar a <span class="accent">presença digital</span> do seu negócio?</h2>
+          <p data-i18n="final_p">Conte um pouco sobre o seu projeto e receba um orçamento sob medida.</p>
+        </div>
+        <div class="pick">
+          <span class="mono" id="fin-q" data-i18n="fin_q">O QUE VOCÊ PRECISA? (OPCIONAL)</span>
+          <div class="fin-chips" role="group" aria-labelledby="fin-q"><button type="button" aria-pressed="false" data-k="s1h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s1h">Sites e landing pages</span></button><button type="button" aria-pressed="false" data-k="s2h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s2h">Identidade visual</span></button><button type="button" aria-pressed="false" data-k="s3h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s3h">Design no Figma</span></button><button type="button" aria-pressed="false" data-k="s4h"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="mais" d="M8 3.5v9M3.5 8h9"/><path class="ok" d="M3.5 8.3 6.6 11 12.5 5"/></svg><span data-i18n="s4h">Publicação e manutenção</span></button></div>
+          <a class="btn js-wa" data-fin href="#"><svg aria-hidden="true"><use href="#i-chat"/></svg><span data-i18n="cta_wa">Peça seu orçamento pelo WhatsApp</span></a>
+          <span class="mail"><span data-i18n="fin_mail">ou escreva para</span> <a href="mailto:roberto.mekastudio@gmail.com?subject=Or%C3%A7amento%20pelo%20site">roberto.mekastudio@gmail.com</a></span>
+        </div>
       </div>
     </div>
   </section>
@@ -883,14 +939,24 @@ section { padding-block: var(--space-xl); }
 
 <footer class="footer">
   <div class="wrap">
-    <div class="contacts">
-      <a class="js-wa" href="#">WhatsApp · +55 48 98819-4919</a>
-      <a href="mailto:roberto.mekastudio@gmail.com?subject=Or%C3%A7amento%20pelo%20site">roberto.mekastudio@gmail.com</a>
-      <!-- Instagram escondido por enquanto. Para ativar quando a conta existir:
-      <a href="https://www.instagram.com/meka.studio/" target="_blank" rel="noopener">@meka.studio</a> -->
-      <a href="https://github.com/PauloRFJ" target="_blank" rel="noopener">GitHub</a>
+    <div class="ft-cols">
+      <div class="ft-brand"><svg viewBox="0 0 132 100" aria-hidden="true"><polyline points="12,90 12,10 42,56 72,10 72,90" fill="none" stroke="#8E939C" stroke-width="14" stroke-linejoin="miter" stroke-miterlimit="10"/><path d="M118 10 74 54M92 36l28 54" stroke="#C8F542" stroke-width="14"/></svg><p data-i18n="ft_tag">Sites e identidade visual para pequenos negócios, no Brasil e no exterior.</p></div>
+      <nav class="ft-col" aria-labelledby="ft-nav"><h3 id="ft-nav" data-i18n="ft_nav">Navegação</h3>
+        <a href="#projetos" data-i18n="nav1">Projetos</a><a href="#servicos" data-i18n="nav2">Serviços</a><a href="#como" data-i18n="how_h">Como funciona</a><a href="#sobre" data-i18n="nav3">Sobre</a>
+      </nav>
+      <div class="ft-col"><h3 data-i18n="ft_ct">Contato</h3>
+        <div class="contacts">
+          <a class="js-wa" href="#">WhatsApp · +55 48 98819-4919</a>
+          <a href="mailto:roberto.mekastudio@gmail.com?subject=Or%C3%A7amento%20pelo%20site">roberto.mekastudio@gmail.com</a>
+          <!-- Instagram escondido por enquanto. Para ativar quando a conta existir:
+          <a href="https://www.instagram.com/meka.studio/" target="_blank" rel="noopener">@meka.studio</a> -->
+          <a href="https://github.com/PauloRFJ" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <button type="button" class="ft-top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span data-i18n="ft_top">Voltar ao topo</span></button>
     </div>
-    <span class="copy"><svg viewBox="0 0 132 100" aria-hidden="true"><polyline points="12,90 12,10 42,56 72,10 72,90" fill="none" stroke="#8E939C" stroke-width="14" stroke-linejoin="miter" stroke-miterlimit="10"/><path d="M118 10 74 54M92 36l28 54" stroke="#C8F542" stroke-width="14"/></svg>© MeKa Studio</span>
+    <span class="ft-marca" data-t="MeKa Studio" aria-hidden="true">MeKa Studio</span>
+    <div class="ft-base"><span class="copy">© <span id="ano">2026</span> MeKa Studio</span><span class="copy" data-i18n="ft_made">Feito à mão, sem modelo pronto.</span></div>
   </div>
 </footer>
 
@@ -942,7 +1008,7 @@ const T = {
     about_h: 'De onde vem o nome Me<span class="k">K</span>a',
     about_p1: "Em todos os jogos online, meu nome sempre foi o mesmo: MeKa. Era por ele que me reconheciam em cada partida.",
     about_p2: "Quando decidi criar sites e marcas para pequenos negócios, não fazia sentido usar outro nome. O MeKa Studio leva para cada projeto a mesma dedicação: entender o objetivo, planejar cada etapa e entregar algo de que você vai se orgulhar.",
-    final_h: "Vamos criar a presença digital do seu negócio?", final_p: "Conte um pouco sobre o seu projeto e receba um orçamento sob medida.",
+    final_h: 'Vamos criar a <span class="accent">presença digital</span> do seu negócio?', final_p: "Conte um pouco sobre o seu projeto e receba um orçamento sob medida.",
     cta_wa: "Peça seu orçamento pelo WhatsApp", soon: "EM BREVE"
   },
   en: {
@@ -986,7 +1052,7 @@ const T = {
     about_h: 'Where the name Me<span class="k">K</span>a comes from',
     about_p1: "In every online game, my name has always been the same: MeKa. It’s how people recognized me in every match.",
     about_p2: "When I decided to create websites and brands for small businesses, using any other name made no sense. MeKa Studio brings that same dedication to every project: understanding the goal, planning each step and delivering something you’ll be proud of.",
-    final_h: "Ready to build your business’s online presence?", final_p: "Tell me a little about your project and get a tailored quote.",
+    final_h: 'Ready to build your business’s <span class="accent">online presence</span>?', final_p: "Tell me a little about your project and get a tailored quote.",
     cta_wa: "Request a quote on WhatsApp", soon: "SOON"
   }
 };
@@ -1004,7 +1070,7 @@ function aplicar(lang) {
   document.querySelectorAll("[data-i18n-aria]").forEach(el => { const v = t[el.dataset.i18nAria]; if (v) el.setAttribute("aria-label", v); });
   document.querySelectorAll("[data-i18n-alt]").forEach(el => { const v = t[el.dataset.i18nAlt]; if (v) el.alt = v; });
   document.querySelectorAll(".js-wa").forEach(a => {
-    const msg = a.dataset.srv ? t._wa_srv.replace("{s}", t[a.dataset.srv]) : t._wa;
+    const msg = a.hasAttribute("data-fin") ? msgFinal(t) : a.dataset.srv ? t._wa_srv.replace("{s}", t[a.dataset.srv]) : t._wa;
     a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`; a.target = "_blank"; a.rel = "noopener";
   });
   langBox.dataset.active = lang;
@@ -1020,6 +1086,22 @@ function trocar(lang) {
 langBox.querySelectorAll("button").forEach(b => b.addEventListener("click", () => trocar(b.dataset.lang)));
 
 T.pt.pal = "PALETA"; T.en.pal = "PALETTE";
+T.pt.fin_q = 'O QUE VOCÊ PRECISA? (OPCIONAL)';
+T.pt.fin_mail = 'ou escreva para';
+T.pt._wa_fin = 'Olá! Vim pelo site do MeKa Studio e gostaria de um orçamento de: {s}.';
+T.pt.ft_tag = 'Sites e identidade visual para pequenos negócios, no Brasil e no exterior.';
+T.pt.ft_nav = 'Navegação';
+T.pt.ft_ct = 'Contato';
+T.pt.ft_top = 'Voltar ao topo';
+T.pt.ft_made = 'Feito à mão, sem modelo pronto.';
+T.en.fin_q = 'WHAT DO YOU NEED? (OPTIONAL)';
+T.en.fin_mail = 'or email';
+T.en._wa_fin = 'Hi! I found MeKa Studio’s website and I’d like a quote for: {s}.';
+T.en.ft_tag = 'Websites and brand identity for small businesses, in Brazil and abroad.';
+T.en.ft_nav = 'Menu';
+T.en.ft_ct = 'Contact';
+T.en.ft_top = 'Back to top';
+T.en.ft_made = 'Handmade, no templates.';
 T.pt.ap1 = 'Briefing';
 T.pt.ap2 = 'Textos';
 T.pt.ap3 = 'Visual';
@@ -1330,6 +1412,50 @@ if (mouseFino && !reduz) {
     passos.forEach((p, i) => setTimeout(() => acender(i), 250 + i * 750));
   }, { threshold: .45 });
   io.observe(passos[0].parentElement);
+})();
+
+/* ===== Fechamento: o botão do WhatsApp leva os serviços marcados ===== */
+function msgFinal(t) {
+  const marcados = [...document.querySelectorAll('.fin-chips button[aria-pressed="true"]')].map(b => t[b.dataset.k]);
+  if (!marcados.length) return t._wa;
+  const lista = marcados.join(", ");
+  return t._wa_fin.replace("{s}", lista);
+}
+(() => {
+  const botao = document.querySelector(".final .btn[data-fin]"); if (!botao) return;
+  const atualizar = () => {
+    const t = T[document.documentElement.lang.startsWith("en") ? "en" : "pt"];
+    botao.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msgFinal(t))}`;
+  };
+  document.querySelectorAll(".fin-chips button").forEach(b => b.addEventListener("click", () => {
+    b.setAttribute("aria-pressed", String(b.getAttribute("aria-pressed") !== "true")); atualizar();
+  }));
+  const box = document.querySelector(".final .box");
+  box.addEventListener("pointermove", e => {
+    const r = box.getBoundingClientRect();
+    box.style.setProperty("--mx", (e.clientX - r.left) + "px"); box.style.setProperty("--my", (e.clientY - r.top) + "px");
+  });
+})();
+
+/* ===== Rodapé ===== */
+(() => {
+  const ano = document.getElementById("ano"); if (ano) ano.textContent = new Date().getFullYear();
+  const topo = document.querySelector(".ft-top");
+  if (topo) topo.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: reduz ? "auto" : "smooth" });
+    const alvo = document.querySelector(".skip"); if (alvo) setTimeout(() => document.querySelector(".header a")?.focus({ preventScroll: true }), reduz ? 0 : 600);
+  });
+  const marca = document.querySelector(".ft-marca");
+  if (marca && matchMedia("(hover: hover) and (pointer: fine)").matches && !reduz) {
+    const footer = marca.closest(".footer");
+    footer.addEventListener("pointermove", e => {
+      const r = marca.getBoundingClientRect();
+      marca.classList.add("seguindo");
+      marca.style.setProperty("--fx", ((e.clientX - r.left) / r.width * 100) + "%");
+      marca.style.setProperty("--fy", ((e.clientY - r.top) / r.height * 100) + "%");
+    });
+    footer.addEventListener("pointerleave", () => { marca.classList.remove("seguindo"); marca.style.removeProperty("--fx"); marca.style.removeProperty("--fy"); });
+  }
 })();
 </script>
 </body>
